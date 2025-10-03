@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "attributes": {
+    "linkColor": { "type": "string" },
+    "linkBackgroundColor": { "type": "string" },
+    "linkBorderColor": { "type": "string" },
+    "linkBorderRadius": { "type": "number" },
+    "linkPadding": { "type": "string" },
+    "fontSize": {
+      "type": "string"
+    },
+    "headingLevels": {
+      "default": [
+        "h2"
+      ],
+      "type": "array"
+    },
+    "headingText": {
+      "default": "On This Page",
+      "type": "string"
+    },
+    "headings": {
+      "default": [
+      ],
+      "items": {
+        "properties": {
+          "anchor": {
+            "type": "string"
+          },
+          "isVisible": {
+            "type": "boolean"
+          },
+          "linkText": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "isCollapsible": {
+      "default": false,
+      "type": "boolean"
+    },
+    "isEditing": {
+      "default": false,
+      "type": "boolean"
+    },
+    "layout": {
+      "default": "vertical",
+      "type": "string"
+    },
+    "listStyle": {
+      "default": "ul",
+      "type": "string"
+    },
+    "showHeading": {
+      "default": false,
+      "type": "boolean"
+    },
+    "textColor": {
+      "type": "string"
+    }
+  },
+  "category": "text",
+  "description": "Automatically generates a table of contents with links to headings on your page.",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "icon": "list-view",
+  "name": "seo44/jump-links",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "seo-44",
+  "title": "SEO 44 Jump Links",
+  "version": "1.6.2",
+  "viewScript": "file:./view.js"
+} 

@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"description": "Jump links block for SEO 44.",
 	"main": "build/index.js",
-	"scripts": {
+	"private": true,
+  	"scripts": {
 		"build": "wp-scripts build",
 		"start": "wp-scripts start"
 	},

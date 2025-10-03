@@ -28,7 +28,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
     	style,
 	});
 	
-	// SHow More Expand and Contract Arrows
+	// Show More Expand and Contract Arrows
 	const arrowDownIcon = (
 		<svg className="arrow-down" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 			<path d="M12 16l-6-6 1.41-1.41L12 13.17l4.59-4.58L18 10l-6 6z"></path>
@@ -40,9 +40,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
 		</svg>
 	);
 
-
 	return (
-return (
 		<div {...blockProps}>
 			{showHeading && <RichText.Content tagName="div" className="wp-block-seo44-jump-links-heading" value={headingText} />}
 			{headings && headings.length > 0 && (

@@ -1,0 +1,174 @@
+/* Style the On This Page Text */
+.wp-block-seo44-jump-links-heading{
+	font-size: calc(var(--jump-link-font-size, 1em) * 1.25);
+	flex-basis: 100%;
+}
+
+/* Jump Links Block Styles */
+.wp-block-seo44-jump-links.list-style-none > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Jump Links Block - Horizontal Layout Styles */
+.wp-block-seo44-jump-links.is-layout-horizontal ol,
+.wp-block-seo44-jump-links.is-layout-horizontal ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.wp-block-seo44-jump-links.is-layout-horizontal li a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+	text-decoration: none;
+    color: #000;
+	border: 1px solid #ddd;
+}
+
+.wp-block-seo44-jump-links.is-layout-horizontal li a:hover {
+	text-decoration: underline;
+	text-underline-offset: .1em;
+	border: 1px solid #ccc;
+}
+
+/* Styling for the Collapsible Feature */
+.wp-block-seo44-jump-links.is-collapsible > ul,
+.wp-block-seo44-jump-links.is-collapsible > ol {
+    /* If horizontal, allow wrapping so we can see the overflow */
+    flex-wrap: wrap;
+    /* Limit to roughly one line of text height */
+    max-height: 2.5em; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.wp-block-seo44-jump-links.is-collapsible.is-expanded > ul,
+.wp-block-seo44-jump-links.is-collapsible.is-expanded > ol {
+    max-height: 1000px; /* A large value to reveal all content */
+}
+
+/* The button is hidden by default; our JS shows it only when needed */
+.wp-block-seo44-jump-links .seo-44-show-more {
+    display: none; 
+    background: none;
+    border: 1px solid currentColor; /*  border: none; */
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.wp-block-seo44-jump-links .seo-44-show-more svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+}
+
+/* Logic to show/hide the correct arrow icon */
+.wp-block-seo44-jump-links .seo-44-show-more .arrow-up { display: none; }
+.wp-block-seo44-jump-links.is-expanded .seo-44-show-more .arrow-down { display: none; }
+.wp-block-seo44-jump-links.is-expanded .sseo-44-show-more .arrow-up { display: inline-block; }
+
+/* DYNAMIC COLLAPSED HEIGHTS */
+/* Vertical Layout: Collapse to 2 lines */
+.wp-block-seo44-jump-links.is-collapsible:not(.is-layout-horizontal) > ul,
+.wp-block-seo44-jump-links.is-collapsible:not(.is-layout-horizontal) > ol {
+    max-height: calc(var(--jump-link-font-size, 1em) * 1.7 * 2); /* font-size * line-height * 2 lines */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+	max-width: calc(100% - 40px);
+    display: inline-block;
+}
+.wp-block-seo44-jump-links.is-collapsible:not(.is-layout-horizontal) .seo-44-show-more{
+	vertical-align: top;
+    margin-top: calc(var(--jump-link-font-size, 1em) * 1.8);
+}
+
+/* Horizontal Layout: Collapse to 1 line */
+.wp-block-seo44-jump-links.is-collapsible.is-layout-horizontal > ul,
+.wp-block-seo44-jump-links.is-collapsible.is-layout-horizontal > ol {
+    max-height: calc(var(--jump-link-font-size, 1em) * 1.7 + 1.5em); /* font-size * line-height + padding */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Expanded state for both layouts */
+.wp-block-seo44-jump-links.is-collapsible.is-expanded > ul,
+.wp-block-seo44-jump-links.is-collapsible.is-expanded > ol {
+    max-height: 1000px;
+}
+
+/* HORIZONTAL LAYOUT: BUTTON BESIDE LIST */
+.wp-block-seo44-jump-links.is-layout-horizontal.is-collapsible {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.wp-block-seo44-jump-links.is-layout-horizontal.is-collapsible > ul,
+.wp-block-seo44-jump-links.is-layout-horizontal.is-collapsible > ol {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.wp-block-seo44-jump-links.is-layout-horizontal.is-collapsible .seo-44-show-more {
+    flex-shrink: 0;
+    margin-top: 0.5em;
+}
+
+/* OTHER EDIT CONTROLS */
+/* This more specific rule will override the default 'display: none' in the editor */
+.block-editor-block-list__block[data-type="seo44/jump-links"].is-collapsible.wp-block-seo44-jump-links .seo-44-show-more {
+    display: inline-block;
+}
+
+/* Make the text input take up the available space */
+.wp-block-seo44-jump-links ol li .components-text-control,
+.wp-block-seo44-jump-links ul li .components-text-control {
+    flex-grow: 1;
+}
+
+/* Style the sidebar layout buttons to look better */
+.components-panel__body .components-button-group {
+    display: flex;
+    width: 100%;
+	gap: 8px;
+	margin-bottom:8px;
+}
+
+.components-panel__body .components-button-group .components-button {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.reorder-buttons .components-button{
+	border: 1px solid #999;
+	border-radius: 6px;
+	margin: 0 5px;
+}
+
+.reorder-buttons .components-button:disabled{
+	display:none;
+	color:transparent;
+}
+
+.wp-block-seo44-jump-links ol li .reorder-buttons,
+.wp-block-seo44-jump-links ul li .reorder-buttons{
+	width:96px
+}
+
+.wp-block-seo44-jump-links ol li .reorder-buttons,
+.wp-block-seo44-jump-links ul li .reorder-buttons,
+.wp-block-seo44-jump-links ol li .components-toggle-control.components-toggle-control,
+.wp-block-seo44-jump-links ul li .components-toggle-control.components-toggle-control {
+    display: inline-block; /* Make TextControl and ToggleControl take full width */
+	margin: 0 5px 10px;
+	vertical-align: middle;
+}

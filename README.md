@@ -184,9 +184,3 @@ The main **SEO 44** plugin is a complete suite of tools that includes meta tag o
 * **Live Editor Preview:** The block displays a live preview of the generated link list directly in the editor.
 * **Smart Anchor ID Generation:** The block intelligently adds unique anchor IDs to heading blocks that are missing them, while respecting any custom IDs that have already been set by the user.
 * **Basic Sidebar Controls:** Added checkboxes to allow users to select which heading levels (H2, H3, H4) to include in the list.
-
----
-
-## Upgrade Notice
-### 1.5.0
-This update adds an important conflict-resolution feature. It will now automatically deactivate a standalone Jump Links Block plugin if it is detected.

@@ -283,7 +283,15 @@ export default function Edit({ attributes, setAttributes }) {
 			</InspectorControls>
 			<div {...blockProps}>
 				
-				{showHeading && <RichText.Content tagName="div" className="wp-block-seo44-jump-links-heading" value={headingText} />}
+				{showHeading && (
+				    <RichText
+				        tagName="div"
+				        className="wp-block-seo44-jump-links-heading"
+				        value={headingText}
+				        onChange={(newText) => setAttributes({ headingText: newText })}
+				        placeholder={__('On This Page', 'seo-44')}
+				    />
+				)}
 
 				{savedHeadings.length > 0 ? ( // We now use savedHeadings for a stable display
 					<ListTag>

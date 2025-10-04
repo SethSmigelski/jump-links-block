@@ -235,6 +235,13 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(newSize) => setAttributes({ fontSize: newSize })}
 						withReset
 					/>
+					<PanelColorSettings
+						title={__('Colors', 'seo-44')}
+						colorSettings={[
+							{ value: linkColor, onChange: (newColor) => setAttributes({ linkColor: newColor }), label: __('Link Color', 'seo-44') },
+							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'seo-44') },
+        				]}
+					/>
 					
 				</PanelBody>
 										  

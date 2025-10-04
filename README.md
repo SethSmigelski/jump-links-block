@@ -5,7 +5,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 * **Tags:** jump links, on this page, table of contents, jump links block, jump links generator
 * **Requires at least:** 5.5
 * **Tested up to:** 6.8
-* **Stable tag:** 1.4
+* **Stable tag:** 1.5
 * **Requires PHP:** 7.4
 * **License:** GPLv2 or later
 * **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
@@ -114,11 +114,23 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 ## Frequently Asked Questions (FAQ)
 
-### How do I edit the text, reorder, or hide a specific link?
-In the block's sidebar, go to the **Presentation** panel and click the **Editing Mode** button. This will reveal all the controls inside the block editor for customizing each individual link. When you're done, you can switch back to **Viewing Mode** to see a clean preview.
+### How is the standalone "SEO 44 Jump Links Block" plugin different from the "SEO 44" plugin?
+The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. if you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+
+### Are Jump To Links the same as Site Links?
+While they look similar, **sitelinks** and **jump to links** are two different features in Google's search results. The main difference is where the links take the user. 
+
+* **Sitelinks:** Links to **separate pages** on the same website (site-level navigation). They most often appear for branded searches when Google is confident the user wants to navigate the main sections of a specific site. Their purpose is to navigate a website's main sections and help users get to the most popular or important pages on a website more quickly.
+
+* **"Jump to" links:** Links to **different sections within the same page** (page-level navigation).  Jump To Links are also called fragment links or in-page links.  They typically appear for long articles, tutorials, or FAQs where a table of contents with anchor links is used.  Their purpose is to navigate a long piece of content and take search users directly to the specific part of the page that answers their question.
+
+**Jump To Links** are the search result feature that the Jump Links Block is designed to create. 
 
 ### Which heading levels will appear in the list? 
 That’s your choice. By default, the block will create a list of the H2 headings, but you can add H3 and H4 headings (or remove h2 headings) by simply checking a box (H1 and H5 headings are not included as they are less commonly used for in-page content structure). Control which levels are included in the **Heading Settings** panel in the sidebar by checking or unchecking the boxes. You can also use the **Editing Mode** screen to exclude individual headings from your list.
+
+### How do I edit the text, reorder, or hide a specific link?
+In the block's sidebar, go to the **Presentation** panel and click the **Editing Mode** button. This will reveal all the controls inside the block editor for customizing each individual link. When you're done, you can switch back to **Viewing Mode** to see a clean preview.
 
 ### Will this block overwrite custom anchor IDs I've already added to my headings?
 No. The block is designed to be smart about this. If a heading block already has a custom anchor ID, the Jump Links Block will use that existing ID and will not overwrite it. It only adds an ID if one is missing.  The anchor ID is required to create semantic jump links.
@@ -131,18 +143,28 @@ The collapsible functionality and the **Show More** button, which features a dow
 ### How do I style the links in the horizontal layout?
 The special styling options for the horizontal layout (like link background and border color) will automatically appear in the **Appearance** panel in the sidebar *after* you select the "Horizontal" layout option.
 
-### Are Jump To Links the same as Site Links?
-While they look similar, **sitelinks** and **jump to links** are two different features in Google's search results. The main difference is where the links take the user. 
+### How can I save and reuse my custom styles for the Jump Links Block?
+ You can save a fully customized Jump Links block as a **Block Pattern** to easily reuse it across your site. This is a powerful, built-in WordPress feature (and it means you don't have to manually set all the style style settings for Jump Links block the same way on every page).
 
-* **Sitelinks:** Links to **separate pages** on the same website (site-level navigation). They most often appear for branded searches when Google is confident the user wants to navigate the main sections of a specific site. Their purpose is to navigate a website's main sections and help users get to the most popular or important pages on a website more quickly.
+Here’s how:
 
-* **"Jump to" links:** Links to **different sections within the same page** (page-level navigation).  Jump To Links are also called fragment links or in-page links.  They typically appear for long articles, tutorials, or FAQs where a table of contents with anchor links is used.  Their purpose is to navigate a long piece of content and take search users directly to the specific part of the page that answers their question.
+1.  **Style Your Block:** Add the SEO 44 Jump Links block to a page and style it exactly how you want using the settings in the sidebar (colors, layout, border radius, etc.).
 
-**Jump To Links** are the search result feature that the Jump Links Block is designed to create. 
+2.  **Open the Options Menu:** With the block selected, click the three-dot (⋮) options menu on the block's toolbar.
 
-### How is the standalone "SEO 44 Jump Links Block" plugin different from the "SEO 44" plugin?
-The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. if you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+3.  **Create the Pattern:** From the dropdown menu, select **Create pattern**. A pop-up window will appear.
+    
 
+4.  **Name and Configure:**
+    * Give your pattern a name (e.g., "My Custom Jump Links").
+    * You will see a toggle for **Synced**. This is an important choice:
+        * **Synced (OFF):** This creates a regular pattern. When you insert it, you get a fresh, independent copy of your styled block. This is what you want for most cases.
+        * **Synced (ON):** This creates what used to be called a "Reusable Block." If you edit it in one place, it updates *everywhere* on your site.
+
+5.  **Click Create:** Your custom pattern is now saved!
+
+6.  **Reuse Your Pattern:** To use it on another page, click the main block inserter (+), go to the **Patterns** tab, and select the "My patterns" category. You will see your saved design, ready to be inserted with one click.
+   
 ---
 
 ## Screenshots
@@ -157,6 +179,13 @@ The main **SEO 44** plugin is a complete suite of tools that includes meta tag o
 
 ## Changelog
 
+### 1.5.0
+* **FEATURE:** Added a new "Background Hover" color setting in the Inspector Controls for links in the horizontal layout.
+* **ENHANCEMENT:** Improved the out-of-the-box appearance by setting default colors and a default border-radius in block.json, ensuring the block looks great immediately upon being added.
+* **REFACTOR:** Removed hardcoded default styles from the stylesheets, making the block's settings the single source of truth for its design and improving consistency.
+* **CODE QUALITY:** Refactored editor.scss to import style.scss, eliminating code duplication and making the styles easier to maintain.
+* **CODE QUALITY:** Performed a comprehensive review and refactor of all block source files (.js, .scss, .json). This improves the block's stability, maintainability, and alignment with modern WordPress development best practices.
+  
 ### 1.4.0
 * **State Reconciliation Engine:**  Completely overhauled the core useEffect logic to robustly handle all state changes. The new "reconciliation" engine correctly adds and removes headings as the document is edited, while intelligently preserving all user customizations (custom text, visibility, and custom order) without conflict.
 * **Bug Fixes:**  Resolved bugs related to component rendering and various JavaScript "race conditions."

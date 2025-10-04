@@ -1,6 +1,6 @@
 {
 	"name": "seo-44-jump-links-block",
-	"version": "1.6.4",
+	"version": "1.6.6",
 	"description": "Jump links block for SEO 44.",
 	"main": "build/index.js",
 	"private": true,

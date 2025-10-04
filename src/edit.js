@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { RichText, useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { Tooltip, PanelBody, Button, ButtonGroup, CheckboxControl, FontSizePicker, PanelColorSettings, SelectControl, TextControl, ToggleControl, RangeControl } from '@wordpress/components';
+import { RichText, useBlockProps, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+import { Tooltip, PanelBody, Button, ButtonGroup, CheckboxControl, FontSizePicker, SelectControl, TextControl, ToggleControl, RangeControl } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data'; 
 import { useEffect } from '@wordpress/element';
 

@@ -4,6 +4,7 @@
   "attributes": {
     "linkColor": { "type": "string" },
     "linkBackgroundColor": { "type": "string" },
+    "linkBackgroundColorHover": { "type": "string" }, 
     "linkBorderColor": { "type": "string" },
     "linkBorderRadius": { "type": "number" },
     "linkPadding": { "type": "string" },

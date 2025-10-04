@@ -2,11 +2,11 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "attributes": {
-    "linkColor": { "type": "string" },
-    "linkBackgroundColor": { "type": "string" },
-    "linkBackgroundColorHover": { "type": "string" }, 
-    "linkBorderColor": { "type": "string" },
-    "linkBorderRadius": { "type": "number" },
+    "linkColor": { "type": "string", "default": "#0073aa" },
+    "linkBackgroundColor": { "type": "string", "default": "#f0f0f0" },
+    "linkBackgroundColorHover": { "type": "string", "default": "#e0e0e0" }, 
+    "linkBorderColor": { "type": "string", "default": "#dddddd" },
+    "linkBorderRadius": { "type": "number", "default": 10 },
     "linkPadding": { "type": "string" },
     "fontSize": {
       "type": "string"

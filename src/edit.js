@@ -297,6 +297,75 @@ export default function Edit({ attributes, setAttributes }) {
 		                placeholder={__('On This Page', 'seo-44')}
 		            />
 		        )}
+
+				{savedHeadings.length > 0 ? ( // We now use savedHeadings for a stable display
+					<ListTag>
+						{savedHeadings.map((heading, index) => 
+							isEditing ? (
+								<li key={heading.anchor}>
+									<TextControl
+										value={heading.linkText}
+										onChange={(newText) => updateLinkText(index, newText)}
+									/>
+									<div className="edit-controls-wrapper">
+										<div className="reorder-buttons">
+											<Button
+												icon={arrowUpIcon}
+												label={__('Move Up', 'seo-44')}
+												onClick={() => moveItem(index, 'up')}
+												disabled={index === 0}
+											/>
+											<Button
+												icon={arrowDownIcon}
+												label={__('Move Down', 'seo-44')}
+												onClick={() => moveItem(index, 'down')}
+												disabled={index === savedHeadings.length - 1}
+											/>
+										</div>
+										<ToggleControl
+											label={
+												heading.isVisible !== false 
+												? __('Included', 'seo-44') 
+												: __('This Jump Link will not be shown', 'seo-44')
+											}
+											checked={heading.isVisible !== false}
+											onChange={() => toggleVisibility(index)}
+										/>
+									</div>
+								</li>
+							) : (
+								heading.isVisible !== false && (
+									<li key={heading.anchor}>
+										<a href={`#${heading.anchor}`} style={linkStyle} onClick={(e) => e.preventDefault()}>
+											{heading.linkText}
+										</a>
+									</li>
+								)
+							)
+						)}
+					</ListTag>
+				) : (
+					<p>{__('No headings found. Select a heading level in the block settings to generate links.', 'seo-44')}</p>
+				)}
+				
+				{/* ADD THIS SIMULATED BUTTON */}
+				{!isEditing && isCollapsible && savedHeadings.length > 0 && (
+                    <Tooltip text={__('This button is functional on the front-end to expand the list.', 'seo-44')}>
+                        <button
+                            type="button"
+                            className="seo-44-show-more"
+                            aria-label={__('Show More', 'seo-44')}
+                            onClick={() => {
+                                createInfoNotice(
+                                    __('The "Show More" button is interactive on the published page.', 'seo-44'),
+                                    { type: 'snackbar' }
+                                );
+                            }}
+                        >
+                            {expandDownIcon}
+                        </button>
+                    </Tooltip>
+                )}																				
 		    </div>
 		</>
 	);

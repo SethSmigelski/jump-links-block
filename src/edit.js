@@ -1,7 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { RichText, useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { Tooltip, PanelBody, Button, ButtonGroup, CheckboxControl, FontSizePicker, PanelColorSettings, SelectControl, TextControl, ToggleControl, RangeControl } from '@wordpress/components';
-import { useSelect, useDispatch } from '@wordpress/data'; 
+import { RichText, useBlockProps, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+import { Tooltip, PanelBody, Button, ButtonGroup, CheckboxControl, FontSizePicker, SelectControl, TextControl, ToggleControl, RangeControl } from import { useSelect, useDispatch } from '@wordpress/data'; 
 import { useEffect } from '@wordpress/element';
 
 // Helper function to strip HTML from heading content.
@@ -285,15 +284,7 @@ export default function Edit({ attributes, setAttributes }) {
 			</InspectorControls>
 			<div {...blockProps}>
 				
-				{showHeading && (
-				    <RichText
-				        tagName="div"
-				        className="wp-block-seo44-jump-links-heading"
-				        value={headingText}
-				        onChange={(newText) => setAttributes({ headingText: newText })}
-				        placeholder={__('On This Page', 'seo-44')}
-				    />
-				)}
+				{showHeading && <RichText.Content tagName="div" className="wp-block-seo44-jump-links-heading" value={headingText} />}
 
 				{savedHeadings.length > 0 ? ( // We now use savedHeadings for a stable display
 					<ListTag>

@@ -14,7 +14,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
 	};
 	
 	const linkStyle = {
-		backgroundColor: layout === 'horizontal' ? linkBackgroundColor : undefined,
+		'--link-bg-color': layout === 'horizontal' ? linkBackgroundColor : undefined,
 		borderColor: layout === 'horizontal' ? linkBorderColor : undefined,
 		borderRadius: layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 		color: linkColor, // Always apply the custom link color

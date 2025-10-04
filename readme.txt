@@ -95,6 +95,9 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 == Frequently Asked Questions (FAQ)== 
 
+= How is the standalone "SEO 44 Jump Links Block" plugin different from the "SEO 44" plugin? =
+The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. if you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+
 = Are Jump To Links the same as Site Links? =
 While they look similar, **sitelinks** and **jump to links** are two different features in Google's search results. The main difference is where the links take the user. 
 
@@ -103,9 +106,6 @@ While they look similar, **sitelinks** and **jump to links** are two different f
 * **"Jump to" links:** Links to **different sections within the same page** (page-level navigation).  Jump To Links are also called fragment links or in-page links.  They typically appear for long articles, tutorials, or FAQs where a table of contents with anchor links is used.  Their purpose is to navigate a long piece of content and take search users directly to the specific part of the page that answers their question.
 
 **Jump To Links** are the search result feature that the Jump Links Block is designed to create. 
-
-= How is the standalone "SEO 44 Jump Links Block" plugin different from the "SEO 44" plugin? =
-The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. if you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
 
 = Which heading levels will appear in the list? =
 That’s your choice. By default, the block will create a list of the H2 headings, but you can add H3 and H4 headings (or remove h2 headings) by simply checking a box (H1 and H5 headings are not included as they are less commonly used for in-page content structure). Control which levels are included in the **Heading Settings** panel in the sidebar by checking or unchecking the boxes. You can also use the **Editing Mode** screen to exclude individual headings from your list.

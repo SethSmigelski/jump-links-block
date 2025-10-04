@@ -186,7 +186,26 @@ export default function Edit({ attributes, setAttributes }) {
 					</ButtonGroup>
 					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'seo-44')}</p>
 				</PanelBody>
-								
+
+				{/* Panel 3: For all other settings */}
+				<PanelBody title={__('Heading Settings', 'seo-44')}>
+					<ToggleControl
+						label={__('Show Heading for Jump Links Block (off by default)', 'seo-44')}
+						checked={showHeading}
+						onChange={() => setAttributes({ showHeading: !showHeading })}
+					/>
+					{showHeading && (
+						<TextControl
+							label={__('Heading Text', 'seo-44')}
+							value={headingText}
+							onChange={(newText) => setAttributes({ headingText: newText })}
+						/>
+					)}
+					<p>{__('Select heading levels to include:', 'seo-44')}</p>
+					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
+					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
+					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
+				</PanelBody>				
 			</InspectorControls>
 		</>
 	);

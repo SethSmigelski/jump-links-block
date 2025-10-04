@@ -36,7 +36,7 @@ export default function Edit({ attributes, setAttributes }) {
 		'--jump-link-font-size': fontSize || '18px', // Use font size or a default
 	};
 	const linkStyle = {
-		backgroundColor: layout === 'horizontal' ? linkBackgroundColor : undefined,
+		'--link-bg-color': layout === 'horizontal' ? linkBackgroundColor : undefined,
 		borderColor: layout === 'horizontal' ? linkBorderColor : undefined,
 		borderRadius: layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 		color: linkColor, // Always apply the custom link color

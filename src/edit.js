@@ -29,7 +29,7 @@ const arrowDownIcon = (
 	);
 
 export default function Edit({ attributes, setAttributes }) {
-	const { headingLevels, headings: savedHeadings, layout, showHeading, headingText, isEditing, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBorderColor, linkBorderRadius } = attributes;
+	const { headingLevels, headings: savedHeadings, layout, showHeading, headingText, isEditing, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
 	const style = {
 		color: textColor,
 		fontSize: fontSize,
@@ -40,6 +40,7 @@ export default function Edit({ attributes, setAttributes }) {
 		borderColor: layout === 'horizontal' ? linkBorderColor : undefined,
 		borderRadius: layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 		color: linkColor, // Always apply the custom link color
+		'--link-bg-hover-color': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
     };
 	// Determine which HTML tag to use for the list
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
@@ -251,7 +252,8 @@ export default function Edit({ attributes, setAttributes }) {
                                 title={__('Link Colors', 'seo-44')}
                                 colorSettings={[
                                     { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'seo-44') },
-                                    { value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'seo-44') },
+                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'seo-44') },    
+									{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'seo-44') },
                                 ]}
                             />
                             <RangeControl

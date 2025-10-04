@@ -165,7 +165,28 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-				
+
+				{/* Panel 1: For the mode switcher */}
+				<PanelBody title={__('Presentation', 'seo-44')}>
+					<ButtonGroup>
+						<Button
+							isPrimary={!isEditing}
+							isPressed={!isEditing}
+							onClick={() => setAttributes({ isEditing: false })}
+						>
+							{__('Viewing Mode', 'seo-44')}
+						</Button>
+						<Button
+							isPrimary={isEditing}
+							isPressed={isEditing}
+							onClick={() => setAttributes({ isEditing: true })}
+						>
+							{__('Editing Mode', 'seo-44')}
+						</Button>
+					</ButtonGroup>
+					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'seo-44')}</p>
+				</PanelBody>
+								
 			</InspectorControls>
 		</>
 	);

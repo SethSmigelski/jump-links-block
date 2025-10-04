@@ -241,7 +241,7 @@ export default function Edit({ attributes, setAttributes }) {
 					{layout === 'horizontal' && (
                         <>
                             <hr />
-                            <p><strong>{__('Horizontal Link Styles', 'seo-4e4')}</strong></p>
+                            <p><strong>{__('Horizontal Link Styles', 'seo-44')}</strong></p>
                             <PanelColorSettings
                                 title={__('Link Colors', 'seo-44')}
                                 colorSettings={[

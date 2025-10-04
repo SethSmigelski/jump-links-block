@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { RichText, useBlockProps, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+// This is the correct import for PanelColorSettings
 import { Tooltip, PanelBody, Button, ButtonGroup, CheckboxControl, FontSizePicker, SelectControl, TextControl, ToggleControl, RangeControl } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data'; 
 import { useEffect } from '@wordpress/element';
@@ -285,6 +286,18 @@ export default function Edit({ attributes, setAttributes }) {
 					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
 				</PanelBody>				
 			</InspectorControls>
+
+			<div {...blockProps}>
+		        {showHeading && (
+		            <RichText
+		                tagName="div"
+		                className="wp-block-seo44-jump-links-heading"
+		                value={headingText}
+		                onChange={(newText) => setAttributes({ headingText: newText })}
+		                placeholder={__('On This Page', 'seo-44')}
+		            />
+		        )}
+		    </div>
 		</>
 	);
 }

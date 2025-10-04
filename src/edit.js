@@ -187,6 +187,58 @@ export default function Edit({ attributes, setAttributes }) {
 					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'seo-44')}</p>
 				</PanelBody>
 
+				{/*Panel 2: For styling settings */}
+				<PanelBody title={__('Appearance', 'seo-44')}>
+				
+					<p><strong>{__('Layout', 'seo-44')}</strong></p>
+					<ButtonGroup>
+						<Button
+							isPrimary={layout === 'vertical'}
+							isPressed={layout === 'vertical'}
+							onClick={() => setAttributes({ layout: 'vertical' })}
+						>
+							{__('Vertical', 'seo-44')}
+						</Button>
+						<Button
+							isPrimary={layout === 'horizontal'}
+							isPressed={layout === 'horizontal'}
+							onClick={() => setAttributes({ layout: 'horizontal' })}
+						>
+							{__('Horizontal', 'seo-44')}
+						</Button>
+					</ButtonGroup>
+					<ToggleControl
+						label={__('Make Jump Links Area Expandable', 'seo-44')}
+    					help={__('Conserve screen space by collapsing a long list of jump links, providing users with an elegant "show more" button to see the entire list.', 'seo-44')}
+						checked={isCollapsible}
+						onChange={() => setAttributes({ isCollapsible: !isCollapsible })}
+					/>
+					<SelectControl
+						label={__('List Style', 'seo-44')}
+						value={listStyle}
+						options={[
+							{ label: __('Bulleted', 'seo-44'), value: 'ul' },
+            				{ label: __('Numbered', 'seo-44'), value: 'ol' },
+            				{ label: __('None', 'seo-44'), value: 'none' },
+						]}
+						onChange={(newListStyle) => setAttributes({ listStyle: newListStyle })}
+        				disabled={layout === 'horizontal'} 
+					/>
+					<FontSizePicker
+						fontSizes={[
+							{ name: __('S', 'seo-44'), slug: 'small', size: '14px' },
+							{ name: __('M', 'seo-44'), slug: 'normal', size: '17px' },
+							{ name: __('L', 'seo-44'), slug: 'large', size: '20px' },
+							{ name: __('XL', 'seo-44'), slug: 'extra-large', size: '23px' },
+						]}
+						value={fontSize}
+						onChange={(newSize) => setAttributes({ fontSize: newSize })}
+						withReset
+					/>
+					
+				</PanelBody>
+										  
+
 				{/* Panel 3: For all other settings */}
 				<PanelBody title={__('Heading Settings', 'seo-44')}>
 					<ToggleControl

@@ -242,7 +242,26 @@ export default function Edit({ attributes, setAttributes }) {
 							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'seo-44') },
         				]}
 					/>
-					
+					{layout === 'horizontal' && (
+                        <>
+                            <hr />
+                            <p><strong>{__('Horizontal Link Styles', 'seo-44')}</strong></p>
+                            <PanelColorSettings
+                                title={__('Link Colors', 'seo-44')}
+                                colorSettings={[
+                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'seo-44') },
+                                    { value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'seo-44') },
+                                ]}
+                            />
+                            <RangeControl
+                                label={__('Link Border Radius', 'seo-44')}
+                                value={linkBorderRadius}
+                                onChange={(newValue) => setAttributes({ linkBorderRadius: newValue })}
+                                min={0}
+                                max={50}
+                            />
+                        </>
+                    )}
 				</PanelBody>
 										  
 

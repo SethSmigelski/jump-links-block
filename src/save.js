@@ -4,7 +4,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	// Read directly from attributes, no hooks!
-const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBorderColor, linkBorderRadius } = attributes;
+const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
 
 	// Pass the font size as a CSS Custom Property for dynamic height calculations
 	const style = {
@@ -18,6 +18,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
 		borderColor: layout === 'horizontal' ? linkBorderColor : undefined,
 		borderRadius: layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 		color: linkColor, // Always apply the custom link color
+		'--link-bg-hover-color': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
 	};
 	
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';

@@ -166,7 +166,7 @@ export default function Edit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 			    {/* Panel 1: For the mode switcher */}
-				<PanelBody title={__('Presentation', 'seo-44')}>
+				/* <PanelBody title={__('Presentation', 'seo-44')}>
 					<ButtonGroup>
 						<Button
 							isPrimary={!isEditing}
@@ -184,10 +184,10 @@ export default function Edit({ attributes, setAttributes }) {
 						</Button>
 					</ButtonGroup>
 					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'seo-44')}</p>
-				</PanelBody>
+				</PanelBody> */
 				
-				{/*Panel 2: For styling settings */}
-				<PanelBody title={__('Appearance', 'seo-44')}>
+				{/* Panel 2: For styling settings */}
+				/* <PanelBody title={__('Appearance', 'seo-44')}>
 				
 					<p><strong>{__('Layout', 'seo-44')}</strong></p>
 					<ButtonGroup>
@@ -261,10 +261,10 @@ export default function Edit({ attributes, setAttributes }) {
                             />
                         </>
                     )}
-				</PanelBody>				
+				</PanelBody> */				
 			
 				{/* Panel 3: For all other settings */}
-				<PanelBody title={__('Heading Settings', 'seo-44')}>
+				/* <PanelBody title={__('Heading Settings', 'seo-44')}>
 					<ToggleControl
 						label={__('Show Heading for Jump Links Block (off by default)', 'seo-44')}
 						checked={showHeading}
@@ -281,7 +281,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
 					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
-				</PanelBody>
+				</PanelBody>*/
 				
 			</InspectorControls>
 		</>

@@ -28,13 +28,13 @@
     border-radius: 8px;
 	text-decoration: none;
     color: #000;
-	border: 1px solid #ddd;
+	border-width: 1px;     
+    border-style: solid;
 }
 
 .wp-block-seo44-jump-links.is-layout-horizontal li a:hover {
 	text-decoration: underline;
 	text-underline-offset: .1em;
-	border: 1px solid #ccc;
 	background-color: var(--link-bg-hover-color);
 }
 

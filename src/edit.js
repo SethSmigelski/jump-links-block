@@ -295,8 +295,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 				{savedHeadings.length > 0 ? ( // We now use savedHeadings for a stable display
 					<ListTag>
-						{savedHeadings.map((heading, index) => (
-							// EDITING MODE: Show all the controls
+						{savedHeadings.map((heading, index) => 
 							isEditing ? (
 								<li key={heading.anchor}>
 									<TextControl
@@ -309,37 +308,36 @@ export default function Edit({ attributes, setAttributes }) {
 												icon={arrowUpIcon}
 												label={__('Move Up', 'seo-44')}
 												onClick={() => moveItem(index, 'up')}
-												disabled={index === 0} // Disable if it's the first item
+												disabled={index === 0}
 											/>
 											<Button
 												icon={arrowDownIcon}
 												label={__('Move Down', 'seo-44')}
 												onClick={() => moveItem(index, 'down')}
-												disabled={index === savedHeadings.length - 1} // Disable if it's the last item
+												disabled={index === savedHeadings.length - 1}
 											/>
 										</div>
 										<ToggleControl
-										label={
-											heading.isVisible !== false 
-											? __('Included', 'seo-44') 
-											: __('This Jump Link will not be shown', 'seo-44')
-										}
-										checked={heading.isVisible !== false}
-										onChange={() => toggleVisibility(index)}
+											label={
+												heading.isVisible !== false 
+												? __('Included', 'seo-44') 
+												: __('This Jump Link will not be shown', 'seo-44')
+											}
+											checked={heading.isVisible !== false}
+											onChange={() => toggleVisibility(index)}
 										/>
 									</div>
 								</li>
 							) : (
-                            // VIEWING MODE: Show a clean preview
-							heading.isVisible !== false && (
-								<li key={heading.anchor}>
-									<a href={`#${heading.anchor}`} style={linkStyle} onClick={(e) => e.preventDefault()}>
-										{heading.linkText}
-									</a>
-								</li>
+								heading.isVisible !== false && (
+									<li key={heading.anchor}>
+										<a href={`#${heading.anchor}`} style={linkStyle} onClick={(e) => e.preventDefault()}>
+											{heading.linkText}
+										</a>
+									</li>
+								)
 							)
-						)
-						))}
+						)}
 					</ListTag>
 				) : (
 					<p>{__('No headings found. Select a heading level in the block settings to generate links.', 'seo-44')}</p>

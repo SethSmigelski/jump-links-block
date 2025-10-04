@@ -56,10 +56,7 @@ export default function Edit({ attributes, setAttributes }) {
 	// Use useEffect to process the blocks.
 	// This hook runs whenever the blocks on the page change or the user toggles a heading level
 	// NEW: Reconciling logic to avoid re-ordering conflict
-	const stableUpdateBlockAttributes = useCallback(
-	    (clientId, attributes) => updateBlockAttributes(clientId, attributes),
-	    [updateBlockAttributes]
-	);
+
 	useEffect(() => {
     // 1. Get all current heading blocks and ensure they have an anchor.
     const currentBlocks = blocks
@@ -71,7 +68,7 @@ export default function Edit({ attributes, setAttributes }) {
             const text = stripHtml(block.attributes.content);
             if (text) {
                 const anchor = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
-                stableUpdateBlockAttributes(block.clientId, { anchor });
+                updateBlockAttributes(block.clientId, { anchor });
             }
         }
     });
@@ -118,7 +115,7 @@ export default function Edit({ attributes, setAttributes }) {
     if (JSON.stringify(reconciledHeadings) !== JSON.stringify(savedHeadings)) {
         setAttributes({ headings: reconciledHeadings });
     }
-}, [blocks, headingLevels, savedHeadings, setAttributes, stableUpdateBlockAttributes]);
+}, [blocks, headingLevels, savedHeadings, setAttributes, updateBlockAttributes]);
 	
 	// useEffect to handle conditional logic to force list style for the horizontal layout
 	useEffect(() => {

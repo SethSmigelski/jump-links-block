@@ -17,7 +17,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 
 ## Description
 
-A powerful, feature-rich WordPress block that automatically generates a customizable Jump To “On this Page “table of contents to improve user navigation and engagement on your posts and pages.
+A WordPress block that automatically generates a customizable Jump To “On this Page“ table of contents to improve user navigation and engagement on your posts and pages.
 
 The Jump Links Block intelligently scans your content for headings and creates a dynamic, interactive list of links. With a full collection of controls in the editor sidebar, you have complete command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
 
@@ -78,7 +78,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Full Color Control:** Use integrated color pickers to customize: **Link Color**, **Other Text Color** (for bullets, numbers, and the main heading).
 
-* **Conditional Horizontal Link Styles:** When in the horizontal layout, you can fine-tune the design with controls for  **Link Background Color**, **Link Border Color**, and **border radius**.
+* **Conditional Horizontal Link Styles:** When in the horizontal layout, you can fine-tune the design with controls for  **Link Background Color**, **Link Background Color on hover**, **Link Border Color**, and **border radius**.
 
 ---
 
@@ -87,7 +87,6 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 * **Smooth Scrolling:** Clicking a link smoothly scrolls the user to the relevant section of the page, providing a modern and pleasant user experience.
 
 * **Collapsible List:** Optional feature to collapse long lists with an elegant "Show More" / "Show Less" SVG icon button to expand and contract the list horizontally or vertically.
-
 
 ---
 
@@ -115,19 +114,19 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 ## Frequently Asked Questions (FAQ)
 
 ### How is the standalone "SEO 44 Jump Links Block" plugin different from the "SEO 44" plugin?
-The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. if you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
 
 ### Are Jump To Links the same as Site Links?
 While they look similar, **sitelinks** and **jump to links** are two different features in Google's search results. The main difference is where the links take the user. 
 
 * **Sitelinks:** Links to **separate pages** on the same website (site-level navigation). They most often appear for branded searches when Google is confident the user wants to navigate the main sections of a specific site. Their purpose is to navigate a website's main sections and help users get to the most popular or important pages on a website more quickly.
 
-* **"Jump to" links:** Links to **different sections within the same page** (page-level navigation).  Jump To Links are also called fragment links or in-page links.  They typically appear for long articles, tutorials, or FAQs where a table of contents with anchor links is used.  Their purpose is to navigate a long piece of content and take search users directly to the specific part of the page that answers their question.
+* **"Jump to" links:** Links to **different sections within the same page** (page-level navigation).  Jump To Links are also called "fragment links" or "in-page links."  They typically appear for long articles, tutorials, or FAQs where a table of contents with anchor links is used.  Their purpose is to navigate a long piece of content and take search users directly to the specific part of the page that answers their question.
 
 **Jump To Links** are the search result feature that the Jump Links Block is designed to create. 
 
 ### Which heading levels will appear in the list? 
-That’s your choice. By default, the block will create a list of the H2 headings, but you can add H3 and H4 headings (or remove h2 headings) by simply checking a box (H1 and H5 headings are not included as they are less commonly used for in-page content structure). Control which levels are included in the **Heading Settings** panel in the sidebar by checking or unchecking the boxes. You can also use the **Editing Mode** screen to exclude individual headings from your list.
+That's your choice. By default, the block will create a list of the H2 headings, but you can add H3 and H4 headings (or remove H2 headings) by simply checking a box (H1 and H5 headings are not included as they are less commonly used for in-page content structure). Control which levels are included in the **Heading Settings** panel in the sidebar by checking or unchecking the boxes. You can also use the **Editing Mode** screen to exclude individual headings from your list.
 
 ### How do I edit the text, reorder, or hide a specific link?
 In the block's sidebar, go to the **Presentation** panel and click the **Editing Mode** button. This will reveal all the controls inside the block editor for customizing each individual link. When you're done, you can switch back to **Viewing Mode** to see a clean preview.
@@ -135,7 +134,7 @@ In the block's sidebar, go to the **Presentation** panel and click the **Editing
 ### Will this block overwrite custom anchor IDs I've already added to my headings?
 No. The block is designed to be smart about this. If a heading block already has a custom anchor ID, the Jump Links Block will use that existing ID and will not overwrite it. It only adds an ID if one is missing.  The anchor ID is required to create semantic jump links.
 
-**Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.”  This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, you simply need to assing another id to the block heading to resolve this conflict.
+**Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.”  This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, assign a different ID to the block heading to resolve the conflict.
 
 ### Why does the "Show More" button not work in the editor?
 The collapsible functionality and the **Show More** button, which features a down arrow icon, are front-end features that function using a JavaScript file. They are designed to work only on the live, published page. To give you an accurate preview, the editor displays a non-functional replica of the "Show More" button when the feature is enabled. You can hover over it to see a helpful tooltip, and clicking it will show an informational notice confirming that it's interactive on the front end.
@@ -144,7 +143,7 @@ The collapsible functionality and the **Show More** button, which features a dow
 The special styling options for the horizontal layout (like link background and border color) will automatically appear in the **Appearance** panel in the sidebar *after* you select the "Horizontal" layout option.
 
 ### How can I save and reuse my custom styles for the Jump Links Block?
- You can save a fully customized Jump Links block as a **Block Pattern** to easily reuse it across your site. This is a powerful, built-in WordPress feature (and it means you don't have to manually set all the style style settings for Jump Links block the same way on every page).
+You can save a fully customized Jump Links block as a **Block Pattern** to easily reuse it across your site. This is a handy WordPress feature.  With Block Patterns, you don't have to repeat the process of manually setting the same style settings for Jump Links blocks on multiple pages.  That work is done for you.
 
 Here’s how:
 
@@ -154,12 +153,11 @@ Here’s how:
 
 3.  **Create the Pattern:** From the dropdown menu, select **Create pattern**. A pop-up window will appear.
     
-
 4.  **Name and Configure:**
-    * Give your pattern a name (e.g., "My Custom Jump Links").
+    * Give your pattern a name (e.g., "Super Stylish Jump Links").
     * You will see a toggle for **Synced**. This is an important choice:
-        * **Synced (OFF):** This creates a regular pattern. When you insert it, you get a fresh, independent copy of your styled block. This is what you want for most cases.
-        * **Synced (ON):** This creates what used to be called a "Reusable Block." If you edit it in one place, it updates *everywhere* on your site.
+        * **Avoid Synced (ON):** Don't use this setting, which will prevent you from accessing the Jump Link Block's customization features, like being able to re-order or rename the jump links.
+        * **Use Synced (OFF):** Turn synced off before saving your custom pattern. This will create a regular pattern that, when added to other posts, renders a Jump Links Block with all your favorite styles preloaded. This independent copy of your original styled block, created through your new pattern, has full customization controls. **Synced Off is the way to go!**
 
 5.  **Click Create:** Your custom pattern is now saved!
 

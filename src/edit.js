@@ -211,7 +211,7 @@ export default function Edit({ attributes, setAttributes }) {
 					</ButtonGroup>
 					<ToggleControl
 						label={__('Make Jump Links Area Expandable', 'search-appearance-toolkit-seo-44')}
-    					help={__('Conserve screen space by collapsing a long list of jump links, providing users with an elegant "show more" button to see the entire list.', 'seo-44')}
+    					help={__('Conserve screen space by collapsing a long list of jump links, providing users with an elegant "show more" button to see the entire list.', 'search-appearance-toolkit-seo-44')}
 						checked={isCollapsible}
 						onChange={() => setAttributes({ isCollapsible: !isCollapsible })}
 					/>
@@ -219,45 +219,45 @@ export default function Edit({ attributes, setAttributes }) {
 						label={__('List Style', 'search-appearance-toolkit-seo-44')}
 						value={listStyle}
 						options={[
-							{ label: __('Bulleted', 'seo-44'), value: 'ul' },
-            				{ label: __('Numbered', 'seo-44'), value: 'ol' },
-            				{ label: __('None', 'seo-44'), value: 'none' },
+							{ label: __('Bulleted', 'search-appearance-toolkit-seo-44'), value: 'ul' },
+            				{ label: __('Numbered', 'search-appearance-toolkit-seo-44'), value: 'ol' },
+            				{ label: __('None', 'search-appearance-toolkit-seo-44'), value: 'none' },
 						]}
 						onChange={(newListStyle) => setAttributes({ listStyle: newListStyle })}
         				disabled={layout === 'horizontal'} 
 					/>
 					<FontSizePicker
 						fontSizes={[
-							{ name: __('S', 'seo-44'), slug: 'small', size: '14px' },
-							{ name: __('M', 'seo-44'), slug: 'normal', size: '17px' },
-							{ name: __('L', 'seo-44'), slug: 'large', size: '20px' },
-							{ name: __('XL', 'seo-44'), slug: 'extra-large', size: '23px' },
+							{ name: __('S', 'search-appearance-toolkit-seo-44'), slug: 'small', size: '14px' },
+							{ name: __('M', 'search-appearance-toolkit-seo-44'), slug: 'normal', size: '17px' },
+							{ name: __('L', 'search-appearance-toolkit-seo-44'), slug: 'large', size: '20px' },
+							{ name: __('XL', 'search-appearance-toolkit-seo-44'), slug: 'extra-large', size: '23px' },
 						]}
 						value={fontSize}
 						onChange={(newSize) => setAttributes({ fontSize: newSize })}
 						withReset
 					/>
 					<PanelColorSettings
-						title={__('Colors', 'seo-44')}
+						title={__('Colors', 'search-appearance-toolkit-seo-44')}
 						colorSettings={[
-							{ value: linkColor, onChange: (newColor) => setAttributes({ linkColor: newColor }), label: __('Link Color', 'seo-44') },
-							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'seo-44') },
+							{ value: linkColor, onChange: (newColor) => setAttributes({ linkColor: newColor }), label: __('Link Color', 'search-appearance-toolkit-seo-44') },
+							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'search-appearance-toolkit-seo-44') },
         				]}
 					/>
 					{layout === 'horizontal' && (
                         <>
                             <hr />
-                            <p><strong>{__('Horizontal Link Styles', 'seo-44')}</strong></p>
+                            <p><strong>{__('Horizontal Link Styles', 'search-appearance-toolkit-seo-44')}</strong></p>
                             <PanelColorSettings
-                                title={__('Link Colors', 'seo-44')}
+                                title={__('Link Colors', 'search-appearance-toolkit-seo-44')}
                                 colorSettings={[
-                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'seo-44') },
-                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'seo-44') },    
-									{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'seo-44') },
+                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'search-appearance-toolkit-seo-44') },
+                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'search-appearance-toolkit-seo-44') },    
+									{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'search-appearance-toolkit-seo-44') },
                                 ]}
                             />
                             <RangeControl
-                                label={__('Link Border Radius', 'seo-44')}
+                                label={__('Link Border Radius', 'search-appearance-toolkit-seo-44')}
                                 value={linkBorderRadius}
                                 onChange={(newValue) => setAttributes({ linkBorderRadius: newValue })}
                                 min={0}

@@ -169,54 +169,54 @@ export default function Edit({ attributes, setAttributes }) {
 			<InspectorControls>
 
 				{/* Panel 1: For the mode switcher */}
-				<PanelBody title={__('Presentation', 'seo-44')}>
+				<PanelBody title={__('Presentation', 'search-appearance-toolkit-seo-44')}>
 					<ButtonGroup>
 						<Button
 							isPrimary={!isEditing}
 							isPressed={!isEditing}
 							onClick={() => setAttributes({ isEditing: false })}
 						>
-							{__('Viewing Mode', 'seo-44')}
+							{__('Viewing Mode', 'search-appearance-toolkit-seo-44')}
 						</Button>
 						<Button
 							isPrimary={isEditing}
 							isPressed={isEditing}
 							onClick={() => setAttributes({ isEditing: true })}
 						>
-							{__('Editing Mode', 'seo-44')}
+							{__('Editing Mode', 'search-appearance-toolkit-seo-44')}
 						</Button>
 					</ButtonGroup>
-					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'seo-44')}</p>
+					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'search-appearance-toolkit-seo-44')}</p>
 				</PanelBody>
 
 				{/*Panel 2: For styling settings */}
-				<PanelBody title={__('Appearance', 'seo-44')}>
+				<PanelBody title={__('Appearance', 'search-appearance-toolkit-seo-44')}>
 				
-					<p><strong>{__('Layout', 'seo-44')}</strong></p>
+					<p><strong>{__('Layout', 'search-appearance-toolkit-seo-44')}</strong></p>
 					<ButtonGroup>
 						<Button
 							isPrimary={layout === 'vertical'}
 							isPressed={layout === 'vertical'}
 							onClick={() => setAttributes({ layout: 'vertical' })}
 						>
-							{__('Vertical', 'seo-44')}
+							{__('Vertical', 'search-appearance-toolkit-seo-44')}
 						</Button>
 						<Button
 							isPrimary={layout === 'horizontal'}
 							isPressed={layout === 'horizontal'}
 							onClick={() => setAttributes({ layout: 'horizontal' })}
 						>
-							{__('Horizontal', 'seo-44')}
+							{__('Horizontal', 'search-appearance-toolkit-seo-44')}
 						</Button>
 					</ButtonGroup>
 					<ToggleControl
-						label={__('Make Jump Links Area Expandable', 'seo-44')}
+						label={__('Make Jump Links Area Expandable', 'search-appearance-toolkit-seo-44')}
     					help={__('Conserve screen space by collapsing a long list of jump links, providing users with an elegant "show more" button to see the entire list.', 'seo-44')}
 						checked={isCollapsible}
 						onChange={() => setAttributes({ isCollapsible: !isCollapsible })}
 					/>
 					<SelectControl
-						label={__('List Style', 'seo-44')}
+						label={__('List Style', 'search-appearance-toolkit-seo-44')}
 						value={listStyle}
 						options={[
 							{ label: __('Bulleted', 'seo-44'), value: 'ul' },
@@ -269,20 +269,20 @@ export default function Edit({ attributes, setAttributes }) {
 										  
 
 				{/* Panel 3: For all other settings */}
-				<PanelBody title={__('Heading Settings', 'seo-44')}>
+				<PanelBody title={__('Heading Settings', 'search-appearance-toolkit-seo-44')}>
 					<ToggleControl
-						label={__('Show Heading for Jump Links Block (off by default)', 'seo-44')}
+						label={__('Show Heading for Jump Links Block (off by default)', 'search-appearance-toolkit-seo-44')}
 						checked={showHeading}
 						onChange={() => setAttributes({ showHeading: !showHeading })}
 					/>
 					{showHeading && (
 						<TextControl
-							label={__('Heading Text', 'seo-44')}
+							label={__('Heading Text', 'search-appearance-toolkit-seo-44')}
 							value={headingText}
 							onChange={(newText) => setAttributes({ headingText: newText })}
 						/>
 					)}
-					<p>{__('Select heading levels to include:', 'seo-44')}</p>
+					<p>{__('Select heading levels to include:', 'search-appearance-toolkit-seo-44')}</p>
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
 					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
@@ -296,7 +296,7 @@ export default function Edit({ attributes, setAttributes }) {
 		                className="wp-block-seo44-jump-links-heading"
 		                value={headingText}
 		                onChange={(newText) => setAttributes({ headingText: newText })}
-		                placeholder={__('On This Page', 'seo-44')}
+		                placeholder={__('On This Page', 'search-appearance-toolkit-seo-44')}
 		            />
 		        )}
 
@@ -313,13 +313,13 @@ export default function Edit({ attributes, setAttributes }) {
 										<div className="reorder-buttons">
 											<Button
 												icon={arrowUpIcon}
-												label={__('Move Up', 'seo-44')}
+												label={__('Move Up', 'search-appearance-toolkit-seo-44')}
 												onClick={() => moveItem(index, 'up')}
 												disabled={index === 0}
 											/>
 											<Button
 												icon={arrowDownIcon}
-												label={__('Move Down', 'seo-44')}
+												label={__('Move Down', 'search-appearance-toolkit-seo-44')}
 												onClick={() => moveItem(index, 'down')}
 												disabled={index === savedHeadings.length - 1}
 											/>
@@ -327,8 +327,8 @@ export default function Edit({ attributes, setAttributes }) {
 										<ToggleControl
 											label={
 												heading.isVisible !== false 
-												? __('Included', 'seo-44') 
-												: __('This Jump Link will not be shown', 'seo-44')
+												? __('Included', 'search-appearance-toolkit-seo-44') 
+												: __('This Jump Link will not be shown', 'search-appearance-toolkit-seo-44')
 											}
 											checked={heading.isVisible !== false}
 											onChange={() => toggleVisibility(index)}
@@ -347,19 +347,19 @@ export default function Edit({ attributes, setAttributes }) {
 						)}
 					</ListTag>
 				) : (
-					<p>{__('No headings found. Select a heading level in the block settings to generate links.', 'seo-44')}</p>
+					<p>{__('No headings found. Select a heading level in the block settings to generate links.', 'search-appearance-toolkit-seo-44')}</p>
 				)}
 				
 				{/* ADD THIS SIMULATED BUTTON */}
 				{!isEditing && isCollapsible && savedHeadings.length > 0 && (
-                    <Tooltip text={__('This button is functional on the front-end to expand the list.', 'seo-44')}>
+                    <Tooltip text={__('This button is functional on the front-end to expand the list.', 'search-appearance-toolkit-seo-44')}>
                         <button
                             type="button"
                             className="seo-44-show-more"
-                            aria-label={__('Show More', 'seo-44')}
+                            aria-label={__('Show More', 'search-appearance-toolkit-seo-44')}
                             onClick={() => {
                                 createInfoNotice(
-                                    __('The "Show More" button is interactive on the published page.', 'seo-44'),
+                                    __('The "Show More" button is interactive on the published page.', 'search-appearance-toolkit-seo-44'),
                                     { type: 'snackbar' }
                                 );
                             }}

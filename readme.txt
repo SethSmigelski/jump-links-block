@@ -17,7 +17,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 
 A WordPress block that automatically generates a customizable Jump To “On this Page“ table of contents to improve user navigation and engagement on your posts and pages.
 
-The Jump Links Block intelligently scans your content for headings and creates a dynamic, interactive list of links. With a full collection of controls in the editor sidebar, you have complete command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
+Jump Links Block (SEO 44) intelligently scans your content for headings and creates a dynamic, interactive list of links. With a complete collection of controls in the editor sidebar, you have command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
 
 == The SEO & User Engagement Benefits ==
 
@@ -25,25 +25,25 @@ The Jump Links Block intelligently scans your content for headings and creates a
 Adding a well-structured table of contents is one of the most effective ways to improve both your website's user experience and its visibility in search engine rankings. The Jump Links Block is more than just a navigation tool; it's a powerful feature for enhancing your SEO.
 
 **Stand Out in Search Results**
-Google and other search engines can detect the anchor links created by this block and may feature them directly in the search results. This adds valuable "Jump to" links below your page description (also called fragment links or in-page links), allowing users to go straight to the section that answers their question.
+Google and other search engines can detect the anchor links created by this block and may feature them directly in the search results. This adds valuable "Jump to" links below your page description (also known as fragment links or in-page links), allowing users to go directly to the section that answers their question.
 
 **Improve Click-Through Rate (CTR)**
 By occupying more space in the search results and presenting a clear outline of your content, you make your listing more appealing and informative. This encourages more users to click on your link over your competitors, directly boosting your CTR—a key metric for search engine ranking.
 
 **Enhance User Experience**
-For long articles, a table of contents is essential. It allows readers to easily navigate to the sections they care about most, which reduces bounce rates and increases the time they spend on your page. These positive user engagement signals are highly valued by search engines.
+For long articles, a table of contents is essential. It allows readers to easily navigate to the sections they care about most, which reduces bounce rates and increases the time they spend on your page. Search engines place value on these positive user engagement signals.
 
 **Provide Clear Context for Search Engines**
-A list of jump links acts as a clear, semantic outline of your page's structure. This helps search engines better understand the topics and sub-topics you cover, which can improve your chances of ranking for a wider range of related search queries.
+A list of jump links acts as a clear, semantic outline of your page's structure. This helps search engines better understand the topics and sub-topics you cover, which can improve your chances of ranking for a broader range of related search queries.
 
 == Key Features ==
 
 = Automatic & Intelligent =
 * **Auto-Generates Links:** Scans your document in real-time and creates a list of links from your H2, H3, and H4 heading blocks. 
 
-* **Smart Anchor ID Handling:** Automatically adds unique, semantic id attributes to heading blocks that don't have one.
+* **Smart Anchor ID Handling:** Automatically adds unique, semantic ID attributes to heading blocks that don't have one.
 
-* **Respects Your Content:** Never overwrites a custom id you've already added to a heading, giving you full control.
+* **Respects Your Content:** Never overwrites a custom ID you've already added to a heading, giving you complete control.
 
 * **Live Syncing:** The list automatically updates in real-time as you add, remove, or edit headings in the editor.
 
@@ -95,11 +95,11 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 == Frequently Asked Questions (FAQ)== 
 
-= How is the standalone "SEO 44 Jump Links Block" plugin different from the "SEO 44" plugin? =
-The main **SEO 44** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, *and* the Jump Links Block. This standalone **SEO 44 Jump Links Block** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the SEO 44 plugin, *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+= How is the standalone "SEO 44 Jump Links Block (SEO 44)" plugin different from the "SEO 44" plugin? =
+The main **Search Appearance Toolkit (SEO 44)** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, and the Jump Links Block. This standalone **Jump Links Block (SEO 44)** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the Search Appearance Toolkit (SEO 44) plugin, you *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
 
 = Are Jump To Links the same as Site Links? =
-While they look similar, **sitelinks** and **jump to links** are two different features in Google's search results. The main difference is where the links take the user. 
+While they look similar, **sitelinks** and **jump to links** are two distinct features in Google's search results. The main difference is where the links take the user. 
 
 * **Sitelinks:** Links to **separate pages** on the same website (site-level navigation). They most often appear for branded searches when Google is confident the user wants to navigate the main sections of a specific site. Their purpose is to navigate a website's main sections and help users get to the most popular or important pages on a website more quickly.
 
@@ -111,12 +111,12 @@ While they look similar, **sitelinks** and **jump to links** are two different f
 That’s your choice. By default, the block will create a list of the H2 headings, but you can add H3 and H4 headings (or remove H2 headings) by simply checking a box (H1 and H5 headings are not included as they are less commonly used for in-page content structure). Control which levels are included in the **Heading Settings** panel in the sidebar by checking or unchecking the boxes. You can also use the **Editing Mode** screen to exclude individual headings from your list.
 
 = How do I edit the text, reorder, or hide a specific link? =
-In the block's sidebar, go to the **Presentation** panel and click the **Editing Mode** button. This will reveal all the controls inside the block editor for customizing each individual link. When you're done, you can switch back to **Viewing Mode** to see a clean preview.
+In the block's sidebar, go to the **Presentation** panel and click the **Editing Mode** button. This will reveal all the controls inside the block editor for customizing each link. When you're done, you can switch back to **Viewing Mode** to see a clean preview.
 
 = Will this block overwrite custom anchor IDs I've already added to my headings? =
-No. The block is designed to be smart about this. If a heading block already has a custom anchor ID, the Jump Links Block will use that existing ID and will not overwrite it. It only adds an ID if one is missing.  The anchor ID is required to create a semantic jump links.
+No. The block is designed to be smart about this. If a heading block already has a custom anchor ID, the Jump Links Block will use that existing ID and will not overwrite it. It only adds an ID if one is missing.  The anchor ID is required to create semantic jump links.
 
-**Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.”  This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, assign a different ID to the block heading to resolve the conflict.
+**Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.” This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, assign a different ID to the block heading to resolve the conflict.
 
 = Why does the "Show More" button not work in the editor? =
 The collapsible functionality and the **Show More** button, which features a down arrow icon, are front-end features that function using a JavaScript file. They are designed to work only on the live, published page. To give you an accurate preview, the editor displays a non-functional replica of the "Show More" button when the feature is enabled. You can hover over it to see a helpful tooltip, and clicking it will show an informational notice confirming that it's interactive on the front end.
@@ -154,7 +154,7 @@ Here’s how:
 5. The Sidebar controls for the Jump Links Block.
 
 == Changelog ==
-= 1.5.0 =
+= 1.6.0 =
 CHANGE: modified plugin name to Jump Links Block (SEO 44) in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO), and established the text domain as jump-links-block-seo-44
 
 = 1.5.0 =

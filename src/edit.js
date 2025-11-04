@@ -169,95 +169,95 @@ export default function Edit({ attributes, setAttributes }) {
 			<InspectorControls>
 
 				{/* Panel 1: For the mode switcher */}
-				<PanelBody title={__('Presentation', 'search-appearance-toolkit-seo-44')}>
+				<PanelBody title={__('Presentation', 'jump-links-block-seo-44')}>
 					<ButtonGroup>
 						<Button
 							isPrimary={!isEditing}
 							isPressed={!isEditing}
 							onClick={() => setAttributes({ isEditing: false })}
 						>
-							{__('Viewing Mode', 'search-appearance-toolkit-seo-44')}
+							{__('Viewing Mode', 'jump-links-block-seo-44')}
 						</Button>
 						<Button
 							isPrimary={isEditing}
 							isPressed={isEditing}
 							onClick={() => setAttributes({ isEditing: true })}
 						>
-							{__('Editing Mode', 'search-appearance-toolkit-seo-44')}
+							{__('Editing Mode', 'jump-links-block-seo-44')}
 						</Button>
 					</ButtonGroup>
-					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'search-appearance-toolkit-seo-44')}</p>
+					<p className="description">{__('Switch to Editing Mode to customize link text, visibility, and order.', 'jump-links-block-seo-44')}</p>
 				</PanelBody>
 
 				{/*Panel 2: For styling settings */}
-				<PanelBody title={__('Appearance', 'search-appearance-toolkit-seo-44')}>
+				<PanelBody title={__('Appearance', 'jump-links-block-seo-44')}>
 				
-					<p><strong>{__('Layout', 'search-appearance-toolkit-seo-44')}</strong></p>
+					<p><strong>{__('Layout', 'jump-links-block-seo-44')}</strong></p>
 					<ButtonGroup>
 						<Button
 							isPrimary={layout === 'vertical'}
 							isPressed={layout === 'vertical'}
 							onClick={() => setAttributes({ layout: 'vertical' })}
 						>
-							{__('Vertical', 'search-appearance-toolkit-seo-44')}
+							{__('Vertical', 'jump-links-block-seo-44')}
 						</Button>
 						<Button
 							isPrimary={layout === 'horizontal'}
 							isPressed={layout === 'horizontal'}
 							onClick={() => setAttributes({ layout: 'horizontal' })}
 						>
-							{__('Horizontal', 'search-appearance-toolkit-seo-44')}
+							{__('Horizontal', 'jump-links-block-seo-44')}
 						</Button>
 					</ButtonGroup>
 					<ToggleControl
-						label={__('Make Jump Links Area Expandable', 'search-appearance-toolkit-seo-44')}
-    					help={__('Conserve screen space by collapsing a long list of jump links, providing users with an elegant "show more" button to see the entire list.', 'search-appearance-toolkit-seo-44')}
+						label={__('Make Jump Links Area Expandable', 'jump-links-block-seo-44')}
+    					help={__('Conserve screen space by collapsing a long list of jump links, providing users with an elegant "show more" button to see the entire list.', 'jump-links-block-seo-44')}
 						checked={isCollapsible}
 						onChange={() => setAttributes({ isCollapsible: !isCollapsible })}
 					/>
 					<SelectControl
-						label={__('List Style', 'search-appearance-toolkit-seo-44')}
+						label={__('List Style', 'jump-links-block-seo-44')}
 						value={listStyle}
 						options={[
-							{ label: __('Bulleted', 'search-appearance-toolkit-seo-44'), value: 'ul' },
-            				{ label: __('Numbered', 'search-appearance-toolkit-seo-44'), value: 'ol' },
-            				{ label: __('None', 'search-appearance-toolkit-seo-44'), value: 'none' },
+							{ label: __('Bulleted', 'jump-links-block-seo-44'), value: 'ul' },
+            				{ label: __('Numbered', 'jump-links-block-seo-44'), value: 'ol' },
+            				{ label: __('None', 'jump-links-block-seo-44'), value: 'none' },
 						]}
 						onChange={(newListStyle) => setAttributes({ listStyle: newListStyle })}
         				disabled={layout === 'horizontal'} 
 					/>
 					<FontSizePicker
 						fontSizes={[
-							{ name: __('S', 'search-appearance-toolkit-seo-44'), slug: 'small', size: '14px' },
-							{ name: __('M', 'search-appearance-toolkit-seo-44'), slug: 'normal', size: '17px' },
-							{ name: __('L', 'search-appearance-toolkit-seo-44'), slug: 'large', size: '20px' },
-							{ name: __('XL', 'search-appearance-toolkit-seo-44'), slug: 'extra-large', size: '23px' },
+							{ name: __('S', 'jump-links-block-seo-44'), slug: 'small', size: '14px' },
+							{ name: __('M', 'jump-links-block-seo-44'), slug: 'normal', size: '17px' },
+							{ name: __('L', 'jump-links-block-seo-44'), slug: 'large', size: '20px' },
+							{ name: __('XL', 'jump-links-block-seo-44'), slug: 'extra-large', size: '23px' },
 						]}
 						value={fontSize}
 						onChange={(newSize) => setAttributes({ fontSize: newSize })}
 						withReset
 					/>
 					<PanelColorSettings
-						title={__('Colors', 'search-appearance-toolkit-seo-44')}
+						title={__('Colors', 'jump-links-block-seo-44')}
 						colorSettings={[
-							{ value: linkColor, onChange: (newColor) => setAttributes({ linkColor: newColor }), label: __('Link Color', 'search-appearance-toolkit-seo-44') },
-							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'search-appearance-toolkit-seo-44') },
+							{ value: linkColor, onChange: (newColor) => setAttributes({ linkColor: newColor }), label: __('Link Color', 'jump-links-block-seo-44') },
+							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'jump-links-block-seo-44') },
         				]}
 					/>
 					{layout === 'horizontal' && (
                         <>
                             <hr />
-                            <p><strong>{__('Horizontal Link Styles', 'search-appearance-toolkit-seo-44')}</strong></p>
+                            <p><strong>{__('Horizontal Link Styles', 'jump-links-block-seo-44')}</strong></p>
                             <PanelColorSettings
-                                title={__('Link Colors', 'search-appearance-toolkit-seo-44')}
+                                title={__('Link Colors', 'jump-links-block-seo-44')}
                                 colorSettings={[
-                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'search-appearance-toolkit-seo-44') },
-                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'search-appearance-toolkit-seo-44') },    
-									{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'search-appearance-toolkit-seo-44') },
+                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'jump-links-block-seo-44') },
+                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'jump-links-block-seo-44') },    
+									{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'jump-links-block-seo-44') },
                                 ]}
                             />
                             <RangeControl
-                                label={__('Link Border Radius', 'search-appearance-toolkit-seo-44')}
+                                label={__('Link Border Radius', 'jump-links-block-seo-44')}
                                 value={linkBorderRadius}
                                 onChange={(newValue) => setAttributes({ linkBorderRadius: newValue })}
                                 min={0}
@@ -269,20 +269,20 @@ export default function Edit({ attributes, setAttributes }) {
 										  
 
 				{/* Panel 3: For all other settings */}
-				<PanelBody title={__('Heading Settings', 'search-appearance-toolkit-seo-44')}>
+				<PanelBody title={__('Heading Settings', 'jump-links-block-seo-44')}>
 					<ToggleControl
-						label={__('Show Heading for Jump Links Block (off by default)', 'search-appearance-toolkit-seo-44')}
+						label={__('Show Heading for Jump Links Block (off by default)', 'jump-links-block-seo-44')}
 						checked={showHeading}
 						onChange={() => setAttributes({ showHeading: !showHeading })}
 					/>
 					{showHeading && (
 						<TextControl
-							label={__('Heading Text', 'search-appearance-toolkit-seo-44')}
+							label={__('Heading Text', 'jump-links-block-seo-44')}
 							value={headingText}
 							onChange={(newText) => setAttributes({ headingText: newText })}
 						/>
 					)}
-					<p>{__('Select heading levels to include:', 'search-appearance-toolkit-seo-44')}</p>
+					<p>{__('Select heading levels to include:', 'jump-links-block-seo-44')}</p>
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
 					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
@@ -296,7 +296,7 @@ export default function Edit({ attributes, setAttributes }) {
 		                className="wp-block-seo44-jump-links-heading"
 		                value={headingText}
 		                onChange={(newText) => setAttributes({ headingText: newText })}
-		                placeholder={__('On This Page', 'search-appearance-toolkit-seo-44')}
+		                placeholder={__('On This Page', 'jump-links-block-seo-44')}
 		            />
 		        )}
 
@@ -313,13 +313,13 @@ export default function Edit({ attributes, setAttributes }) {
 										<div className="reorder-buttons">
 											<Button
 												icon={arrowUpIcon}
-												label={__('Move Up', 'search-appearance-toolkit-seo-44')}
+												label={__('Move Up', 'jump-links-block-seo-44')}
 												onClick={() => moveItem(index, 'up')}
 												disabled={index === 0}
 											/>
 											<Button
 												icon={arrowDownIcon}
-												label={__('Move Down', 'search-appearance-toolkit-seo-44')}
+												label={__('Move Down', 'jump-links-block-seo-44')}
 												onClick={() => moveItem(index, 'down')}
 												disabled={index === savedHeadings.length - 1}
 											/>
@@ -327,8 +327,8 @@ export default function Edit({ attributes, setAttributes }) {
 										<ToggleControl
 											label={
 												heading.isVisible !== false 
-												? __('Included', 'search-appearance-toolkit-seo-44') 
-												: __('This Jump Link will not be shown', 'search-appearance-toolkit-seo-44')
+												? __('Included', 'jump-links-block-seo-44') 
+												: __('This Jump Link will not be shown', 'jump-links-block-seo-44')
 											}
 											checked={heading.isVisible !== false}
 											onChange={() => toggleVisibility(index)}
@@ -347,19 +347,19 @@ export default function Edit({ attributes, setAttributes }) {
 						)}
 					</ListTag>
 				) : (
-					<p>{__('No headings found. Select a heading level in the block settings to generate links.', 'search-appearance-toolkit-seo-44')}</p>
+					<p>{__('No headings found. Select a heading level in the block settings to generate links.', 'jump-links-block-seo-44')}</p>
 				)}
 				
 				{/* ADD THIS SIMULATED BUTTON */}
 				{!isEditing && isCollapsible && savedHeadings.length > 0 && (
-                    <Tooltip text={__('This button is functional on the front-end to expand the list.', 'search-appearance-toolkit-seo-44')}>
+                    <Tooltip text={__('This button is functional on the front-end to expand the list.', 'jump-links-block-seo-44')}>
                         <button
                             type="button"
                             className="seo-44-show-more"
-                            aria-label={__('Show More', 'search-appearance-toolkit-seo-44')}
+                            aria-label={__('Show More', 'jump-links-block-seo-44')}
                             onClick={() => {
                                 createInfoNotice(
-                                    __('The "Show More" button is interactive on the published page.', 'search-appearance-toolkit-seo-44'),
+                                    __('The "Show More" button is interactive on the published page.', 'jump-links-block-seo-44'),
                                     { type: 'snackbar' }
                                 );
                             }}

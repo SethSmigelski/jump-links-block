@@ -54,7 +54,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
                         ))}
                     </ListTag>
                     {isCollapsible && (
-						<button type="button" className="seo-44-show-more" aria-label={__('Show More', 'search-appearance-toolkit-seo-44')}>
+						<button type="button" className="seo-44-show-more" aria-label={__('Show More', 'jump-links-block-seo-44')}>
 							{arrowDownIcon}
 							{arrowUpIcon}
 						</button>

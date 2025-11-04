@@ -77,7 +77,7 @@
   "supports": {
     "html": false
   },
-  "textdomain": "search-appearance-toolkit-seo-44",
+  "textdomain": "jump-links-block-seo-44",
   "title": "SEO 44 Jump Links",
   "version": "1.7.0",
   "viewScript": "file:./view.js"

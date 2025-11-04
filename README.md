@@ -74,7 +74,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Typography:** Control the **font size** with a simple picker, including a reset button. 
 
-* **List Styles:** Choose between a bulleted list (<ul>), a numbered list (<ol>), or no list styling at all.
+* **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
 
 * **Full Color Control:** Use integrated color pickers to customize: **Link Color**, **Other Text Color** (for bullets, numbers, and the main heading).
 
@@ -167,11 +167,11 @@ Here’s how:
 
 ## Screenshots
 
-1. Published Jump Links, horizontal and vertical examples
-2. Expandable Jump Links, horizontal and vertical examples
-3. The Jump Links Block in Presentation Mode
-4. The Jump Links Block in Editing Mode
-5. The Sidebar controls for the Jump Links Block 
+1. Published Vertical Jump Links, expanded and collapsed.
+2. Published Horizontal Jump Links, expanded and collapsed.
+3. The Jump Links Block in Viewing Mode.
+4. The Jump Links Block in Editing Mode.
+5. The Sidebar controls for the Jump Links Block.
 
 ---
 

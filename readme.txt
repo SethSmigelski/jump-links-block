@@ -1,9 +1,9 @@
-=== SEO 44 Jump Links Block ===
+=== Jump Links Block (SEO 44) ===
 Contributors: sethsm
 Tags: jump links, on this page, table of contents, jump links block, jump links generator
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 1.5
+Stable tag: 1.6
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,7 +65,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Typography:** Control the **font size** with a simple picker, including a reset button. 
 
-* **List Styles:** Choose between a bulleted list (<ul>), a numbered list (<ol>), or no list styling at all.
+* **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
 
 * **Full Color Control:** Use integrated color pickers to customize: **Link Color**, **Other Text Color** (for bullets, numbers, and the main heading).
 
@@ -154,6 +154,8 @@ Here’s how:
 5. The Sidebar controls for the Jump Links Block.
 
 == Changelog ==
+= 1.5.0 =
+CHANGE: modified plugin name to Jump Links Block (SEO 44) in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO), and established the text domain as jump-links-block-seo-44
 
 = 1.5.0 =
 * FEATURE: Added a new "Background Hover" color setting in the Inspector Controls for links in the horizontal layout.

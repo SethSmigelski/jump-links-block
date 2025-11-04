@@ -1,6 +1,6 @@
 === Jump Links Block (SEO 44) ===
 Contributors: sethsm
-Tags: jump links, on this page, table of contents, jump links block, jump links generator
+Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.8
 Stable tag: 1.6
@@ -155,7 +155,8 @@ Here’s how:
 
 == Changelog ==
 = 1.6.0 =
-CHANGE: modified plugin name to Jump Links Block (SEO 44) in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO), and established the text domain as jump-links-block-seo-44
+* TWEAK: Renamed plugin to "Jump Links Block (SEO 44)" to align with the new branding in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO)
+* TWEAK: Updated the Text Domain to `jump-links-block-seo-44` to match the new plugin slug.
 
 = 1.5.0 =
 * FEATURE: Added a new "Background Hover" color setting in the Inspector Controls for links in the horizontal layout.

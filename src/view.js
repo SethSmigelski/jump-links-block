@@ -43,10 +43,10 @@ window.addEventListener('load', function () {
 
                     // 2. UPDATE the button's aria-label using our new strings
                     // This handles the icon change via CSS.
-					if (block.classList.contains('is-expanded')) {
-						button.setAttribute('aria-label', 'Show Less');
+					if (isExpanded) {
+						button.setAttribute('aria-label', showLessText);
 					} else {
-						button.setAttribute('aria-label', 'Show More');
+						button.setAttribute('aria-label', showMoreText);
 					}
                 });
             }

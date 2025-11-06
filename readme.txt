@@ -3,7 +3,7 @@ Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 1.6
+Stable tag: 1.7
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -154,6 +154,10 @@ Here’s how:
 5. The Sidebar controls for the Jump Links Block.
 
 == Changelog ==
+
+= 1.7.0 =
+* ENHANCEMENT: Improved accessibility by expanding aria labels and wrapping jump links in a semantic `<nav>` element.
+
 = 1.6.0 =
 * TWEAK: Renamed plugin to "Jump Links Block (SEO 44)" to align with the new branding in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO)
 * TWEAK: Updated the Text Domain to `jump-links-block-seo-44` to match the new plugin slug.

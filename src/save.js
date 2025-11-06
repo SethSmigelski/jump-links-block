@@ -45,7 +45,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
 		<div {...blockProps}>
 			{showHeading && <RichText.Content tagName="div" className="wp-block-seo44-jump-links-heading" value={headingText} />}
 			{headings && headings.length > 0 && (
-                <>
+                <nav aria-label={__('Table of contents', 'jump-links-block-seo-44')}>
                     <ListTag>
                         {headings.filter(h => h.isVisible !== false).map(h => (
                             <li key={h.anchor}>
@@ -59,7 +59,7 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
 							{arrowUpIcon}
 						</button>
 					)}
-                </>
+                </nav>
 			)}
 		</div>
 	);

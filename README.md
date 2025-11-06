@@ -178,7 +178,8 @@ Here’s how:
 ## Changelog
 
 ###  1.7.0
-* **ENHANCEMENT:** Improved accessibility by expanding aria labels and wrapping jump links in a semantic `<nav>` element.
+* **ENHANCEMENT:** Improved semantics and accessibility by wrapping the block's content in a `<nav>` landmark with a translatable aria-label.
+* **ENHANCEMENT:** Added full ARIA support to the collapsible button, including aria-expanded, aria-controls, and a dynamic "Show More" / "Show Less" label.
 
 ### 1.6.0
 * **TWEAK:** Renamed plugin to "Jump Links Block (SEO 44)" to align with the new branding in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO)

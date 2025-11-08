@@ -3,7 +3,7 @@ import { RichText, useBlockProps, InspectorControls, PanelColorSettings } from '
 // This is the correct import for PanelColorSettings
 import { Tooltip, PanelBody, Button, ButtonGroup, CheckboxControl, FontSizePicker, SelectControl, TextControl, ToggleControl, RangeControl } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data'; 
-import { useEffect } from '@wordpress/element';
+import { useEffect, Fragment } from '@wordpress/element';
 
 // Helper function to strip HTML from heading content.
 function stripHtml(html) {
@@ -126,7 +126,11 @@ useEffect(() => {
         // If we fixed any duplicates, show a snackbar warning.
         if (wasDuplicateFound) {
             createInfoNotice(
-                __('Duplicate headings were found and auto-corrected with unique IDs. Please review your headings for clarity.', 'jump-links-block-seo-44'),
+                <Fragment>
+                    <strong>{__('Jump Links Block:', 'jump-links-block-seo-44')}</strong>
+                    {' '}
+                    {__('Duplicate headings were found. Unique IDs have been auto-generated, but this may be a sign of redundancy. Please review your headings for clarity.', 'jump-links-block-seo-44')}
+                </Fragment>,
                 { To: 'snackbar' }
             );
         }

@@ -3,7 +3,7 @@ Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 1.7
+Stable tag: 1.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -154,6 +154,11 @@ Here’s how:
 5. The Sidebar controls for the Jump Links Block.
 
 == Changelog ==
+
+= 1.8.0 =
+* ENHANCEMENT: Implemented a robust de-duping engine to prevent invalid HTML from duplicate headings. The block now automatically appends a number (e.g., `my-heading-2`) to any heading with a conflicting text or manual anchor ID.
+* FEATURE: Added a snackbar warning that notifies the user when duplicate headings have been found and auto-corrected, prompting them to review their content for clarity.
+* FIX: Ensured that all user customizations (custom link text, visibility, and ordering) are correctly preserved during the new de-duping and reconciliation process.
 
 = 1.7.0 =
 * ENHANCEMENT: Improved semantics and accessibility by wrapping the block's content in a `<nav>` landmark with a translatable aria-label.

@@ -3,7 +3,7 @@ Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 1.9
+Stable tag: 1.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -154,9 +154,6 @@ Here’s how:
 5. The Sidebar controls for the Jump Links Block.
 
 == Changelog ==
-
-= 1.9.0 =
-* FEATURE: Introduced localization and jump link event tracking code for Google Tag Manager integration available in the Search Appearance Tooklit (SEO 44) Plugin
 
 = 1.8.0 =
 * ENHANCEMENT: Implemented a robust de-duping engine to prevent invalid HTML from duplicate headings. The block now automatically appends a number (e.g., `my-heading-2`) to any heading with a conflicting text or manual anchor ID.

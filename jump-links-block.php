@@ -3,7 +3,7 @@
  * Plugin Name:       Jump Links Block (SEO 44)
  * Plugin URI:        https://www.sethcreates.com/plugins-for-wordpress/seo-jump-links-block-seo-44/
  * Description:       A standalone custom block for automatically creating a customizable Jump Links table of contents.
- * Version:           1.9
+ * Version:           1.8
  * Author:            Seth Smigelski
  * Author URI:  	    https://www.sethcreates.com/plugins-for-wordpress/
  * License:           GPL-2.0+
@@ -32,16 +32,9 @@ function seo44_jump_links_localize_script() {
 
 	// Only localize if the script is actually enqueued
 	if ( wp_script_is( $handle, 'enqueued' ) ) {
-		
-    	// Get the GTM tracking setting from your main plugin options
-        $track_clicks = seo44_get_option('enable_jump_link_tracking', 0); 
-		
 		wp_localize_script( $handle, 'seo44JumpLinksL10n', [
-			// ShowMore text localization
 			'showMore' => __( 'Show More', 'jump-links-block-seo-44' ),
 			'showLess' => __( 'Show Less', 'jump-links-block-seo-44' ),
-			// Click event tracking check
-            'trackClicks' => (bool) $track_clicks
 		] );
 	}
 }

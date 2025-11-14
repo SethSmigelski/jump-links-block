@@ -10,7 +10,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 * **License:** GPLv2 or later
 * **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 * **Donate link:** [https://www.paypal.com/donate/?hosted_button_id=M3B2Q94PGVVWL](https://www.paypal.com/donate/?hosted_button_id=M3B2Q94PGVVWL)
-* **Plugin URI:**  [https://www.sethcreates.com/plugins-for-wordpress/under-the-weather/](https://www.sethcreates.com/plugins-for-wordpress/seo-jump-links-block-seo-44/)
+* **Plugin URI:**  [https://www.sethcreates.com/plugins-for-wordpress/jump-links-block-seo-44/](https://www.sethcreates.com/plugins-for-wordpress/jump-links-block-seo-44/)
 * **Author URI:**  [https://www.sethcreates.com/plugins-for-wordpress/](https://www.sethcreates.com/plugins-for-wordpress/)
 
 ---

@@ -155,11 +155,11 @@ Here’s how:
 
 == Screenshots ==
 
-1. Published Vertical Jump Links, expanded and collapsed.
-2. Published Horizontal Jump Links, expanded and collapsed.
-3. The Jump Links Block in Viewing Mode.
-4. The Jump Links Block in Editing Mode.
-5. The Sidebar controls for the Jump Links Block.
+1. The Jump Links Block in Viewing Mode.
+2. The Jump Links Block in Editing Mode.
+3. The Sidebar controls for the Jump Links Block.
+4. Published Vertical Jump Links, expanded and collapsed.
+5. Published Horizontal Jump Links, expanded and collapsed.
 
 == Changelog ==
 

@@ -186,8 +186,6 @@ Here’s how:
 ---
 
 ## Changelog
-### 1.9.0
-* **FEATURE:** Introduced localization and jump link event tracking code for Google Tag Manager integration available in the Search Appearance Tooklit (SEO 44) Plugin
 
 ### 1.8.0
 * **ENHANCEMENT:** Implemented a robust de-duping engine to prevent invalid HTML from duplicate headings. The block now automatically appends a number (e.g., `my-heading-2`) to any heading with a conflicting text or manual anchor ID.

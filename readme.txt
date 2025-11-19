@@ -28,7 +28,7 @@ Adding a well-structured table of contents is one of the most effective ways to 
 Google and other search engines can detect the anchor links created by this block and may feature them directly in the search results. This adds valuable "Jump to" links below your page description (also known as fragment links or in-page links), allowing users to go directly to the section that answers their question.
 
 **Improve Click-Through Rate (CTR)**
-By occupying more space in the search results and presenting a clear outline of your content, you make your listing more appealing and informative. This encourages more users to click on your link over your competitors, directly boosting your CTR—a key metric for search engine ranking.
+By occupying more space in the search results and presenting a clear outline of your content, you make your listing more appealing and informative. This encourages more users to click on your link over your competitors, directly boosting your CTR—a key metric that can lead to better search engine rankings.
 
 **Enhance User Experience**
 For long articles, a table of contents is essential. It allows readers to easily navigate to the sections they care about most, which reduces bounce rates and increases the time they spend on your page. Search engines place value on these positive user engagement signals.

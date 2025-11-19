@@ -96,7 +96,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 == Frequently Asked Questions (FAQ)== 
 
 = How is the standalone "SEO 44 Jump Links Block (SEO 44)" plugin different from the "SEO 44" plugin? =
-The main **Search Appearance Toolkit (SEO 44)** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, and the Jump Links Block. This standalone **Jump Links Block (SEO 44)** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the Search Appearance Toolkit (SEO 44) plugin, you *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+The main **[Search Appearance Toolkit (SEO 44)](https://wordpress.org/plugins/search-appearance-toolkit-seo-44/)** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, and the Jump Links Block. This standalone **Jump Links Block (SEO 44)** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the Search Appearance Toolkit (SEO 44) plugin, you *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
 
 = Are Jump To Links the same as Site Links? =
 While they look similar, **sitelinks** and **jump to links** are two distinct features in Google's search results. The main difference is where the links take the user. 

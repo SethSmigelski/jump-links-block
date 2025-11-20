@@ -17,7 +17,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 
 A WordPress block that automatically generates a customizable Jump To “On this Page“ table of contents to improve user navigation and engagement on your posts and pages.
 
-[Jump Links Block (SEO 44)](https://seo44plugin.com/jump-links-block-seo-44/) intelligently scans your content for headings and creates a dynamic, interactive list of links. With a complete collection of controls in the editor sidebar, you have command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
+**[Jump Links Block (SEO 44)](https://seo44plugin.com/jump-links-block-seo-44/)** intelligently scans your content for headings and creates a dynamic, interactive list of links. With a complete collection of controls in the editor sidebar, you have command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
 
 == The SEO & User Engagement Benefits ==
 
@@ -111,7 +111,7 @@ If you like this plugin, you might also enjoy these WordPress tools:
 == Frequently Asked Questions == 
 
 = How is the standalone "SEO 44 Jump Links Block (SEO 44)" plugin different from the "SEO 44" plugin? =
-The main **[Search Appearance Toolkit (SEO 44)](https://wordpress.org/plugins/search-appearance-toolkit-seo-44/)** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, and the Jump Links Block. This standalone **Jump Links Block (SEO 44)** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the Search Appearance Toolkit (SEO 44) plugin, you *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
+The main **[Search Appearance Toolkit (SEO 44)](https://wordpress.org/plugins/search-appearance-toolkit-seo-44/)** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, and the Jump Links Block. This standalone **[Jump Links Block (SEO 44)](https://wordpress.org/plugins/jump-links-block-seo-44)** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the Search Appearance Toolkit (SEO 44) plugin, you *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
 
 = Are Jump To Links the same as Site Links? =
 While they look similar, **sitelinks** and **jump to links** are two distinct features in Google's search results. The main difference is where the links take the user. 

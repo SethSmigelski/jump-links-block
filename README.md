@@ -102,10 +102,17 @@ If you like this plugin, you might also enjoy these WordPress tools:
 
 ## Installation
 
-1. Download the plugin's .zip file.
-2. In your WordPress admin dashboard, go to **Plugins > Add New > Upload Plugin.**
-3. Upload the .zip file and click **Install Now.**
-4. Activate the plugin.
+### From the WordPress Plugin Directory File
+1.  Log in to your WordPress Admin Dashboard.
+2.  Navigate to **Plugins > Add Plugin** in the left-hand menu.
+3.  Search for the plugin: **Jump Links Block (SEO 44)**.
+4.  Install the plugin: Once you locate the [correct plugin](https://wordpress.org/plugins/jump-links-block-seo-44), click the **"Install Now"** button next to it.
+5.  Activate the plugin: After the installation is complete, click the **"Activate Plugin"** button that appears.
+
+### From a Zip File
+1.  Download a copy of the plugin, available in the WordPress Plugin Directory [Jump Links Block (SEO 44)](https://wordpress.org/plugins/jump-links-block-seo-44) webpage. 
+2.  Upload the **jump-links-block-seo-44** folder to the `/wp-content/plugins/` directory 
+3.  Activate the plugin through the **Plugins** menu in WordPress.
 
 ---
 

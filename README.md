@@ -10,7 +10,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 * **License:** GPLv2 or later
 * **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 * **Donate link:** [https://www.paypal.com/donate/?hosted_button_id=M3B2Q94PGVVWL](https://www.paypal.com/donate/?hosted_button_id=M3B2Q94PGVVWL)
-* **Plugin URI:**  [https://www.sethcreates.com/plugins-for-wordpress/jump-links-block-seo-44/](https://www.sethcreates.com/plugins-for-wordpress/jump-links-block-seo-44/)
+* **Plugin URI:**  [https://seo44plugin.com/jump-links-block-seo-44/](https://seo44plugin.com/jump-links-block-seo-44/)
 * **Author URI:**  [https://www.sethcreates.com/plugins-for-wordpress/](https://www.sethcreates.com/plugins-for-wordpress/)
 
 ---
@@ -200,45 +200,9 @@ Here’s how:
 * **FEATURE:** Added a snackbar warning that notifies the user when duplicate headings have been found and auto-corrected, prompting them to review their content for clarity.
 * **FIX:** Ensured that all user customizations (custom link text, visibility, and ordering) are correctly preserved during the new de-duping and reconciliation process.
 
-### 1.7.0
-* **ENHANCEMENT:** Improved semantics and accessibility by wrapping the block's content in a `<nav>` landmark with a translatable aria-label.
-* **ENHANCEMENT:** Added full ARIA support to the collapsible button, including aria-expanded, aria-controls, and a dynamic "Show More" / "Show Less" label.
+For a complete list of changes, please see the [full changelog](https://seo44plugin.com/jump-links-block-seo-44/changelog/) or the changelog.txt file included with the plugin.
 
-### 1.6.0
-* **TWEAK:** Renamed plugin to "Jump Links Block (SEO 44)" to align with the new branding in coordination with the SEO suite plugin, Search Appearance Toolkit (SEO)
-* **TWEAK:** Updated the Text Domain to `jump-links-block-seo-44` to match the new plugin slug.
+## Upgrade Notice
 
-### 1.5.0
-* **FEATURE:** Added a new "Background Hover" color setting in the Inspector Controls for links in the horizontal layout.
-* **ENHANCEMENT:** Improved the out-of-the-box appearance by setting default colors and a default border-radius in block.json, ensuring the block looks great immediately upon being added.
-* **REFACTOR:** Removed hardcoded default styles from the stylesheets, making the block's settings the single source of truth for its design and improving consistency.
-* **CODE QUALITY:** Refactored editor.scss to import style.scss, eliminating code duplication and making the styles easier to maintain.
-* **CODE QUALITY:** Performed a comprehensive review and refactor of all block source files (.js, .scss, .json). This improves the block's stability, maintainability, and alignment with modern WordPress development best practices.
-  
-### 1.4.0
-* **State Reconciliation Engine:**  Completely overhauled the core useEffect logic to robustly handle all state changes. The new "reconciliation" engine correctly adds and removes headings as the document is edited, while intelligently preserving all user customizations (custom text, visibility, and custom order) without conflict.
-* **Bug Fixes:**  Resolved bugs related to component rendering and various JavaScript "race conditions."
-
-### 1.3.0
-* **Smooth Scrolling:**  Implemented a front-end script (view.js) that enables smooth scrolling when a user clicks on a jump link.
-* **Collapsible Section:**  For long lists, the front-end script can now automatically collapse the block and add a "Show More" / "Show Less" button for a cleaner appearance.
-
-### 1.2.0
-* **New "Appearance" Panel:**  Reorganized the sidebar controls for a cleaner user experience.
-* **Layout Control:** Added a ButtonGroup to switch between a standard vertical list and a modern horizontal layout.
-* **List Style Control:** Added a dropdown to select a bulleted (ul), numbered (ol), or unstyled (none) list format. The control is intelligently disabled when in the horizontal layout.
-* **Typography & Color Controls:** Added a FontSizePicker with a reset button. Added PanelColorSettings for "Link Color" and "Other Text Color."
-* **Conditional Horizontal Styles:** Added a dedicated section that appears only for the horizontal layout, allowing users to customize the link background color, border color, and border radius.
-
-### 1.1.0
-* **"Viewing" vs. "Editing" Modes:** Introduced a presentation toggle in the sidebar to switch between a clean preview and a detailed editing interface.
-* **Editable Link Text:** In "Editing Mode," users can now customize the text of each link (e.g., change "Frequently Asked Questions" to "FAQ").
-* **Visibility Toggles:** Added an "Included" / "Exclude" toggle for each link in "Editing Mode," allowing users to hide specific headings from the list.
-* **Custom Reordering:** Implemented up and down arrow buttons for each link, allowing users to set a custom order that is different from the document's top-to-bottom order. The buttons use robust SVG icons.
-
-### 1.0.0
-* **Initial Block Setup:** Established the basic block structure and registration.
-* **Real-time Heading Scan:** Implemented the core logic to automatically scan the editor content for H2, H3, and H4 headings.
-* **Live Editor Preview:** The block displays a live preview of the generated link list directly in the editor.
-* **Smart Anchor ID Generation:** The block intelligently adds unique anchor IDs to heading blocks that are missing them, while respecting any custom IDs that have already been set by the user.
-* **Basic Sidebar Controls:** Added checkboxes to allow users to select which heading levels (H2, H3, H4) to include in the list.
+### 1.8.0
+Initial release to the WordPress Plugin Directory.

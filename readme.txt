@@ -155,7 +155,7 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 == Changelog ==
 
 = 1.9.1 =
-FIX (readme): Fixed a small typo in the readme.txt file.
+* FIX (readme): Fixed a small typo in the readme.txt file.
 
 = 1.9.0 =
 * HELLO WORLD: Initial release to the WordPress Plugin Directory.

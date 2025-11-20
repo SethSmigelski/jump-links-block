@@ -108,7 +108,7 @@ If you like this plugin, you might also enjoy these WordPress tools:
    B. In the "Appearance" panel, control the layout, styling, and colors.
    C. In the "Heading Settings" panel, toggle the optional title and select which heading levels to include.
 
-== Frequently Asked Questions (FAQ)== 
+== Frequently Asked Questions == 
 
 = How is the standalone "SEO 44 Jump Links Block (SEO 44)" plugin different from the "SEO 44" plugin? =
 The main **[Search Appearance Toolkit (SEO 44)](https://wordpress.org/plugins/search-appearance-toolkit-seo-44/)** plugin is a complete suite of tools that includes meta tag optimization, schema generation, XML sitemaps, and the Jump Links Block. This standalone **Jump Links Block (SEO 44)** plugin offers *only* the Jump Links Block functionality for users who don't need a full SEO suite. If you are using the Search Appearance Toolkit (SEO 44) plugin, you *already* have access to the Jump Links Block and do not need to install this standalone block plugin.
@@ -217,3 +217,8 @@ Here’s how:
 * **Live Editor Preview:** The block displays a live preview of the generated link list directly in the editor.
 * **Smart Anchor ID Generation:** The block intelligently adds unique anchor IDs to heading blocks that are missing them, while respecting any custom IDs that have already been set by the user.
 * **Basic Sidebar Controls:** Added checkboxes to allow users to select which heading levels (H2, H3, H4) to include in the list.
+
+== Upgrade Notice ==
+
+= 1.8.0 =
+Initial release to the WordPress Plugin Directory.

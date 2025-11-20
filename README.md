@@ -19,7 +19,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 
 A WordPress block that automatically generates live-syncing, customizable Jump Links navigation lists ("On This Page" Table of Contents) from post headings.
 
-Jump Links Block (SEO 44) intelligently scans your content for headings and creates a dynamic, interactive list of links. With a complete collection of controls in the editor sidebar, you have command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
+[Jump Links Block (SEO 44)](https://seo44plugin.com/jump-links-block-seo-44/) intelligently scans your content for headings and creates a dynamic, interactive list of links. With a complete collection of controls in the editor sidebar, you have command over the block's functionality and appearance, from reordering links to fine-tuning the design for your theme.
 
 ---
 

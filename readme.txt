@@ -3,7 +3,7 @@ Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 1.9
+Stable tag: 1.9.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -71,7 +71,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Conditional Horizontal Link Styles:** When in the horizontal layout, you can fine-tune the design with controls for  **Link Background Color**, **Link Background Color on hover**, **Link Border Color**, and **border radius**.
 
-= Front-End Experience ==
+= Front-End Experience =
 * **Smooth Scrolling:** Clicking a link smoothly scrolls the user to the relevant section of the page, providing a modern and pleasant user experience.
 
 * **Collapsible List:** Optional feature to collapse long lists with an elegant "Show More" / "Show Less" SVG icon button to expand and contract the list horizontally or vertically.

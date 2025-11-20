@@ -100,6 +100,14 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
    B. In the "Appearance" panel, control the layout, styling, and colors.
    C. In the "Heading Settings" panel, toggle the optional title and select which heading levels to include.
 
+== You Might Also Like ==
+
+If you like this plugin, you might also enjoy these WordPress tools:
+
+* **[Search Appearance Toolkit (SEO 44)](https://wordpress.org/plugins/search-appearance-toolkit-seo-44/)** - A lightweight, feature-packed SEO plugin for WordPress that offers a comprehensive suite of site optimization tools, all easy to control.
+* **[Microdata to JSON-LD Converter](https://wordpress.org/plugins/microdata-to-json-ld-converter/)** - A handy tool to convert your existing Schema.org Microdata into the preferred JSON-LD format, clean up your HTML, and maintain structured data.
+* **[Under The Weather](https://wordpress.org/plugins/under-the-weather/)** - A lightweight and customizable weather widget, powered by the OpenWeather API, that caches and presents weather data with multiple style options.
+
 == Frequently Asked Questions == 
 
 = How is the standalone "SEO 44 Jump Links Block (SEO 44)" plugin different from the "SEO 44" plugin? =
@@ -143,14 +151,6 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 3. The Sidebar controls for the Jump Links Block.
 4. Published Vertical Jump Links, expanded and collapsed.
 5. Published Horizontal Jump Links, expanded and collapsed.
-
-== You Might Also Like ==
-
-If you like this plugin, you might also enjoy these WordPress tools:
-
-* **[Search Appearance Toolkit (SEO 44)](https://wordpress.org/plugins/search-appearance-toolkit-seo-44/)** - A lightweight, feature-packed SEO plugin for WordPress that offers a comprehensive suite of site optimization tools, all easy to control.
-* **[Microdata to JSON-LD Converter](https://wordpress.org/plugins/microdata-to-json-ld-converter/)** - A handy tool to convert your existing Schema.org Microdata into the preferred JSON-LD format, clean up your HTML, and maintain structured data.
-* **[Under The Weather](https://wordpress.org/plugins/under-the-weather/)** - A lightweight and customizable weather widget, powered by the OpenWeather API, that caches and presents weather data with multiple style options.
 
 == Changelog ==
 

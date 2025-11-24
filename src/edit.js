@@ -287,7 +287,7 @@ useEffect(() => {
 				{/* Panel 3: For all other settings */}
 				<PanelBody title={__('Heading Settings', 'jump-links-block-seo-44')}>
 					<ToggleControl
-						label={__('Show Title for Jump Links Block (off by default)', 'jump-links-block-seo-44')}
+						label={__('Display a title for Jump Links Block (off by default)', 'jump-links-block-seo-44')}
 						checked={showHeading}
 						onChange={() => setAttributes({ showHeading: !showHeading })}
 					/>

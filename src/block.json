@@ -11,6 +11,10 @@
     "fontSize": {
       "type": "string"
     },
+    "headingTag": {
+      "type": "string",
+      "default": "h2"
+    },
     "headingLevels": {
       "default": [
         "h2"
@@ -75,10 +79,20 @@
   "icon": "list-view",
   "name": "seo44/jump-links",
   "supports": {
-    "html": false
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    }
   },
   "textdomain": "jump-links-block-seo-44",
   "title": "SEO 44 Jump Links",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "viewScript": "file:./view.js"
 } 

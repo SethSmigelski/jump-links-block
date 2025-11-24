@@ -287,19 +287,20 @@ useEffect(() => {
 				{/* Panel 3: For all other settings */}
 				<PanelBody title={__('Heading Settings', 'jump-links-block-seo-44')}>
 					<ToggleControl
-						label={__('Show Heading for Jump Links Block (off by default)', 'jump-links-block-seo-44')}
+						label={__('Show Title for Jump Links Block (off by default)', 'jump-links-block-seo-44')}
 						checked={showHeading}
 						onChange={() => setAttributes({ showHeading: !showHeading })}
 					/>
 					{showHeading && (
 						<>
 							<TextControl
-								label={__('Heading Text', 'jump-links-block-seo-44')}
+								label={__('Title Text', 'jump-links-block-seo-44')}
 								value={headingText}
 								onChange={(newText) => setAttributes({ headingText: newText })}
+								help={__('The text that appears above your list of links.', 'jump-links-block-seo-44')}
 							/>
 							<SelectControl
-                                label={__('Heading Level', 'jump-links-block-seo-44')}
+                                label={__('Title Tag', 'jump-links-block-seo-44')}
                                 value={headingTag}
                                 options={[
                                     { label: 'H2', value: 'h2' },
@@ -313,6 +314,12 @@ useEffect(() => {
                             />
 						</>
 					)}
+					<hr />
+					{/* SECTION 2: SCANNED CONTENT */}
+					<p><strong>{__('Included Headings', 'jump-links-block-seo-44')}</strong></p>
+                    <p className="description">
+                        {__('Select which heading levels from your post content should appear in the jump links list.', 'jump-links-block-seo-44')}
+                    </p>
 					<p>{__('Select heading levels to include:', 'jump-links-block-seo-44')}</p>
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />

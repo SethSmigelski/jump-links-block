@@ -308,9 +308,10 @@ useEffect(() => {
                                     { label: 'H4', value: 'h4' },
                                     { label: 'H5', value: 'h5' },
                                     { label: 'Paragraph (Bold)', value: 'p' },
-                                    { label: 'Div (No Semantic Value)', value: 'div' },
+                                    { label: 'Div', value: 'div' },
                                 ]}
                                 onChange={(newTag) => setAttributes({ headingTag: newTag })}
+								help={__('Choose a level that fits your page's structure.', 'search-appearance-toolkit-seo-44')}
                             />
 						</>
 					)}

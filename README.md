@@ -198,6 +198,7 @@ Here’s how:
 * FEATURE: Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.
 * FEATURE: Added a "Heading Level" control. You can now choose the specific HTML tag (H2, H3, H4, H5, Paragraph, or Div) for the "On This Page" heading to better match your document structure.
 * REFACTOR: Optimized the block's styling logic to use CSS variables on the parent container instead of inline styles for every link. This reduces the block's HTML size and improves rendering performance.
+* TWEAK: Reorganized the sidebar settings for better clarity between Block Title settings and Content Inclusion settings.
 
 ### 1.9.1
 * FIX (readme): Fixed a small typo in the readme.txt file.

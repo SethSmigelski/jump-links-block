@@ -24,19 +24,28 @@
 	flex-wrap: wrap;
 }
 
+.wp-block-seo44-jump-links li a {    
+    /* USE THE VARIABLE */
+    color: var(--seo44-link-color, #0073aa); /* Fallback to default blue */
+}
+
 .wp-block-seo44-jump-links.is-layout-horizontal li a {
     display: inline-block;
     padding: 0.5em 1em;
 	text-decoration: none;
 	border-width: 1px;     
     border-style: solid;
-	background-color: var(--link-bg-color);
+
+	/* USE THE VARIABLES */
+    background-color: var(--seo44-link-bg);
+    border-color: var(--seo44-link-border-color);
+    border-radius: var(--seo44-link-radius);
 }
 
 .wp-block-seo44-jump-links.is-layout-horizontal li a:hover {
 	text-decoration: underline;
 	text-underline-offset: .1em;
-	background-color: var(--link-bg-hover-color); 
+	background-color: var(--seo44-link-hover-bg); 
 }
 
 /* Styling for the Collapsible Feature */

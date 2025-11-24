@@ -29,7 +29,7 @@ const arrowDownIcon = (
 	);
 
 export default function Edit({ attributes, setAttributes }) {
-	const { headingLevels, headings: savedHeadings, layout, showHeading, headingText, isEditing, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
+	const { headingLevels, headings: savedHeadings, layout, showHeading, headingText, headingTag, isEditing, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
 	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
 		// Text & Font
@@ -292,11 +292,26 @@ useEffect(() => {
 						onChange={() => setAttributes({ showHeading: !showHeading })}
 					/>
 					{showHeading && (
-						<TextControl
-							label={__('Heading Text', 'jump-links-block-seo-44')}
-							value={headingText}
-							onChange={(newText) => setAttributes({ headingText: newText })}
-						/>
+						<>
+							<TextControl
+								label={__('Heading Text', 'jump-links-block-seo-44')}
+								value={headingText}
+								onChange={(newText) => setAttributes({ headingText: newText })}
+							/>
+							<SelectControl
+                                label={__('Heading Level', 'jump-links-block-seo-44')}
+                                value={headingTag}
+                                options={[
+                                    { label: 'H2', value: 'h2' },
+                                    { label: 'H3', value: 'h3' },
+                                    { label: 'H4', value: 'h4' },
+                                    { label: 'H5', value: 'h5' },
+                                    { label: 'Paragraph (Bold)', value: 'p' },
+                                    { label: 'Div (No Semantic Value)', value: 'div' },
+                                ]}
+                                onChange={(newTag) => setAttributes({ headingTag: newTag })}
+                            />
+						</>
 					)}
 					<p>{__('Select heading levels to include:', 'jump-links-block-seo-44')}</p>
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
@@ -308,7 +323,7 @@ useEffect(() => {
 			<div {...blockProps}>
 		        {showHeading && (
 		            <RichText
-		                tagName="div"
+		                tagName={headingTag}
 		                className="wp-block-seo44-jump-links-heading"
 		                value={headingText}
 		                onChange={(newText) => setAttributes({ headingText: newText })}

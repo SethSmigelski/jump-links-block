@@ -30,18 +30,20 @@ const arrowDownIcon = (
 
 export default function Edit({ attributes, setAttributes }) {
 	const { headingLevels, headings: savedHeadings, layout, showHeading, headingText, isEditing, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
+	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
+		// Text & Font
 		color: textColor,
 		fontSize: fontSize,
-		'--jump-link-font-size': fontSize || '18px', // Use font size or a default
+		'--jump-link-font-size': fontSize || '18px',
+		
+		// Link Variables (Applied to wrapper, consumed by children)
+		'--seo44-link-color': linkColor,
+		'--seo44-link-bg': layout === 'horizontal' ? linkBackgroundColor : undefined,
+		'--seo44-link-hover-bg': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
+		'--seo44-link-border-color': layout === 'horizontal' ? linkBorderColor : undefined,
+		'--seo44-link-radius': layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 	};
-	const linkStyle = {
-		'--link-bg-color': layout === 'horizontal' ? linkBackgroundColor : undefined,
-		borderColor: layout === 'horizontal' ? linkBorderColor : undefined,
-		borderRadius: layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
-		color: linkColor, // Always apply the custom link color
-		'--link-bg-hover-color': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
-    };
 	// Determine which HTML tag to use for the list
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
 	const { createInfoNotice } = useDispatch( 'core/notices' );
@@ -353,7 +355,7 @@ useEffect(() => {
 								) : (
 									heading.isVisible !== false && (
 										<li key={heading.anchor}>
-											<a href={`#${heading.anchor}`} style={linkStyle} onClick={(e) => e.preventDefault()}>
+											<a href={`#${heading.anchor}`} onClick={(e) => e.preventDefault()}>
 												{heading.linkText}
 											</a>
 										</li>

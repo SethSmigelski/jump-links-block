@@ -43,7 +43,11 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
 
 	return (
 		<div {...blockProps}>
-			{showHeading && <RichText.Content tagName="div" className="wp-block-seo44-jump-links-heading" value={headingText} />}
+			{showHeading && <RichText.Content 
+				tagName={headingTag || 'h2'} // Fallback to h2 if undefined
+				className="wp-block-seo44-jump-links-heading" 
+				value={headingText} 
+			/>}
 			{headings && headings.length > 0 && (
                 <nav aria-label={__('Table of contents', 'jump-links-block-seo-44')}>
                     <ListTag id="seo44-jump-links-list">

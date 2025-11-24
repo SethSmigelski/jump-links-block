@@ -1,4 +1,3 @@
-import { __ } from '@wordpress/i18n'; 
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 // import { useSelect } from '@wordpress/data';
 
@@ -7,18 +6,19 @@ export default function save({ attributes }) {
 const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
 
 	// Pass the font size as a CSS Custom Property for dynamic height calculations
+	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
+		// Text & Font
 		color: textColor,
 		fontSize: fontSize,
-		'--jump-link-font-size': fontSize || '18px', // Use font size or a default
-	};
-	
-	const linkStyle = {
-		'--link-bg-color': layout === 'horizontal' ? linkBackgroundColor : undefined,
-		borderColor: layout === 'horizontal' ? linkBorderColor : undefined,
-		borderRadius: layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
-		color: linkColor, // Always apply the custom link color
-		'--link-bg-hover-color': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
+		'--jump-link-font-size': fontSize || '18px',
+		
+		// Link Variables (Applied to wrapper, consumed by children)
+		'--seo44-link-color': linkColor,
+		'--seo44-link-bg': layout === 'horizontal' ? linkBackgroundColor : undefined,
+		'--seo44-link-hover-bg': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
+		'--seo44-link-border-color': layout === 'horizontal' ? linkBorderColor : undefined,
+		'--seo44-link-radius': layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 	};
 	
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
@@ -49,7 +49,8 @@ const { headings, showHeading, headingText, layout, isCollapsible, listStyle, fo
                     <ListTag id="seo44-jump-links-list">
                         {headings.filter(h => h.isVisible !== false).map(h => (
                             <li key={h.anchor}>
-                                <a href={`#${h.anchor}`} style={linkStyle}>{h.linkText}</a>
+								<a href={`#${h.anchor}`}>{h.linkText}</a>
+				
                             </li>
                         ))}
                     </ListTag>

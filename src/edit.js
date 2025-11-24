@@ -320,7 +320,6 @@ useEffect(() => {
                     <p className="description">
                         {__('Select which heading levels from your post content should appear in the jump links list.', 'jump-links-block-seo-44')}
                     </p>
-					<p>{__('Select heading levels to include:', 'jump-links-block-seo-44')}</p>
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
 					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	

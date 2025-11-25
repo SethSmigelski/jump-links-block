@@ -3,18 +3,21 @@
 window.addEventListener('load', function () {
     const jumpLinksBlocks = document.querySelectorAll('.wp-block-seo44-jump-links');
 
-// Clean, delegated click listener - SMOOTH SCROLLING LOGIC
-    block.addEventListener('click', function(e) {
-        const link = e.target.closest('a[href^="#"]');
-        if (link) {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+jumpLinksBlocks.forEach(block => {
+        
+        // --- SMOOTH SCROLLING LOGIC (Event Delegation) ---
+        // Clean, delegated click listener attached to the block itself
+        block.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href^="#"]');
+            if (link) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             }
-        }
-    });
+        });
 
         // --- COLLAPSIBLE LOGIC (SIMPLIFIED & ROBUST) ---
         if (block.classList.contains('is-collapsible')) {

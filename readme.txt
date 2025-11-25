@@ -63,11 +63,11 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Layout Control:** Display your links in a standard vertical list or a modern horizontal, button-style layout.
 
-* **Block Background:** Set a background color for the entire block container to make your table of contents pop or match your theme's card style (you can also control to margin, padding, and border styling for the block).
+* **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
 
 * **Typography:** Control the **font size** with a simple picker, including a reset button. 
 
-* **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
+* **Block Background:** Set a background color for the entire block container to make your table of contents pop or match your theme's card style (you can also control the margin, padding, and border styling for the block).
 
 * **Full Color Control:** Use integrated color pickers to customize: **Link Color**, **Other Text Color** (for bullets, numbers, and the main heading).
 
@@ -178,7 +178,6 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 * FEATURE: **Smart Indentation:** Added a "Create Visual Hierarchy" toggle. When enabled, H3 and H4 sub-headings are visually indented to create a clear, nested outline structure.
 * FEATURE: **Block Background:** You can now set a background color for the entire block container, perfect for creating "card-style" floating navigation.
 
-
 = 1.9.2 =
 * FEATURE: Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.
 * FEATURE: Added a "Title tag" control. You can now choose the specific HTML tag (H2, H3, H4, H5, Paragraph, or Div) for the "On This Page" heading to better match your document structure.
@@ -187,11 +186,6 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 * PERFORMANCE: Refactored the front-end JavaScript to use event delegation for smooth scrolling. This reduces memory usage by attaching a single event listener to the block instead of individual listeners for every link.
 * TWEAK: Reorganized the sidebar settings for better clarity between Block Title settings and Content Inclusion settings.
 
-= 1.9.1 =
-* FIX (readme): Fixed a small typo in the readme.txt file.
-
-= 1.9.0 =
-* HELLO WORLD: Initial release to the WordPress Plugin Directory.
 
 For a complete list of changes, please see the [full changelog](https://seo44plugin.com/jump-links-block-seo-44/changelog/) or the changelog.txt file included with the plugin.
 

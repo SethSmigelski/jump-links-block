@@ -5,7 +5,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 * **Tags:** block, jump links, on this page, table of contents, jump links block
 * **Requires at least:** 5.5
 * **Tested up to:** 6.8
-* **Stable tag:** 1.9.1
+* **Stable tag:** 2.0.0
 * **Requires PHP:** 7.4
 * **License:** GPLv2 or later
 * **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
@@ -71,14 +71,18 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 * **Organized Sidebar:** All styling controls are neatly organized in a dedicated "Appearance" panel.
 
 * **Layout Control:** Display your links in a standard vertical list or a modern horizontal, button-style layout.
+  
+* **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
 
 * **Typography:** Control the **font size** with a simple picker, including a reset button. 
 
-* **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
+* **Block Background:** Set a background color for the entire block container to make your table of contents pop or match your theme's card style (you can also control the margin, padding, and border styling for the block).
 
 * **Full Color Control:** Use integrated color pickers to customize: **Link Color**, **Other Text Color** (for bullets, numbers, and the main heading).
 
 * **Conditional Horizontal Link Styles:** When in the horizontal layout, you can fine-tune the design with controls for  **Link Background Color**, **Link Background Color on hover**, **Link Border Color**, and **border radius**.
+
+* **Visual Hierarchy:** Optional **"Smart Indentation"** creates a nested outline look, making it easier for readers to scan your document structure in a larger Table of Contents (e.g., indenting H3s under H2s).
 
 ---
 
@@ -87,6 +91,10 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 * **Smooth Scrolling:** Clicking a link smoothly scrolls the user to the relevant section of the page, providing a modern and pleasant user experience.
 
 * **Collapsible List:** Optional feature to collapse long lists with an elegant "Show More" / "Show Less" SVG icon button to expand and contract the list horizontally or vertically.
+
+* **Sticky Navigation:** Optionally, keep the table of contents pinned to the viewport as users scroll, ensuring navigation is always accessible for long articles.
+
+* **Smart Sticky Controls:**  Includes a Top Offset setting to prevent the block from hiding behind your site's sticky header, and a Disable on Mobile strategy to prevent it from blocking content on small screens.
 
 ---
 
@@ -153,6 +161,17 @@ No. The block is designed to be smart about this. If a heading block already has
 
 **Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.” This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, assign a different ID to the block heading to resolve the conflict.
 
+### How do I make the Table of Contents stay visible while scrolling?
+In the block settings sidebar, look for the **Position Settings** panel. Toggle on **"Sticky Position"**.
+You can then use the **"Top Offset"** slider to adjust how far from the top of the screen the block sits (useful if you have a sticky site header).
+
+### Why isn't the block "sticky" on my phone?
+The sticky feature includes a **"Disable on Mobile"** setting that is enabled by default.
+Sticky elements on mobile devices often cover up too much reading space and lead to a poor user experience. If you want it sticky on mobile, you can uncheck this box in the **Position Settings** panel.
+
+### Can I include more than one Jump Links Block per page?
+Yes. In fact, you can customize the second jump links block to appear different than the first. For example, you might have a horizontal jump links block at the top of your page containing jump links to each H2 heading. Lower on your webpage, you could add a second jump links block formatted as a numbered vertical list of links for each H3 heading in the biggest section of your page. 
+
 ### Why does the "Show More" button not work in the editor?
 The collapsible functionality and the **Show More** button, which features a down arrow icon, are front-end features that function using a JavaScript file. They are designed to work only on the live, published page. To give you an accurate preview, the editor displays a non-functional replica of the "Show More" button when the feature is enabled. You can hover over it to see a helpful tooltip, and clicking it will show an informational notice confirming that it's interactive on the front end.
 
@@ -193,17 +212,18 @@ Here’s how:
 ---
 
 ## Changelog
+### 2.0.0
+* **FEATURE:** **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers and a "Disable on Mobile" toggle to preserve screen space on small devices.
+* **FEATURE:** **Smart Indentation:** Added a "Create Visual Hierarchy" toggle. When enabled, H3 and H4 sub-headings are visually indented to create a clear, nested outline structure.
+* **FEATURE:** **Block Background:** You can now set a background color for the entire block container, perfect for creating "card-style" floating navigation.
 
 ### 1.9.2
-* FEATURE: Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.
-* FEATURE: Added a "Heading Level" control. You can now choose the specific HTML tag (H2, H3, H4, H5, Paragraph, or Div) for the "On This Page" heading to better match your document structure.
-* REFACTOR: Optimized the block's styling logic to use CSS variables on the parent container instead of inline styles for every link. This reduces the block's HTML size and improves rendering performance.
-* FIX: Resolved an accessibility and HTML validation issue where using multiple Jump Links blocks on a single page created duplicate element IDs. Each block now generates a unique instance ID.
-* PERFORMANCE: Refactored the front-end JavaScript to use event delegation for smooth scrolling. This reduces memory usage by attaching a single event listener to the block instead of individual listeners for every link.
-* TWEAK: Reorganized the sidebar settings for better clarity between Block Title settings and Content Inclusion settings.
-
-### 1.9.1
-* FIX (readme): Fixed a small typo in the readme.txt file.
+* **FEATURE:** Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.
+* **FEATURE:** Added a "Heading Level" control. You can now choose the specific HTML tag (H2, H3, H4, H5, Paragraph, or Div) for the "On This Page" heading to better match your document structure.
+* **REFACTOR:** Optimized the block's styling logic to use CSS variables on the parent container instead of inline styles for every link. This reduces the block's HTML size and improves rendering performance.
+* **FIX:** Resolved an accessibility and HTML validation issue where using multiple Jump Links blocks on a single page created duplicate element IDs. Each block now generates a unique instance ID.
+* **PERFORMANCE:** Refactored the front-end JavaScript to use event delegation for smooth scrolling. This reduces memory usage by attaching a single event listener to the block instead of individual listeners for every link.
+* **TWEAK:** Reorganized the sidebar settings for better clarity between Block Title settings and Content Inclusion settings.
 
 ### 1.9.0
 * **HELLO WORLD:** Initial release to the WordPress Plugin Directory.

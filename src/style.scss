@@ -135,6 +135,41 @@
     margin-top: 0.5em;
 }
 
+/* SMART INDENTATION (Visual Hierarchy) */
+/* Only apply when not horizontal, as indentation looks bad on buttons */
+
+/* BULLETED LISTS (UL): Use Margin to move bullet + text */
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ul li.seo44-jump-link-level-3 {
+    margin-left: 1.5em;
+    font-size: 0.95em; 
+    opacity: 0.9;
+}
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ul li.seo44-jump-link-level-4 {
+    margin-left: 3em;
+    font-size: 0.9em; 
+    opacity: 0.85;
+    list-style-type: circle; /* Change bullet style for hierarchy */
+}
+
+/* Override the Level 4 "Circle" bullet when "List Style: None" is selected */
+.wp-block-seo44-jump-links.list-style-none nav > ul li.seo44-jump-link-level-4,
+.wp-block-seo44-jump-links.list-style-none nav > ol li.seo44-jump-link-level-4 {
+    list-style-type: none;
+}
+
+/* NUMBERED LISTS (OL): Use Padding to keep numbers aligned, indent text only */
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-3 {
+    padding-left: 1.5em; /* Indent text only */
+    font-size: 0.95em; 
+    opacity: 0.9;
+}
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-4 {
+    padding-left: 3em; /* Indent text only */
+    font-size: 0.9em; 
+    opacity: 0.85;
+    /* Note: list-style-type is not changed, so numbers stay consistent */
+}
+
 /* STICKY JUMP LINKS */
 .wp-block-seo44-jump-links.is-sticky {
     position: sticky;
@@ -171,31 +206,36 @@
     padding-left: 0.5em;
 }
 
-/* SMART INDENTATION (Visual Hierarchy) */
-/* Only apply when not horizontal, as indentation looks bad on buttons */
-
-/* BULLETED LISTS (UL): Use Margin to move bullet + text */
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) ul li.seo44-jump-link-level-3 {
-    margin-left: 1.5em;
-    font-size: 0.95em; 
-    opacity: 0.9;
-}
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) ul li.seo44-jump-link-level-4 {
-    margin-left: 3em;
-    font-size: 0.9em; 
-    opacity: 0.85;
-    list-style-type: circle; /* Change bullet style for hierarchy */
+/* COLLAPSING TITLE for sticky */
+/* The Sentinel must be absolute so it doesn't affect layout */
+.wp-block-seo44-jump-links {
+    position: relative; /* Needed for absolute positioning of sentinel */
 }
 
-/* NUMBERED LISTS (OL): Use Padding to keep numbers aligned, indent text only */
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-3 {
-    padding-left: 1.5em; /* Indent text only */
-    font-size: 0.95em; 
-    opacity: 0.9;
+.seo44-sticky-sentinel {
+    position: absolute;
+    top: calc(var(--seo44-sticky-offset, 20px) * -1 - 1px); /* Sit just above the sticky threshold */
+    left: 0;
+    right: 0;
+    height: 1px;
+    pointer-events: none;
+    visibility: hidden;
 }
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-4 {
-    padding-left: 3em; /* Indent text only */
-    font-size: 0.9em; 
-    opacity: 0.85;
-    /* Note: list-style-type is not changed, so numbers stay consistent */
+
+/* The "Gentle" Collapse Animation */
+.wp-block-seo44-jump-links.is-stuck .wp-block-seo44-jump-links-heading {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+    /* Wait 1s, then slide up over 0.5s */
+    transition: max-height 0.5s ease 1s, opacity 0.3s ease 1s, margin 0.5s ease 1s;
+}
+
+/* Normal State (Not Stuck) */
+.wp-block-seo44-jump-links-heading {
+    /* Ensure we have a starting max-height for the transition to work */
+    max-height: 100px; 
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.3s ease, margin 0.5s ease;
 }

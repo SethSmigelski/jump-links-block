@@ -78,54 +78,45 @@ useEffect(() => {
 	        setAttributes({ blockInstanceId: uniqueId });
 	    }
 	
-        // Get all current heading blocks
+        // 1. Get all current heading blocks
         const currentBlocks = blocks
             .filter(block => block.name === 'core/heading' && headingLevels.includes(`h${block.attributes.level}`));
 
         // --- Tools for de-duping and warning ---
         const seenAnchors = new Set();
         let wasDuplicateFound = false;
-        // --- End New ---
 
-		// 1. Create Map (NOW CAPTURING LEVEL)
-        const currentHeadingsMap = new Map(
-            currentBlocks.map(block => {
-                const anchor = block.attributes.anchor || stripHtml(block.attributes.content).toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
-                return [anchor, { 
-                    text: stripHtml(block.attributes.content),
-                    level: block.attributes.level 
-                }];
-            })
-        );
+        // 2. Create Map of SAVED headings (Restored!)
+        // We need this to look up your previous customizations (link text, visibility)
+        const savedHeadingsMap = new Map(savedHeadings.map(h => [h.anchor, h]));
         
         const newHeadings = [];
 
-        // 2. Process all blocks in a single, robust pass
+
+        // 3. Process all blocks in a single, robust pass
         for (const block of currentBlocks) {
             const originalText = stripHtml(block.attributes.content);
             
-            // 3. Generate a base anchor
+            // Generate a base anchor
             let baseAnchor = block.attributes.anchor || originalText.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
             
-            // 4. --- THIS IS THE CRITICAL DE-DUPING STEP ---
+            // De-duping logic
             let uniqueAnchor = baseAnchor;
             let counter = 2;
-            
-            // Keep checking until we find a unique ID
+
             while (seenAnchors.has(uniqueAnchor)) {
                 uniqueAnchor = `${baseAnchor}-${counter}`;
                 counter++;
-                wasDuplicateFound = true; // Set the flag!
+                wasDuplicateFound = true; 
             }
             seenAnchors.add(uniqueAnchor);
-            // --- END DE-DUPE ---
-
-            // 5. Update the block in the editor if its anchor is now different
+            
+			// Update the block in the editor if its anchor changed
             if (block.attributes.anchor !== uniqueAnchor) {
                 updateBlockAttributes(block.clientId, { anchor: uniqueAnchor });
             }
 
-            // 6. Reconcile with saved state to preserve custom link text and visibility
+            // Reconcile with saved state to preserve custom link text and visibility
             // Try to find the old state using either the block's original anchor or the new unique one
             const oldState = savedHeadingsMap.get(block.attributes.anchor) || savedHeadingsMap.get(uniqueAnchor);
             
@@ -133,7 +124,7 @@ useEffect(() => {
             const linkText = wasLinkTextManuallyEdited ? oldState.linkText : originalText;
             const isVisible = oldState ? oldState.isVisible : true;
 
-            // 7. Add to our new list
+            // Add to our new list
             newHeadings.push({
                 anchor: uniqueAnchor,
                 text: originalText,
@@ -143,12 +134,12 @@ useEffect(() => {
             });
         }
 
-        // 8. Only update attributes if the final list is different.
+        // Only update attributes if the final list is different.
         if (JSON.stringify(newHeadings) !== JSON.stringify(savedHeadings)) {
             setAttributes({ headings: newHeadings });
         }
 
-        // 9. Inform the user via a SNACKBAR message
+        // Inform the user via a SNACKBAR message
         // If we duplicates are found, show a snackbar warning.
         if (wasDuplicateFound) {
             createInfoNotice(
@@ -439,7 +430,8 @@ useEffect(() => {
 									</li>
 								) : (
 									heading.isVisible !== false && (
-										<li key={heading.anchor}
+										<li 
+											key={heading.anchor}
 											className={isSmartIndentation ? `seo44-jump-link-level-${heading.level}` : ''}
 										>
 											<a href={`#${heading.anchor}`} onClick={(e) => e.preventDefault()}>

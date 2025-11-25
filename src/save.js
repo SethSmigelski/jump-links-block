@@ -7,8 +7,9 @@ export default function save({ attributes }) {
 const { 
 	blockInstanceId, layout, isCollapsible, 
 	headings, showHeading, headingText, headingTag, 
-	listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius, 
-	isSticky, stickyOffset, stickyStrategy 
+	listStyle, fontSize, textColor, linkColor,  blockBackgroundColor,
+	linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius, 
+	isSticky, stickyOffset, stickyStrategy, isSmartIndentation,
 } = attributes;
 	
 	// Pass the font size as a CSS Custom Property for dynamic height calculations

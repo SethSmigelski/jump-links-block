@@ -1,4 +1,4 @@
-// src/view.js (Final Version)
+// src/view.js
 
 window.addEventListener('load', function () {
     const jumpLinksBlocks = document.querySelectorAll('.wp-block-seo44-jump-links');
@@ -53,6 +53,31 @@ jumpLinksBlocks.forEach(block => {
                 });
             }
         }
+		// --- STICKY STATE DETECTION ---
+	    if ('IntersectionObserver' in window) {
+	        const stickyObserver = new IntersectionObserver((entries) => {
+	            entries.forEach(entry => {
+	                // Find the parent block of this sentinel
+	                const block = entry.target.closest('.wp-block-seo44-jump-links');
+	                
+	                // If the sentinel is NOT intersecting, it means it has scrolled UP past the top.
+	                // Since it sits *above* our sticky point, this means the block is now stuck.
+	                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+	                    block.classList.add('is-stuck');
+	                } else {
+	                    block.classList.remove('is-stuck');
+	                }
+	            });
+	        }, {
+	            threshold: 0,
+	            rootMargin: "0px" // Trigger exactly at the viewport edge
+	        });
+	
+	        // Find and observe all sentinels
+	        block.querySelectorAll('.seo44-sticky-sentinel').forEach(sentinel => {
+	            stickyObserver.observe(sentinel);
+	        });
+	    }
 	
 		// --- SCROLLSPY LOGIC ---
 	    // Only run if the browser supports IntersectionObserver

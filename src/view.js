@@ -57,24 +57,14 @@ jumpLinksBlocks.forEach(block => {
 	    if ('IntersectionObserver' in window) {
 	        const stickyObserver = new IntersectionObserver((entries) => {
 	            entries.forEach(entry => {
-                    // --- DEBUGGING START ---
-                     console.log('Sticky Observer:', {
-                        isIntersecting: entry.isIntersecting,
-                        top: entry.boundingClientRect.top,
-                       sentinelTop: window.getComputedStyle(entry.target).top
-                     });
-                    // --- DEBUGGING END ---
-
 	                // We already know which block this is because we are inside the forEach(block) loop!
 	                
 	                // Logic: 
                     // 1. !isIntersecting: The sentinel has gone "out of bounds" (scrolled up).
                     // 2. top < 0: It went out the TOP, not the bottom.
 	                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-                         console.log('-> STATUS: STUCK'); // Debug
 	                    block.classList.add('is-stuck');
 	                } else {
-                         console.log('-> STATUS: UNSTUCK'); // Debug
 	                    block.classList.remove('is-stuck');
 	                }
 	            });

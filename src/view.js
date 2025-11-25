@@ -57,8 +57,7 @@ jumpLinksBlocks.forEach(block => {
 	    if ('IntersectionObserver' in window) {
 	        const stickyObserver = new IntersectionObserver((entries) => {
 	            entries.forEach(entry => {
-	                // Find the parent block of this sentinel
-	                const block = entry.target.closest('.wp-block-seo44-jump-links');
+	                // We already know which block this is because we are inside the forEach(block) loop!
 	                
 	                // If the sentinel is NOT intersecting, it means it has scrolled UP past the top.
 	                // Since it sits *above* our sticky point, this means the block is now stuck.

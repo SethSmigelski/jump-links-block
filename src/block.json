@@ -2,6 +2,9 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "attributes": {
+    "blockInstanceId": {
+        "type": "string"
+    },
     "linkColor": {
       "type": "string",
       "default": "#0073aa"

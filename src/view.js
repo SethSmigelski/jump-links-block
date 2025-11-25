@@ -54,4 +54,41 @@ jumpLinksBlocks.forEach(block => {
             }
         }
     });
+	// --- SCROLLSPY LOGIC ---
+    // Only run if the browser supports IntersectionObserver
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -60% 0px', // Adjusts the "active zone" of the screen
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 1. Find the link that points to this heading
+                    const activeId = entry.target.getAttribute('id');
+                    const activeLink = block.querySelector(`a[href="#${activeId}"]`);
+
+                    if (activeLink) {
+                        // 2. Remove active class from all links in this block
+                        block.querySelectorAll('a').forEach(link => link.classList.remove('is-active'));
+                        
+                        // 3. Add active class to the current link
+                        activeLink.classList.add('is-active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Start watching all headings that are linked in our TOC
+        const links = block.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            const id = link.getAttribute('href').substring(1);
+            const heading = document.getElementById(id);
+            if (heading) {
+                observer.observe(heading);
+            }
+        });
+    }
 });

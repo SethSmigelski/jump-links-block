@@ -57,6 +57,7 @@ const {
 
 	return (
 		<div {...blockProps}>
+			<div className="seo44-sticky-sentinel" aria-hidden="true"></div>
 			{showHeading && <RichText.Content 
 				tagName={headingTag || 'h2'} // Fallback to h2 if undefined
 				className="wp-block-seo44-jump-links-heading" 

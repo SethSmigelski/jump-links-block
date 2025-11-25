@@ -18,6 +18,7 @@ const {
 		color: textColor,
 		fontSize: fontSize,
 		'--jump-link-font-size': fontSize || '18px',
+		'--seo44-block-bg': blockBackgroundColor,
 		
 		// Link Variables (Applied to wrapper, consumed by children)
 		'--seo44-link-color': linkColor,
@@ -64,7 +65,10 @@ const {
                 <nav aria-label={__('Table of contents', 'jump-links-block-seo-44')}>
                     <ListTag id={listId}>
                         {headings.filter(h => h.isVisible !== false).map(h => (
-                            <li key={h.anchor}>
+                            <li 
+								key={h.anchor}
+								className={isSmartIndentation ? `seo44-jump-link-level-${h.level}` : ''}
+							>
 								<a href={`#${h.anchor}`}>{h.linkText}</a>
 				
                             </li>

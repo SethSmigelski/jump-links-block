@@ -133,6 +133,9 @@ No. The block is designed to be smart about this. If a heading block already has
 
 **Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.” This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, assign a different ID to the block heading to resolve the conflict.
 
+= Can I include more than one Jump Links Block per page? =
+Yes. In fact, you can customize the second jump links block to appear different than the first. For example, you might have a horizontal jump links block at the top of your page containing jump links to each H2 heading. Lower on your webpage, you could add a second jump links block formatted as a numbered vertical list of links for each H3 heading in the biggest section of your page. 
+
 = Why does the "Show More" button not work in the editor? =
 The collapsible functionality and the **Show More** button, which features a down arrow icon, are front-end features that function using a JavaScript file. They are designed to work only on the live, published page. To give you an accurate preview, the editor displays a non-functional replica of the "Show More" button when the feature is enabled. You can hover over it to see a helpful tooltip, and clicking it will show an informational notice confirming that it's interactive on the front end.
 

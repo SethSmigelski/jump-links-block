@@ -49,6 +49,7 @@
       "default": [],
       "items": {
         "properties": {
+          "level": { "type": "integer" },
           "anchor": {
             "type": "string"
           },

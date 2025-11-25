@@ -158,6 +158,8 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 * FEATURE: Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.
 * FEATURE: Added a "Heading Level" control. You can now choose the specific HTML tag (H2, H3, H4, H5, Paragraph, or Div) for the "On This Page" heading to better match your document structure.
 * REFACTOR: Optimized the block's styling logic to use CSS variables on the parent container instead of inline styles for every link. This reduces the block's HTML size and improves rendering performance.
+* FIX: Resolved an accessibility and HTML validation issue where using multiple Jump Links blocks on a single page created duplicate element IDs. Each block now generates a unique instance ID.
+* PERFORMANCE: Refactored the front-end JavaScript to use event delegation for smooth scrolling. This reduces memory usage by attaching a single event listener to the block instead of individual listeners for every link.
 * TWEAK: Reorganized the sidebar settings for better clarity between Block Title settings and Content Inclusion settings.
 
 = 1.9.1 =

@@ -136,6 +136,6 @@
   },
   "textdomain": "jump-links-block-seo-44",
   "title": "SEO 44 Jump Links",
-  "version": "1.9.4",
+  "version": "2.0.0",
   "viewScript": "file:./view.js"
 }

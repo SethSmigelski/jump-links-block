@@ -99,7 +99,7 @@
     },
     "stickyStrategy": {
         "type": "string",
-        "default": "desktop-only" // Options: 'always', 'desktop-only'
+        "default": "desktop-only"
     }
   },
   "category": "text",

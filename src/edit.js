@@ -33,8 +33,9 @@ export default function Edit({ attributes, setAttributes }) {
 		headingLevels, headings: savedHeadings, showHeading, headingText, headingTag, 
 		layout, listStyle, 
 		isEditing, isCollapsible, 
-		fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius,
-		isSticky, stickyOffset, stickyStrategy
+		fontSize, textColor, linkColor, blockBackgroundColor,
+		linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius,
+		isSticky, stickyOffset, stickyStrategy, isSmartIndentation,
 	} = attributes;
 	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
@@ -49,6 +50,7 @@ export default function Edit({ attributes, setAttributes }) {
 		'--seo44-link-hover-bg': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
 		'--seo44-link-border-color': layout === 'horizontal' ? linkBorderColor : undefined,
 		'--seo44-link-radius': layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
+		'--seo44-block-bg': blockBackgroundColor,
 	};
 	// Determine which HTML tag to use for the list
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
@@ -76,17 +78,25 @@ useEffect(() => {
 	        setAttributes({ blockInstanceId: uniqueId });
 	    }
 	
-        // 1. Get all current heading blocks
+        // Get all current heading blocks
         const currentBlocks = blocks
             .filter(block => block.name === 'core/heading' && headingLevels.includes(`h${block.attributes.level}`));
 
-        // --- NEW: Tools for de-duping and warning ---
+        // --- Tools for de-duping and warning ---
         const seenAnchors = new Set();
         let wasDuplicateFound = false;
         // --- End New ---
 
-        // Create a Map of the old headings for fast lookup to preserve customizations
-        const savedHeadingsMap = new Map(savedHeadings.map(h => [h.anchor, h]));
+		// 1. Create Map (NOW CAPTURING LEVEL)
+        const currentHeadingsMap = new Map(
+            currentBlocks.map(block => {
+                const anchor = block.attributes.anchor || stripHtml(block.attributes.content).toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+                return [anchor, { 
+                    text: stripHtml(block.attributes.content),
+                    level: block.attributes.level 
+                }];
+            })
+        );
         
         const newHeadings = [];
 
@@ -129,6 +139,7 @@ useEffect(() => {
                 text: originalText,
                 linkText: linkText,
                 isVisible: isVisible,
+                level: block.attributes.level,
             });
         }
 
@@ -269,6 +280,11 @@ useEffect(() => {
 					<PanelColorSettings
 						title={__('Colors', 'jump-links-block-seo-44')}
 						colorSettings={[
+							{ 
+                                value: blockBackgroundColor, 
+                                onChange: (newColor) => setAttributes({ blockBackgroundColor: newColor }), 
+                                label: __('Block Background', 'jump-links-block-seo-44') 
+                            },
 							{ value: linkColor, onChange: (newColor) => setAttributes({ linkColor: newColor }), label: __('Link Color', 'jump-links-block-seo-44') },
 							{ value: textColor, onChange: (newColor) => setAttributes({ textColor: newColor }), label: __('Other Text Color', 'jump-links-block-seo-44') },
         				]}
@@ -336,7 +352,13 @@ useEffect(() => {
                     </p>
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
-					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
+					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />
+					<ToggleControl
+                        label={__('Create Visual Hierarchy', 'jump-links-block-seo-44')}
+                        help={__('Indents sub-headings (H3, H4) to create a nested outline structure.', 'jump-links-block-seo-44')}
+                        checked={isSmartIndentation}
+                        onChange={() => setAttributes({ isSmartIndentation: !isSmartIndentation })}
+                    />
 				</PanelBody>
 				{/* Panel 4: Sticky Position settings */}																
 				<PanelBody title={__('Position Settings', 'jump-links-block-seo-44')}>
@@ -417,7 +439,9 @@ useEffect(() => {
 									</li>
 								) : (
 									heading.isVisible !== false && (
-										<li key={heading.anchor}>
+										<li key={heading.anchor}
+											className={isSmartIndentation ? `seo44-jump-link-level-${heading.level}` : ''}
+										>
 											<a href={`#${heading.anchor}`} onClick={(e) => e.preventDefault()}>
 												{heading.linkText}
 											</a>

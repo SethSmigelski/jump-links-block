@@ -53,17 +53,28 @@ jumpLinksBlocks.forEach(block => {
                 });
             }
         }
-		// --- STICKY STATE DETECTION ---
+// --- STICKY STATE DETECTION ---
 	    if ('IntersectionObserver' in window) {
 	        const stickyObserver = new IntersectionObserver((entries) => {
 	            entries.forEach(entry => {
+                    // --- DEBUGGING START ---
+                     console.log('Sticky Observer:', {
+                        isIntersecting: entry.isIntersecting,
+                        top: entry.boundingClientRect.top,
+                       sentinelTop: window.getComputedStyle(entry.target).top
+                     });
+                    // --- DEBUGGING END ---
+
 	                // We already know which block this is because we are inside the forEach(block) loop!
 	                
-	                // If the sentinel is NOT intersecting, it means it has scrolled UP past the top.
-	                // Since it sits *above* our sticky point, this means the block is now stuck.
+	                // Logic: 
+                    // 1. !isIntersecting: The sentinel has gone "out of bounds" (scrolled up).
+                    // 2. top < 0: It went out the TOP, not the bottom.
 	                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                         console.log('-> STATUS: STUCK'); // Debug
 	                    block.classList.add('is-stuck');
 	                } else {
+                         console.log('-> STATUS: UNSTUCK'); // Debug
 	                    block.classList.remove('is-stuck');
 	                }
 	            });
@@ -73,7 +84,11 @@ jumpLinksBlocks.forEach(block => {
 	        });
 	
 	        // Find and observe all sentinels
-	        block.querySelectorAll('.seo44-sticky-sentinel').forEach(sentinel => {
+            const sentinels = block.querySelectorAll('.seo44-sticky-sentinel');
+            
+             console.log('Sentinels found in block:', sentinels.length); // Debug check
+
+	        sentinels.forEach(sentinel => {
 	            stickyObserver.observe(sentinel);
 	        });
 	    }

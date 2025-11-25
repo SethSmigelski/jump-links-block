@@ -2,12 +2,29 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "attributes": {
-    "linkColor": { "type": "string", "default": "#0073aa" },
-    "linkBackgroundColor": { "type": "string", "default": "#f0f0f0" },
-    "linkBackgroundColorHover": { "type": "string", "default": "#e4e4e4" }, 
-    "linkBorderColor": { "type": "string", "default": "#dddddd" },
-    "linkBorderRadius": { "type": "number", "default": 10 },
-    "linkPadding": { "type": "string" },
+    "linkColor": {
+      "type": "string",
+      "default": "#0073aa"
+    },
+    "linkBackgroundColor": {
+      "type": "string",
+      "default": "#f0f0f0"
+    },
+    "linkBackgroundColorHover": {
+      "type": "string",
+      "default": "#e4e4e4"
+    },
+    "linkBorderColor": {
+      "type": "string",
+      "default": "#dddddd"
+    },
+    "linkBorderRadius": {
+      "type": "number",
+      "default": 10
+    },
+    "linkPadding": {
+      "type": "string"
+    },
     "fontSize": {
       "type": "string"
     },
@@ -26,8 +43,7 @@
       "type": "string"
     },
     "headings": {
-      "default": [
-      ],
+      "default": [],
       "items": {
         "properties": {
           "anchor": {
@@ -101,4 +117,4 @@
   "title": "SEO 44 Jump Links",
   "version": "1.9.2",
   "viewScript": "file:./view.js"
-} 
+}

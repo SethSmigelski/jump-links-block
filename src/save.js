@@ -4,7 +4,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	// Read directly from attributes, no hooks!
-const { blockInstanceId, headings, showHeading, headingText, headingTag, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
+const { blockInstanceId, headings, showHeading, headingText, headingTag, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius, stickyStrategy } = attributes;
 
 	
 	// Pass the font size as a CSS Custom Property for dynamic height calculations
@@ -21,6 +21,9 @@ const { blockInstanceId, headings, showHeading, headingText, headingTag, layout,
 		'--seo44-link-hover-bg': layout === 'horizontal' ? linkBackgroundColorHover : undefined,
 		'--seo44-link-border-color': layout === 'horizontal' ? linkBorderColor : undefined,
 		'--seo44-link-radius': layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
+
+		// sticky positioning
+    	'--seo44-sticky-offset': isSticky ? `${stickyOffset}px` : undefined
 	};
 	
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
@@ -30,8 +33,8 @@ const { blockInstanceId, headings, showHeading, headingText, headingTag, layout,
 	
 
 	const blockProps = useBlockProps.save({
-   		className: `${layout === 'horizontal' ? 'is-layout-horizontal' : ''} ${isCollapsible ? 'is-collapsible' : ''} ${listStyle === 'none' ? 'list-style-none' : ''}`.trim(),
-    	style,
+   		className: `${layout === 'horizontal' ? 'is-layout-horizontal' : ''} ${isCollapsible ? 'is-collapsible' : ''} ${listStyle === 'none' ? 'list-style-none' : ''} ${isSticky ? 'is-sticky' : ''} ${stickyStrategy === 'desktop-only' ? 'sticky-desktop-only' : ''}`.trim(),
+		style,
 	});
 	
 	// Show More Expand and Contract Arrows

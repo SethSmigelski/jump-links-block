@@ -150,8 +150,20 @@
     }
 }
 /* Add scrollspy - active section link is bold and horizontal background */
+/* Base Active Style (Bold text for everyone) */
 .wp-block-seo44-jump-links a.is-active {
     font-weight: bold;
-    color: var(--seo44-link-color); /* Or a distinct 'active' color */
-	background-color: var(--seo44-link-hover-bg); /* hover background for Horizontal list  */
+    color: var(--seo44-link-color);
+}
+
+/* Horizontal-Only Active Style (Background color) */
+.wp-block-seo44-jump-links.is-layout-horizontal a.is-active {
+    background-color: var(--seo44-link-hover-bg);
+    text-decoration: none; /* Optional: remove underline when active */
+}
+
+/* Vertical-Only Active Style (Left Border indicator) */
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) a.is-active {
+    border-left: 3px solid var(--seo44-link-color);
+    padding-left: 0.5em;
 }

@@ -68,7 +68,7 @@ useEffect(() => {
 	        // Generate a random unique string
 	        const uniqueId = Math.random().toString(36).substr(2, 9);
 	        setAttributes({ blockInstanceId: uniqueId });
-	    },
+	    }
 	
         // 1. Get all current heading blocks
         const currentBlocks = blocks

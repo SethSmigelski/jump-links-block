@@ -3,19 +3,18 @@
 window.addEventListener('load', function () {
     const jumpLinksBlocks = document.querySelectorAll('.wp-block-seo44-jump-links');
 
-    jumpLinksBlocks.forEach(block => {
-        // --- SMOOTH SCROLLING LOGIC ---
-        const links = block.querySelectorAll('a[href^="#"]');
-        links.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+// Clean, delegated click listener - SMOOTH SCROLLING LOGIC
+    block.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="#"]');
+        if (link) {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
 
         // --- COLLAPSIBLE LOGIC (SIMPLIFIED & ROBUST) ---
         if (block.classList.contains('is-collapsible')) {

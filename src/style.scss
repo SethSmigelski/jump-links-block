@@ -113,7 +113,7 @@
     max-height: 1000px;
 }
 
-/* HORIZONTAL LAYOUT: BUTTON BESIDE LIST */
+/* HORIZONTAL LAYOUT: BUTTONS BESIDE LIST */
 .wp-block-seo44-jump-links.is-layout-horizontal.is-collapsible > nav {
     display: flex;
     align-items: flex-start;
@@ -130,4 +130,28 @@
 .wp-block-seo44-jump-links.is-layout-horizontal.is-collapsible > nav > .seo-44-show-more {
     flex-shrink: 0;
     margin-top: 0.5em;
+}
+
+/* STICKY JUMP LINKS */
+.wp-block-seo44-jump-links.is-sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: var(--seo44-sticky-offset, 20px);
+    z-index: 10;
+    /* Optional: Add a slight shadow or background when sticky */
+    background-color: var(--seo44-link-bg, #fff); 
+}
+
+/* The "Disable on Mobile" Logic */
+@media (max-width: 781px) {
+    .wp-block-seo44-jump-links.is-sticky.sticky-desktop-only {
+        position: static; /* Revert to normal flow */
+        top: auto;
+    }
+}
+/* Add scrollspy - active section link is bold and horizontal background */
+.wp-block-seo44-jump-links a.is-active {
+    font-weight: bold;
+    color: var(--seo44-link-color); /* Or a distinct 'active' color */
+	background-color: var(--seo44-link-hover-bg); /* hover background for Horizontal list  */
 }

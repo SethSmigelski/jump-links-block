@@ -50,8 +50,12 @@ const { headings, showHeading, headingText, headingTag, layout, isCollapsible, l
 				value={headingText} 
 			/>}
 			{headings && headings.length > 0 && (
+				// Destructure blockInstanceId
+				const { blockInstanceId, ... } = attributes;
+				const listId = `seo44-jump-links-list-${blockInstanceId}`;
+			 
                 <nav aria-label={__('Table of contents', 'jump-links-block-seo-44')}>
-                    <ListTag id="seo44-jump-links-list">
+                    <ListTag id={listId}>
                         {headings.filter(h => h.isVisible !== false).map(h => (
                             <li key={h.anchor}>
 								<a href={`#${h.anchor}`}>{h.linkText}</a>
@@ -62,7 +66,7 @@ const { headings, showHeading, headingText, headingTag, layout, isCollapsible, l
                     {isCollapsible && (
 						<button type="button" className="seo-44-show-more" aria-label={__('Show More', 'jump-links-block-seo-44')}
 							aria-expanded="false"
-                            aria-controls="seo44-jump-links-list"
+                            aria-controls={listId}
 						>
 							{arrowDownIcon}
 							{arrowUpIcon}

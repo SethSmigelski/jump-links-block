@@ -219,7 +219,7 @@
     visibility: hidden;
     pointer-events: none;
     /* This is the magic: The sentinel sits at the "sticky threshold" */
-    top: calc( (var(--seo44-sticky-offset, 20px) + 1px) * -1 ); 
+    top: calc( (var(--seo44-sticky-offset, 20px) + 3px) * -1 ); 
     height: 1px;
 }
 

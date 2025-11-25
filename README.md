@@ -96,6 +96,8 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Smart Sticky Controls:**  Includes a Top Offset setting to prevent the block from hiding behind your site's sticky header, and a Disable on Mobile strategy to prevent it from blocking content on small screens.
 
+* **Auto-Hide Title:** When using Sticky Positioning, the block title (e.g., "On This Page") automatically fades out and collapses once the block sticks to the top of the screen. This maximizes reading space while keeping the navigation links accessible.
+
 ---
 
 ## Installation
@@ -214,6 +216,7 @@ Here’s how:
 ## Changelog
 ### 2.0.0
 * **FEATURE:** **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers and a "Disable on Mobile" toggle to preserve screen space on small devices.
+* **FEATURE:** **Auto-Hide Title:** Implemented a smart "sticky state" detection. When the block sticks, the title gently collapses and fades out to keep the interface clean (this occurs when a block title is used alongside sticky positioning).
 * **FEATURE:** **Smart Indentation:** Added a "Create Visual Hierarchy" toggle. When enabled, H3 and H4 sub-headings are visually indented to create a clear, nested outline structure.
 * **FEATURE:** **Block Background:** You can now set a background color for the entire block container, perfect for creating "card-style" floating navigation.
 

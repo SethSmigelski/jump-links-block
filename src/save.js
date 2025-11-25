@@ -4,8 +4,9 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	// Read directly from attributes, no hooks!
-const { headings, showHeading, headingText, headingTag, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
-
+const { blockInstanceId, headings, showHeading, headingText, headingTag, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
+const listId = `seo44-jump-links-list-${blockInstanceId}`;
+	
 	// Pass the font size as a CSS Custom Property for dynamic height calculations
 	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
@@ -50,10 +51,6 @@ const { headings, showHeading, headingText, headingTag, layout, isCollapsible, l
 				value={headingText} 
 			/>}
 			{headings && headings.length > 0 && (
-				// Destructure blockInstanceId
-				const { blockInstanceId, ... } = attributes;
-				const listId = `seo44-jump-links-list-${blockInstanceId}`;
-			 
                 <nav aria-label={__('Table of contents', 'jump-links-block-seo-44')}>
                     <ListTag id={listId}>
                         {headings.filter(h => h.isVisible !== false).map(h => (

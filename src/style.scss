@@ -1,6 +1,8 @@
 .wp-block-seo44-jump-links{
 	margin-bottom: 1em;
+	background-color: var(--seo44-block-bg);
 }
+
 /* Style the On This Page Text */
 .wp-block-seo44-jump-links-heading{
 	font-size: calc(var(--jump-link-font-size, 1em) * 1.375);
@@ -139,7 +141,7 @@
     top: var(--seo44-sticky-offset, 20px);
     z-index: 10;
     /* Optional: Add a slight shadow or background when sticky */
-    background-color: var(--seo44-link-bg, #fff); 
+    background-color: var(--seo44-block-bg, #fff); 
 }
 
 /* The "Disable on Mobile" Logic */
@@ -166,4 +168,19 @@
 .wp-block-seo44-jump-links:not(.is-layout-horizontal) a.is-active {
     border-left: 3px solid var(--seo44-link-color);
     padding-left: 0.5em;
+}
+
+/* Smart Indentation (Visual Hierarchy) */
+/* Only apply when not horizontal, as indentation looks bad on buttons */
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) li.seo44-jump-link-level-3 {
+    margin-left: 1.5em;
+    font-size: 0.95em; 
+    opacity: 0.9;
+}
+
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) li.seo44-jump-link-level-4 {
+    margin-left: 3em;
+    font-size: 0.9em; 
+    opacity: 0.85;
+    list-style-type: circle; /* Visual distinction for deep nesting */
 }

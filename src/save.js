@@ -5,7 +5,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save({ attributes }) {
 	// Read directly from attributes, no hooks!
 const { blockInstanceId, headings, showHeading, headingText, headingTag, layout, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
-const listId = `seo44-jump-links-list-${blockInstanceId}`;
+
 	
 	// Pass the font size as a CSS Custom Property for dynamic height calculations
 	// Consolidate all dynamic styles onto the parent wrapper
@@ -24,6 +24,9 @@ const listId = `seo44-jump-links-list-${blockInstanceId}`;
 	};
 	
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
+	
+	// 2. Calculate the ID here (OUTSIDE the return statement)
+	const listId = `seo44-jump-links-list-${blockInstanceId}`;
 	
 
 	const blockProps = useBlockProps.save({

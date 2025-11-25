@@ -88,6 +88,18 @@
     },
     "textColor": {
       "type": "string"
+    },
+  "isSticky": {
+        "type": "boolean",
+        "default": false
+    },
+    "stickyOffset": {
+        "type": "number",
+        "default": 20
+    },
+    "stickyStrategy": {
+        "type": "string",
+        "default": "desktop-only" // Options: 'always', 'desktop-only'
     }
   },
   "category": "text",

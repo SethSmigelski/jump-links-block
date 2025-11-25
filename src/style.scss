@@ -10,7 +10,8 @@
 }
 
 /* Jump Links Block Styles */
-.wp-block-seo44-jump-links.list-style-none > ul {
+.wp-block-seo44-jump-links.list-style-none nav > ul,
+.wp-block-seo44-jump-links.list-style-none nav > ol {
     list-style-type: none;
     padding-left: 0;
 }
@@ -170,17 +171,31 @@
     padding-left: 0.5em;
 }
 
-/* Smart Indentation (Visual Hierarchy) */
+/* SMART INDENTATION (Visual Hierarchy) */
 /* Only apply when not horizontal, as indentation looks bad on buttons */
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) li.seo44-jump-link-level-3 {
+
+/* BULLETED LISTS (UL): Use Margin to move bullet + text */
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ul li.seo44-jump-link-level-3 {
     margin-left: 1.5em;
     font-size: 0.95em; 
     opacity: 0.9;
 }
-
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) li.seo44-jump-link-level-4 {
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ul li.seo44-jump-link-level-4 {
     margin-left: 3em;
     font-size: 0.9em; 
     opacity: 0.85;
-    list-style-type: circle; /* Visual distinction for deep nesting */
+    list-style-type: circle; /* Change bullet style for hierarchy */
+}
+
+/* NUMBERED LISTS (OL): Use Padding to keep numbers aligned, indent text only */
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-3 {
+    padding-left: 1.5em; /* Indent text only */
+    font-size: 0.95em; 
+    opacity: 0.9;
+}
+.wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-4 {
+    padding-left: 3em; /* Indent text only */
+    font-size: 0.9em; 
+    opacity: 0.85;
+    /* Note: list-style-type is not changed, so numbers stay consistent */
 }

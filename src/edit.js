@@ -136,7 +136,7 @@ useEffect(() => {
         if (wasDuplicateFound) {
             createInfoNotice(
             	__('Jump Links Block: Duplicate headings were found. Unique IDs have been auto-generated, but this may be a sign of redundancy. Please review your headings for clarity.', 'jump-links-block-seo-44'),
-            	{ To: 'snackbar' }
+            	{ type: 'snackbar' }
             );
         }
 

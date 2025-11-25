@@ -29,7 +29,13 @@ const arrowDownIcon = (
 	);
 
 export default function Edit({ attributes, setAttributes }) {
-	const { headingLevels, headings: savedHeadings, layout, showHeading, headingText, headingTag, isEditing, isCollapsible, listStyle, fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius } = attributes;
+	const { 
+		headingLevels, headings: savedHeadings, showHeading, headingText, headingTag, 
+		layout, listStyle, 
+		isEditing, isCollapsible, 
+		fontSize, textColor, linkColor, linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius,
+		isSticky, stickyOffset, stickyStrategy
+	} = attributes;
 	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
 		// Text & Font

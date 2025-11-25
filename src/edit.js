@@ -331,7 +331,35 @@ useEffect(() => {
 					<CheckboxControl label="H2" checked={headingLevels.includes('h2')} onChange={() => toggleHeadingLevel('h2')} />
 					<CheckboxControl label="H3" checked={headingLevels.includes('h3')} onChange={() => toggleHeadingLevel('h3')} />
 					<CheckboxControl label="H4" checked={headingLevels.includes('h4')} onChange={() => toggleHeadingLevel('h4')} />	
-				</PanelBody>				
+				</PanelBody>
+				{/* Panel 4: Sticky Position settings */}																
+				<PanelBody title={__('Position Settings', 'jump-links-block-seo-44')}>
+				    <ToggleControl
+				        label={__('Sticky Position', 'jump-links-block-seo-44')}
+				        help={__('Keep the table of contents visible while scrolling.', 'jump-links-block-seo-44')}
+				        checked={isSticky}
+				        onChange={() => setAttributes({ isSticky: !isSticky })}
+				    />
+				    {isSticky && (
+						<>
+				            <RangeControl
+				                label={__('Top Offset (px)', 'jump-links-block-seo-44')}
+				                value={stickyOffset}
+				                onChange={(value) => setAttributes({ stickyOffset: value })}
+				                min={0}
+				                max={200}
+				            />
+				            <ToggleControl
+				                label={__('Disable on Mobile', 'jump-links-block-seo-44')}
+				                help={__('Prevents the block from sticking on small screens to save reading space.', 'jump-links-block-seo-44')}
+				                checked={stickyStrategy === 'desktop-only'}
+				                onChange={(isChecked) => setAttributes({ 
+				                    stickyStrategy: isChecked ? 'desktop-only' : 'always' 
+				                })}
+				            />
+				        </>
+				    )}
+				</PanelBody>															
 			</InspectorControls>
 
 			<div {...blockProps}>

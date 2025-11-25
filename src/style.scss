@@ -209,17 +209,18 @@
 /* COLLAPSING TITLE for sticky */
 /* The Sentinel must be absolute so it doesn't affect layout */
 .wp-block-seo44-jump-links {
-    position: relative; /* Needed for absolute positioning of sentinel */
+    position: relative; /* Needed for absolute positioning */
 }
 
 .seo44-sticky-sentinel {
     position: absolute;
-    top: calc(var(--seo44-sticky-offset, 20px) * -1 - 1px); /* Sit just above the sticky threshold */
     left: 0;
     right: 0;
-    height: 1px;
-    pointer-events: none;
     visibility: hidden;
+    pointer-events: none;
+    /* This is the magic: The sentinel sits at the "sticky threshold" */
+    top: calc( (var(--seo44-sticky-offset, 20px) + 1px) * -1 ); 
+    height: 1px;
 }
 
 /* The "Gentle" Collapse Animation */

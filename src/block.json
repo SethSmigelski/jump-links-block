@@ -5,6 +5,7 @@
     "blockInstanceId": {
         "type": "string"
     },
+    "blockBackgroundColor": { "type": "string" },
     "linkColor": {
       "type": "string",
       "default": "#0073aa"
@@ -102,6 +103,7 @@
         "type": "string",
         "default": "desktop-only"
     },
+    "isSmartIndentation": { "type": "boolean", "default": true },
     "style": {
       "type": "object"
     }

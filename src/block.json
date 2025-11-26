@@ -105,7 +105,16 @@
     },
     "isSmartIndentation": { "type": "boolean", "default": true },
     "style": {
-      "type": "object"
+      "type": "object",
+      "default": {
+        "spacing": {
+          "padding": "var:preset|spacing|20",
+          "margin": {
+            "top": "var:preset|spacing|30",
+            "bottom": "var:preset|spacing|30"
+          }
+        }
+      }
     }
   },
   "category": "text",

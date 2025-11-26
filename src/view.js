@@ -6,7 +6,6 @@ window.addEventListener('load', function () {
 jumpLinksBlocks.forEach(block => {
         
         // --- SMOOTH SCROLLING LOGIC (With Offset) ---
-        // Clean, delegated click listener attached to the block itself
         block.addEventListener('click', function(e) {
             const link = e.target.closest('a[href^="#"]');
             if (link) {
@@ -15,26 +14,22 @@ jumpLinksBlocks.forEach(block => {
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    // 1. Check if we need an offset
-                    // We check if the block has the 'is-sticky' class (meaning the feature is enabled)
-                    // Note: We check 'is-sticky' (configuration), not 'is-stuck' (current state),
-                    // because clicking a link might *cause* the page to scroll and the block to stick.
-                    let offset = 0;
-                    if (block.classList.contains('is-sticky')) {
-                        // Retrieve the user setting from the data attribute
-                        const settingOffset = parseInt(block.getAttribute('data-seo44-jump-offset'), 10);
-                        if (!isNaN(settingOffset)) {
-                            offset = settingOffset;
-                        }
+                    // 1. Get the offset from our data attribute
+                    // (It will be 30 by default, or the user's custom value if sticky)
+                    let offset = 30; 
+                    const dataOffset = block.getAttribute('data-seo44-jump-offset');
+                    if (dataOffset) {
+                        offset = parseInt(dataOffset, 10);
                     }
 
-                    // 2. Calculate position
-                    // (Window Scroll Y + Element Rect Top) gives absolute position.
-                    // Then we subtract the offset.
+                    // 2. Calculate the position
+                    // elementRect.top is relative to viewport.
+                    // window.scrollY is current scroll amount.
+                    // We subtract the offset to stop *before* the element.
                     const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    const offsetPosition = elementPosition + window.scrollY - offset;
 
-                    // 3. Scroll
+                    // 3. Scroll there
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: "smooth"

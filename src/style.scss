@@ -1,5 +1,12 @@
 .wp-block-seo44-jump-links{
 	background-color: var(--seo44-block-bg);
+	/* Padding and margin to match default - correct for loading issue - can be superseded by user  */
+	padding-top: var(--wp--preset--spacing--30);
+  	padding-right: var(--wp--preset--spacing--30);
+  	padding-bottom: var(--wp--preset--spacing--30);
+  	padding-left: var(--wp--preset--spacing--30);
+	margin-top: var(--wp--preset--spacing--30);
+  	margin-bottom: var(--wp--preset--spacing--30);
 }
 
 /* Style the On This Page Text */

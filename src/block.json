@@ -12,7 +12,7 @@
     },
     "linkBackgroundColor": {
       "type": "string",
-      "default": "#f3f3f3"
+      "default": "#f4f4f4"
     },
     "linkBackgroundColorHover": {
       "type": "string",

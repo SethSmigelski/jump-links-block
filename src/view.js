@@ -14,26 +14,38 @@ jumpLinksBlocks.forEach(block => {
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    // 1. Get the offset from our data attribute
-                    // (It will be 30 by default, or the user's custom value if sticky)
-                    let offset = 30; 
-                    const dataOffset = block.getAttribute('data-seo44-jump-offset');
-                    if (dataOffset) {
-                        offset = parseInt(dataOffset, 10);
+					
+					// BRANCH A: IS IT STICKY?
+                    // If yes, use manual calculation to handle the Offset + Sticky Bar height
+                    if (block.classList.contains('is-sticky')) {
+	                    // 1. Get the offset from our data attribute
+	                    // (It will be 30 by default, or the user's custom value if sticky)
+	                    let offset = 30; 
+	                    const dataOffset = block.getAttribute('data-seo44-jump-offset');
+	                    if (dataOffset) {
+	                        offset = parseInt(dataOffset, 10);
+	                    }
+	
+	                    // 2. Calculate the position
+	                    // elementRect.top is relative to viewport.
+	                    // window.scrollY is current scroll amount.
+	                    // We subtract the offset to stop *before* the element.
+	                    const elementPosition = targetElement.getBoundingClientRect().top;
+	                    const offsetPosition = elementPosition + window.scrollY - offset;
+	
+	                    // 3. Scroll there
+	                    window.scrollTo({
+	                        top: offsetPosition,
+	                        behavior: "smooth"
+	                    });
+					} 
+						
+                    // BRANCH B: STANDARD BEHAVIOR
+                    // If not sticky, use the native browser method. 
+                    // This respects WP Admin Bar and Theme defaults better.
+                    else {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
-
-                    // 2. Calculate the position
-                    // elementRect.top is relative to viewport.
-                    // window.scrollY is current scroll amount.
-                    // We subtract the offset to stop *before* the element.
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.scrollY - offset;
-
-                    // 3. Scroll there
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
                 }
             }
         });

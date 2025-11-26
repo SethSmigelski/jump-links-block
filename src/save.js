@@ -5,11 +5,12 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save({ attributes }) {
 	// Read directly from attributes, no hooks!
 const { 
-	blockInstanceId, layout, isCollapsible, 
+	blockInstanceId, layout, 
+	isCollapsible,  isSmartIndentation,
 	headings, showHeading, headingText, headingTag, 
 	listStyle, fontSize, textColor, linkColor,  blockBackgroundColor,
 	linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius, 
-	isSticky, stickyOffset, stickyStrategy, isSmartIndentation,
+	isSticky, stickyOffset, jumpOffset, stickyStrategy,
 } = attributes;
 	
 	// Pass the font size as a CSS Custom Property for dynamic height calculations

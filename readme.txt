@@ -82,7 +82,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Sticky Navigation:** Optionally, keep the table of contents pinned to the viewport as users scroll, ensuring navigation is always accessible for long articles.
 
-* **Smart Sticky Controls:**  Includes a Top Offset setting to prevent the block from hiding behind your site's sticky header, and a Disable on Mobile strategy to prevent it from blocking content on small screens.
+* **Smart Sticky Controls:**  Includes a **Top Offset** setting to prevent the block from hiding behind your site's sticky header, a **Jump Offset** setting to ensure that the sticky header does not cover the heading text, and a **Disable on Mobile** strategy to prevent it from blocking content on small screens.
 
 * **Auto-Hide Title:** When using Sticky Positioning, the block title (e.g., "On This Page") automatically fades out and collapses once the block sticks to the top of the screen. This maximizes reading space while keeping the navigation links accessible.
 

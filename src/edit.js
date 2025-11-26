@@ -69,12 +69,17 @@ export default function Edit({ attributes, setAttributes }) {
 	
 	// --- EFFECT: Initialization & Scanning ---
 	useEffect(() => {
-        // Generate a unique ID when the block is first created.
+        const newAttributes = {};
+
+		// A. Generate a unique ID if missing
 		if (!attributes.blockInstanceId) {
-	        // Generate a random unique string
-	        const uniqueId = Math.random().toString(36).substr(2, 9);
-	        setAttributes({ blockInstanceId: uniqueId });
+	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
 	    }
+
+        // Apply initialization changes if needed
+        if (Object.keys(newAttributes).length > 0) {
+            setAttributes(newAttributes);
+        }
 	
         // 1. Get all current heading blocks
         const currentBlocks = blocks
@@ -93,8 +98,10 @@ export default function Edit({ attributes, setAttributes }) {
         for (const block of currentBlocks) {
             const originalText = stripHtml(block.attributes.content);
             
+            // Generate a base anchor
             let baseAnchor = block.attributes.anchor || originalText.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
             
+            // De-duping logic
             let uniqueAnchor = baseAnchor;
             let counter = 2;
 
@@ -135,8 +142,7 @@ export default function Edit({ attributes, setAttributes }) {
             	{ type: 'snackbar' }
             );
         }
-
-    }, [blocks, headingLevels, savedHeadings, setAttributes, updateBlockAttributes, createInfoNotice]);
+    }, [blocks, headingLevels, savedHeadings, attributes.blockInstanceId, setAttributes, updateBlockAttributes, createInfoNotice]);
 	
 	// Handle Layout/List Style conflict
 	useEffect(() => {

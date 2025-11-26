@@ -5,7 +5,7 @@
 
 /* Style the On This Page Text */
 .wp-block-seo44-jump-links-heading{
-	font-size: calc(var(--jump-link-font-size, 1em) * 1.375);
+	/* font-size: calc(var(--jump-link-font-size, 1em) * 1.375); This is no longer necessary with heading selection */
 	flex-basis: 100%;
 }
 /* Keep spacing tight for sticky nav / avoid theme conflicts  */
@@ -198,22 +198,22 @@
     }
 }
 /* Add scrollspy - active section link is bold and horizontal background */
-/* ONLY when the block is stuck */
+/* ONLY when the block is stuck and sticky */
 
 /* Base Active Style (Bold text for everyone) */
-.wp-block-seo44-jump-links.is-stuck a.is-active {
+.wp-block-seo44-jump-links.is-sticky.is-stuck a.is-active {
     font-weight: bold;
     color: var(--seo44-link-color);
 }
 
 /* Horizontal-Only Active Style (Background color) */
-.wp-block-seo44-jump-links.is-stuck.is-layout-horizontal a.is-active {
+.wp-block-seo44-jump-links.is-sticky.is-stuck.is-layout-horizontal a.is-active {
     background-color: var(--seo44-link-hover-bg);
     text-decoration: none; /* Optional: remove underline when active */
 }
 
 /* Vertical-Only Active Style (Left Border indicator) */
-.wp-block-seo44-jump-links.is-stuck:not(.is-layout-horizontal) a.is-active {
+.wp-block-seo44-jump-links.is-sticky.is-stuck:not(.is-layout-horizontal) a.is-active {
     border-left: 3px solid var(--seo44-link-color);
     padding-left: 0.5em;
 }
@@ -236,7 +236,7 @@
 }
 
 /* The "Gentle" Collapse Animation */
-.wp-block-seo44-jump-links.is-stuck .wp-block-seo44-jump-links-heading {
+.wp-block-seo44-jump-links.is-sticky.is-stuck .wp-block-seo44-jump-links-heading {
     max-height: 0;
     opacity: 0;
     margin: 0;

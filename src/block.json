@@ -97,7 +97,7 @@
     },
     "stickyOffset": {
         "type": "number",
-        "default": 20
+        "default": 30
     },
     "stickyStrategy": {
         "type": "string",
@@ -108,7 +108,7 @@
       "type": "object",
       "default": {
         "spacing": {
-          "padding": "var:preset|spacing|20",
+          "padding": "var:preset|spacing|30",
           "margin": {
             "top": "var:preset|spacing|30",
             "bottom": "var:preset|spacing|30"

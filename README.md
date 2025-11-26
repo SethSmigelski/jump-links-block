@@ -76,7 +76,7 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Typography:** Control the **font size** with a simple picker, including a reset button. 
 
-* **Block Background:** Set a background color for the entire block container to make your table of contents pop or match your theme's card style (you can also control the margin, padding, and border styling for the block).
+* **Block Background:** Set a background color for the entire block container to make your table of contents pop or match your theme's card style. This setting extends upon the block margin, padding, and border options within the block styling tab.
 
 * **Full Color Control:** Use integrated color pickers to customize: **Link Color**, **Other Text Color** (for bullets, numbers, and the main heading).
 

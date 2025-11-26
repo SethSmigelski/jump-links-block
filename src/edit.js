@@ -69,47 +69,12 @@ export default function Edit({ attributes, setAttributes }) {
 	
 	// --- EFFECT: Initialization & Scanning ---
 	useEffect(() => {
-        const newAttributes = {};
-
-		// A. Generate a unique ID if missing
+        // Generate a unique ID when the block is first created.
 		if (!attributes.blockInstanceId) {
-	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
+	        // Generate a random unique string
+	        const uniqueId = Math.random().toString(36).substr(2, 9);
+	        setAttributes({ blockInstanceId: uniqueId });
 	    }
-
-        // B. Force Style Defaults (The "Ghost Default" Fix)
-        const currentStyle = attributes.style || {};
-        let styleUpdated = false;
-        
-        // Deep copy the style object
-        const newStyleObj = JSON.parse(JSON.stringify(currentStyle));
-
-        if (!newStyleObj.spacing) {
-            newStyleObj.spacing = {};
-        }
-
-        // 1. Check/Set Padding Default
-        if (newStyleObj.spacing.padding === undefined) {
-            newStyleObj.spacing.padding = "var:preset|spacing|20"; // Extra Small
-            styleUpdated = true;
-        }
-
-        // 2. Check/Set Margin Default
-        if (newStyleObj.spacing.margin === undefined) {
-            newStyleObj.spacing.margin = {
-                top: "var:preset|spacing|30",    // Small
-                bottom: "var:preset|spacing|30"  // Small
-            };
-            styleUpdated = true;
-        }
-
-        if (styleUpdated) {
-            newAttributes.style = newStyleObj;
-        }
-
-        // Apply initialization changes if needed
-        if (Object.keys(newAttributes).length > 0) {
-            setAttributes(newAttributes);
-        }
 	
         // 1. Get all current heading blocks
         const currentBlocks = blocks
@@ -171,7 +136,7 @@ export default function Edit({ attributes, setAttributes }) {
             );
         }
 
-    }, [blocks, headingLevels, savedHeadings, attributes.blockInstanceId, attributes.style, setAttributes, updateBlockAttributes, createInfoNotice]);
+    }, [blocks, headingLevels, savedHeadings, setAttributes, updateBlockAttributes, createInfoNotice]);
 	
 	// Handle Layout/List Style conflict
 	useEffect(() => {

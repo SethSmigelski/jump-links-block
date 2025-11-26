@@ -16,7 +16,7 @@
     },
     "linkBackgroundColorHover": {
       "type": "string",
-      "default": "#e4e4e4"
+      "default": "#ebebeb"
     },
     "linkBorderColor": {
       "type": "string",

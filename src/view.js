@@ -54,7 +54,8 @@ jumpLinksBlocks.forEach(block => {
             }
         }
 // --- STICKY STATE DETECTION ---
-	    if ('IntersectionObserver' in window) {
+// Only run this if the block is actually set to be sticky
+	    if (block.classList.contains('is-sticky') && 'IntersectionObserver' in window) {
 	        const stickyObserver = new IntersectionObserver((entries) => {
 	            entries.forEach(entry => {
 	                // We already know which block this is because we are inside the forEach(block) loop!

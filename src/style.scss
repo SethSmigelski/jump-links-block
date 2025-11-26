@@ -26,7 +26,7 @@
 .wp-block-seo44-jump-links.is-layout-horizontal ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: -0.5em 0 0; /* negative margin eliminates the top created below to vertically separate li buttons */
     gap: 0em 0.5em;
 	display: flex;
 	flex-wrap: wrap;
@@ -251,4 +251,6 @@
     max-height: 100px; 
     opacity: 1;
     transition: max-height 0.5s ease, opacity 0.3s ease, margin 0.5s ease;
+	margin-top:0; /* Use block spacing instead */
+	margin-bottom: 0.25em;
 }

@@ -107,8 +107,6 @@ jumpLinksBlocks.forEach(block => {
 	
 	        // Find and observe all sentinels
             const sentinels = block.querySelectorAll('.seo44-sticky-sentinel');
-            
-             console.log('Sentinels found in block:', sentinels.length); // Debug check
 
 	        sentinels.forEach(sentinel => {
 	            stickyObserver.observe(sentinel);

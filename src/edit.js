@@ -169,7 +169,7 @@ useEffect(() => {
             );
         }
 
-    }, [blocks, headingLevels, savedHeadings, setAttributes, updateBlockAttributes, createInfoNotice]);
+    }, [blocks, headingLevels, savedHeadings, blockInstanceId, style, setAttributes, updateBlockAttributes, createInfoNotice]);
 	
 	// useEffect to handle conditional logic to force list style for the horizontal layout
 	useEffect(() => {

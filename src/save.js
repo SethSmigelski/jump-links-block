@@ -41,7 +41,8 @@ const {
 	const blockProps = useBlockProps.save({
    		className: `${layout === 'horizontal' ? 'is-layout-horizontal' : ''} ${isCollapsible ? 'is-collapsible' : ''} ${listStyle === 'none' ? 'list-style-none' : ''} ${isSticky ? 'is-sticky' : ''} ${stickyStrategy === 'desktop-only' ? 'sticky-desktop-only' : ''}`.trim(),
 		style,
-		'data-seo44-jump-offset': isSticky ? jumpOffset : 0
+		// --- NEW: Pass the offset (User setting OR default 30px) ---
+        'data-seo44-jump-offset': isSticky ? jumpOffset : 30
 	});
 	
 	// Show More Expand and Contract Arrows

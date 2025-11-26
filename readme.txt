@@ -172,11 +172,12 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 3. The Sidebar controls for the Jump Links Block.
 4. Published Vertical Jump Links, expanded and collapsed.
 5. Published Horizontal Jump Links, expanded and collapsed.
+6. Published Horizontal Jump Links with sticky navigation, showing the scrollspy indicator of an active link section
 
 == Changelog ==
 
 = 2.0.0 =
-* FEATURE: **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers and a "Disable on Mobile" toggle to preserve screen space on small devices.
+* FEATURE: **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers, a "Jump Offset" slider to ensure that the sticky header does not cover the heading text, and a "Disable on Mobile" toggle to preserve screen space on small devices.
 * FEATURE: **Auto-Hide Title:** Implemented a smart "sticky state" detection. When the block sticks, the title gently collapses and fades out to keep the interface clean (this occurs when a block title is used alongside sticky positioning).
 * FEATURE: **Smart Indentation:** Added a "Create Visual Hierarchy" toggle. When enabled, H3 and H4 sub-headings are visually indented to create a clear, nested outline structure.
 * FEATURE: **Block Background:** You can now set a background color for the entire block container, perfect for creating "card-style" floating navigation.

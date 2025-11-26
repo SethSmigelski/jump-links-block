@@ -8,15 +8,15 @@
     "blockBackgroundColor": { "type": "string" },
     "linkColor": {
       "type": "string",
-      "default": "#0073aa"
+      "default": "#046bd2"
     },
     "linkBackgroundColor": {
       "type": "string",
-      "default": "#f0f0f0"
+      "default": "#f3f3f3"
     },
     "linkBackgroundColorHover": {
       "type": "string",
-      "default": "#ebebeb"
+      "default": "#efefef"
     },
     "linkBorderColor": {
       "type": "string",

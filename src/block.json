@@ -99,6 +99,10 @@
         "type": "number",
         "default": 30
     },
+    "jumpOffset": {
+      "type": "number",
+      "default": 90
+    },
     "stickyStrategy": {
         "type": "string",
         "default": "desktop-only"

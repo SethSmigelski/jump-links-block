@@ -370,10 +370,24 @@ export default function Edit({ attributes, setAttributes }) {
 				    />
 				    {isSticky && (
 						<>
+                            <p className="description" style={{ marginBottom: '15px' }}>
+                                {__('Customize how the block behaves when it sticks to the top of the screen.', 'jump-links-block-seo-44')}
+                            </p>
 				            <RangeControl
 				                label={__('Top Offset (px)', 'jump-links-block-seo-44')}
+                                help={__('The distance between the top of the screen and the block when stuck (useful for clearing sticky headers).', 'jump-links-block-seo-44')}
 				                value={stickyOffset}
 				                onChange={(value) => setAttributes({ stickyOffset: value })}
+				                min={0}
+				                max={200}
+                                __nextHasNoMarginBottom={true}
+                                __next40pxDefaultSize={true}
+				            />
+                            <RangeControl
+				                label={__('Jump Offset (px)', 'jump-links-block-seo-44')}
+                                help={__('The buffer distance to stop *before* the heading when clicking a link to prevent the heading from being covered by the sticky block.', 'jump-links-block-seo-44')}
+				                value={jumpOffset}
+				                onChange={(value) => setAttributes({ jumpOffset: value })}
 				                min={0}
 				                max={200}
                                 __nextHasNoMarginBottom={true}

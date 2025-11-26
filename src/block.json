@@ -101,7 +101,7 @@
     },
     "jumpOffset": {
       "type": "number",
-      "default": 90
+      "default": 120
     },
     "stickyStrategy": {
         "type": "string",

@@ -36,6 +36,7 @@ export default function Edit({ attributes, setAttributes }) {
 		fontSize, textColor, linkColor, blockBackgroundColor,
 		linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius,
 		isSticky, stickyOffset, stickyStrategy, isSmartIndentation,
+		blockInstanceId, style
 	} = attributes;
 	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {

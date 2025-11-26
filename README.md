@@ -35,7 +35,7 @@ Google and other search engines can detect the anchor links created by this bloc
 By occupying more space in the search results and presenting a clear outline of your content, you make your listing more appealing and informative. This encourages more users to click on your link over your competitors, directly boosting your CTR—a key metric that can lead to better search engine rankings.
 
 **Enhance User Experience:**
-For long articles, a table of contents is essential. It allows readers to easily navigate to the sections they care about most, which reduces bounce rates and increases the time they spend on your page. Search engines place value on these positive user engagement signals.
+For long articles, a table of contents is essential. It allows readers to easily navigate to the sections they care about most, and see exactly where they are in the article at a glance, which reduces bounce rates and increases the time they spend on your page. Search engines place value on these positive user engagement signals.
 
 **Provide Clear Context for Search Engines:**
 A list of jump links acts as a clear, semantic outline of your page's structure. This helps search engines better understand the topics and sub-topics you cover, which can improve your chances of ranking for a broader range of related search queries.
@@ -97,6 +97,9 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 * **Smart Sticky Controls:**  Includes a Top Offset setting to prevent the block from hiding behind your site's sticky header, and a Disable on Mobile strategy to prevent it from blocking content on small screens.
 
 * **Auto-Hide Title:** When using Sticky Positioning, the block title (e.g., "On This Page") automatically fades out and collapses once the block sticks to the top of the screen. This maximizes reading space while keeping the navigation links accessible.
+
+* **Active Link Indicator (ScrollSpy):** As your readers scroll through the content, the table of contents automatically highlights the link for the section they are currently reading, giving them instant context on their progress.
+
 
 ---
 
@@ -210,15 +213,17 @@ Here’s how:
 3. The Sidebar controls for the Jump Links Block.
 4. Published Vertical Jump Links, expanded and collapsed.
 5. Published Horizontal Jump Links, expanded and collapsed.
+6. Published Horizontal Jump Links with sticky navigation showing the Active Link Indicator.
 
 ---
 
 ## Changelog
 ### 2.0.0
-* **FEATURE:** **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers and a "Disable on Mobile" toggle to preserve screen space on small devices.
+* **FEATURE:** **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers, a "Jump Offset" slider to ensure that the sticky header does not cover the heading text, and a "Disable on Mobile" toggle to preserve screen space on small devices.
 * **FEATURE:** **Auto-Hide Title:** Implemented a smart "sticky state" detection. When the block sticks, the title gently collapses and fades out to keep the interface clean (this occurs when a block title is used alongside sticky positioning).
 * **FEATURE:** **Smart Indentation:** Added a "Create Visual Hierarchy" toggle. When enabled, H3 and H4 sub-headings are visually indented to create a clear, nested outline structure.
 * **FEATURE:** **Block Background:** You can now set a background color for the entire block container, perfect for creating "card-style" floating navigation.
+* **FEATURE:** **ScrollSpy:** Automatically highlights the active link in the table of contents as the user scrolls through the corresponding section of the post.
 
 ### 1.9.2
 * **FEATURE:** Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.

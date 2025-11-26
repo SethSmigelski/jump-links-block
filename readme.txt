@@ -174,7 +174,7 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 3. The Sidebar controls for the Jump Links Block.
 4. Published Vertical Jump Links, expanded and collapsed.
 5. Published Horizontal Jump Links, expanded and collapsed.
-6. Published Horizontal Jump Links with sticky navigation, showing the scrollspy indicator of an active link section
+6. Published Horizontal Jump Links with sticky navigation showing the Active Link Indicator.
 
 == Changelog ==
 

@@ -78,22 +78,30 @@ useEffect(() => {
 	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
 	    }
 
-        // B. Force Style Defaults (The Fix)
-        // Check if the style object is empty/undefined, and if so, apply our defaults manually.
-        // This ensures they are "real" attributes that render on the front end.
-        if (!attributes.style) {
-            newAttributes.style = {
-                spacing: {
-                    padding: "var:preset|spacing|30", // Small
-                    margin: {
-                        top: "var:preset|spacing|30",   // Small
-                        bottom: "var:preset|spacing|30" // Small
-                    }
+        // B. Force Style Defaults (The "Ghost Default" Fix)
+        // We check if 'spacing' is missing from the style object.
+        const currentStyle = attributes.style || {};
+        let styleUpdated = false;
+        
+        // Create a shallow copy so we don't mutate the object directly
+        const newStyleObj = { ...currentStyle };
+
+        if (!newStyleObj.spacing) {
+            newStyleObj.spacing = {
+                padding: "var:preset|spacing|30", // Small
+                margin: {
+                    top: "var:preset|spacing|30",    // Small
+                    bottom: "var:preset|spacing|30"  // Small
                 }
             };
+            styleUpdated = true;
         }
 
-        // Apply changes if needed
+        if (styleUpdated) {
+            newAttributes.style = newStyleObj;
+        }
+
+        // Apply initialization changes if needed
         if (Object.keys(newAttributes).length > 0) {
             setAttributes(newAttributes);
         }
@@ -111,7 +119,6 @@ useEffect(() => {
         const savedHeadingsMap = new Map(savedHeadings.map(h => [h.anchor, h]));
         
         const newHeadings = [];
-
 
         // 3. Process all blocks in a single, robust pass
         for (const block of currentBlocks) {
@@ -139,7 +146,6 @@ useEffect(() => {
             // Reconcile with saved state to preserve custom link text and visibility
             // Try to find the old state using either the block's original anchor or the new unique one
             const oldState = savedHeadingsMap.get(block.attributes.anchor) || savedHeadingsMap.get(uniqueAnchor);
-            
             const wasLinkTextManuallyEdited = oldState && oldState.linkText !== oldState.text;
             const linkText = wasLinkTextManuallyEdited ? oldState.linkText : originalText;
             const isVisible = oldState ? oldState.isVisible : true;
@@ -168,7 +174,7 @@ useEffect(() => {
             );
         }
 
-    }, [blocks, headingLevels, savedHeadings, setAttributes, updateBlockAttributes, createInfoNotice]);
+    }, [blocks, headingLevels, savedHeadings, attributes.blockInstanceId, attributes.style, setAttributes, updateBlockAttributes, createInfoNotice]);
 	
 	// useEffect to handle conditional logic to force list style for the horizontal layout
 	useEffect(() => {

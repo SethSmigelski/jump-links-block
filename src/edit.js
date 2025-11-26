@@ -32,10 +32,10 @@ export default function Edit({ attributes, setAttributes }) {
 	const { 
 		headingLevels, headings: savedHeadings, showHeading, headingText, headingTag, 
 		layout, listStyle, 
-		isEditing, isCollapsible, 
+		isEditing, isCollapsible, isSmartIndentation,
 		fontSize, textColor, linkColor, blockBackgroundColor,
 		linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius,
-		isSticky, stickyOffset, stickyStrategy, isSmartIndentation
+		isSticky, stickyOffset, jumpOffset, stickyStrategy,
 	} = attributes;
 
 	// Consolidate all dynamic styles onto the parent wrapper
@@ -52,6 +52,8 @@ export default function Edit({ attributes, setAttributes }) {
 		'--seo44-link-border-color': layout === 'horizontal' ? linkBorderColor : undefined,
 		'--seo44-link-radius': layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 		'--seo44-block-bg': blockBackgroundColor,
+		
+		'--seo44-sticky-offset': isSticky ? `${stickyOffset}px` : undefined
 	};
 
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
@@ -385,7 +387,7 @@ export default function Edit({ attributes, setAttributes }) {
 				            />
                             <RangeControl
 				                label={__('Jump Offset (px)', 'jump-links-block-seo-44')}
-                                help={__('The buffer distance to stop *before* the heading when clicking a link to prevent the heading from being covered by the sticky block.', 'jump-links-block-seo-44')}
+                                help={__('The buffer distance to stop *before* the heading. Increase this if your sticky header covers the text.', 'jump-links-block-seo-44')}
 				                value={jumpOffset}
 				                onChange={(value) => setAttributes({ jumpOffset: value })}
 				                min={0}

@@ -71,19 +71,31 @@ export default function Edit({ attributes, setAttributes }) {
 	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
 	    }
 
-        // B. Force Style Defaults
-        // We check if 'spacing' is missing from the style object.
+        // B. Force Style Defaults (Smart Merge)
         const currentStyle = attributes.style || {};
         let styleUpdated = false;
-        const newStyleObj = { ...currentStyle };
+        
+        // Deep copy the style object so we can modify it safely
+        // (JSON parse/stringify is a cheap way to deep copy simple objects)
+        const newStyleObj = JSON.parse(JSON.stringify(currentStyle));
 
+        // Ensure spacing object exists
         if (!newStyleObj.spacing) {
-            newStyleObj.spacing = {
-                padding: "var:preset|spacing|20", // Extra Small
-                margin: {
-                    top: "var:preset|spacing|30",    // Small
-                    bottom: "var:preset|spacing|30"  // Small
-                }
+            newStyleObj.spacing = {};
+        }
+
+        // 1. Check/Set Padding Default
+        // Only set if it is completely undefined
+        if (newStyleObj.spacing.padding === undefined) {
+            newStyleObj.spacing.padding = "var:preset|spacing|30"; // Small
+            styleUpdated = true;
+        }
+
+        // 2. Check/Set Margin Default
+        if (newStyleObj.spacing.margin === undefined) {
+            newStyleObj.spacing.margin = {
+                top: "var:preset|spacing|30",    // Small
+                bottom: "var:preset|spacing|30"  // Small
             };
             styleUpdated = true;
         }

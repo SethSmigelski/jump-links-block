@@ -74,12 +74,13 @@ useEffect(() => {
         const newAttributes = {};
 
 		// A. Generate a unique ID if missing
+        // We check attributes.blockInstanceId directly since it isn't destructured
 		if (!attributes.blockInstanceId) {
 	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
 	    }
 
         // B. Force Style Defaults (The "Ghost Default" Fix)
-        // We check if 'spacing' is missing from the style object.
+        // We handle cases where 'style' might exist (e.g. border) but 'spacing' is missing.
         const currentStyle = attributes.style || {};
         let styleUpdated = false;
         
@@ -114,8 +115,7 @@ useEffect(() => {
         const seenAnchors = new Set();
         let wasDuplicateFound = false;
 
-        // 2. Create Map of SAVED headings (Restored!)
-        // We need this to look up your previous customizations (link text, visibility)
+        // 2. Create Map of SAVED headings
         const savedHeadingsMap = new Map(savedHeadings.map(h => [h.anchor, h]));
         
         const newHeadings = [];
@@ -138,13 +138,12 @@ useEffect(() => {
             }
             seenAnchors.add(uniqueAnchor);
             
-			// Update the block in the editor if its anchor changed
+            // Update the block in the editor if its anchor changed
             if (block.attributes.anchor !== uniqueAnchor) {
                 updateBlockAttributes(block.clientId, { anchor: uniqueAnchor });
             }
 
-            // Reconcile with saved state to preserve custom link text and visibility
-            // Try to find the old state using either the block's original anchor or the new unique one
+            // Reconcile with saved state
             const oldState = savedHeadingsMap.get(block.attributes.anchor) || savedHeadingsMap.get(uniqueAnchor);
             const wasLinkTextManuallyEdited = oldState && oldState.linkText !== oldState.text;
             const linkText = wasLinkTextManuallyEdited ? oldState.linkText : originalText;
@@ -160,13 +159,12 @@ useEffect(() => {
             });
         }
 
-        // Only update attributes if the final list is different.
+        // 4. Only update attributes if the final list is different.
         if (JSON.stringify(newHeadings) !== JSON.stringify(savedHeadings)) {
             setAttributes({ headings: newHeadings });
         }
 
-        // Inform the user via a SNACKBAR message
-        // If we duplicates are found, show a snackbar warning.
+        // 5. Inform the user via a SNACKBAR message
         if (wasDuplicateFound) {
             createInfoNotice(
             	__('Jump Links Block: Duplicate headings were found. Unique IDs have been auto-generated, but this may be a sign of redundancy. Please review your headings for clarity.', 'jump-links-block-seo-44'),
@@ -174,6 +172,7 @@ useEffect(() => {
             );
         }
 
+    // DEPENDENCIES: Use attributes.blockInstanceId and attributes.style
     }, [blocks, headingLevels, savedHeadings, attributes.blockInstanceId, attributes.style, setAttributes, updateBlockAttributes, createInfoNotice]);
 	
 	// useEffect to handle conditional logic to force list style for the horizontal layout

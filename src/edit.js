@@ -84,7 +84,7 @@ useEffect(() => {
         if (!attributes.style) {
             newAttributes.style = {
                 spacing: {
-                    padding: "var:preset|spacing|20", // Extra Small
+                    padding: "var:preset|spacing|30", // Small
                     margin: {
                         top: "var:preset|spacing|30",   // Small
                         bottom: "var:preset|spacing|30" // Small

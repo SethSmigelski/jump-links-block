@@ -28,6 +28,7 @@ const expandDownIcon = (
 );
 
 export default function Edit({ attributes, setAttributes }) {
+    // Removed 'blockInstanceId' and 'style' from destructuring to avoid conflicts
 	const { 
 		headingLevels, headings: savedHeadings, showHeading, headingText, headingTag, 
 		layout, listStyle, 
@@ -56,6 +57,10 @@ export default function Edit({ attributes, setAttributes }) {
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
 	const { createInfoNotice } = useDispatch( 'core/notices' );
 	
+    // Generate the Dynamic ID (matching save.js logic)
+    // We use attributes.blockInstanceId directly since it wasn't destructured
+    const listId = attributes.blockInstanceId ? `seo44-jump-links-list-${attributes.blockInstanceId}` : 'seo44-jump-links-list';
+
 	const blockProps = useBlockProps({ style });
     blockProps.className = `${blockProps.className} ${layout === 'horizontal' ? 'is-layout-horizontal' : ''} ${isCollapsible && !isEditing ? 'is-collapsible' : ''} ${listStyle === 'none' ? 'list-style-none' : ''}`.trim();
 
@@ -71,23 +76,20 @@ export default function Edit({ attributes, setAttributes }) {
 	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
 	    }
 
-        // B. Force Style Defaults (Smart Merge)
+        // B. Force Style Defaults (The "Ghost Default" Fix)
         const currentStyle = attributes.style || {};
         let styleUpdated = false;
         
-        // Deep copy the style object so we can modify it safely
-        // (JSON parse/stringify is a cheap way to deep copy simple objects)
+        // Deep copy the style object
         const newStyleObj = JSON.parse(JSON.stringify(currentStyle));
 
-        // Ensure spacing object exists
         if (!newStyleObj.spacing) {
             newStyleObj.spacing = {};
         }
 
         // 1. Check/Set Padding Default
-        // Only set if it is completely undefined
         if (newStyleObj.spacing.padding === undefined) {
-            newStyleObj.spacing.padding = "var:preset|spacing|30"; // Small
+            newStyleObj.spacing.padding = "var:preset|spacing|20"; // Extra Small
             styleUpdated = true;
         }
 
@@ -126,10 +128,8 @@ export default function Edit({ attributes, setAttributes }) {
         for (const block of currentBlocks) {
             const originalText = stripHtml(block.attributes.content);
             
-            // Generate a base anchor
             let baseAnchor = block.attributes.anchor || originalText.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
             
-            // De-duping logic
             let uniqueAnchor = baseAnchor;
             let counter = 2;
 
@@ -140,18 +140,15 @@ export default function Edit({ attributes, setAttributes }) {
             }
             seenAnchors.add(uniqueAnchor);
             
-            // Update the block in the editor if its anchor changed
             if (block.attributes.anchor !== uniqueAnchor) {
                 updateBlockAttributes(block.clientId, { anchor: uniqueAnchor });
             }
 
-            // Reconcile with saved state
             const oldState = savedHeadingsMap.get(block.attributes.anchor) || savedHeadingsMap.get(uniqueAnchor);
             const wasLinkTextManuallyEdited = oldState && oldState.linkText !== oldState.text;
             const linkText = wasLinkTextManuallyEdited ? oldState.linkText : originalText;
             const isVisible = oldState ? oldState.isVisible : true;
 
-            // Add to our new list
             newHeadings.push({
                 anchor: uniqueAnchor,
                 text: originalText,
@@ -436,9 +433,9 @@ export default function Edit({ attributes, setAttributes }) {
 		            />
 		        )}
 
-				{savedHeadings.length > 0 ? ( 
+				{savedHeadings.length > 0 ? ( // We now use savedHeadings for a stable display
 					<nav aria-label={__('Table of contents', 'jump-links-block-seo-44')}>
-                    	<ListTag id="seo44-jump-links-list">
+                    	<ListTag id={listId}>
 							{savedHeadings.map((heading, index) => 
 								isEditing ? (
 									<li key={heading.anchor}>
@@ -479,7 +476,8 @@ export default function Edit({ attributes, setAttributes }) {
 											key={heading.anchor}
 											className={isSmartIndentation ? `seo44-jump-link-level-${heading.level}` : ''}
 										>
-											<a href={`#${heading.anchor}`} style={linkStyle} onClick={(e) => e.preventDefault()}>
+                                            {/* REMOVED 'style={linkStyle}' FROM THIS LINE */}
+											<a href={`#${heading.anchor}`} onClick={(e) => e.preventDefault()}>
 												{heading.linkText}
 											</a>
 										</li>
@@ -495,6 +493,8 @@ export default function Edit({ attributes, setAttributes }) {
 		                            type="button"
 		                            className="seo-44-show-more"
 		                            aria-label={__('Show More', 'jump-links-block-seo-44')}
+		                            aria-expanded="false"
+                            		aria-controls={listId}
 		                            onClick={() => {
 		                                createInfoNotice(
 		                                    __('The "Show More" button is interactive on the published page.', 'jump-links-block-seo-44'),

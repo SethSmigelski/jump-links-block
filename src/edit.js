@@ -71,12 +71,32 @@ export default function Edit({ attributes, setAttributes }) {
 	// NEW: Robust, single-pass reconciliation and de-duping engine.
 
 useEffect(() => {
-		// Generate a unique ID when the block is first created.
+        const newAttributes = {};
+
+		// A. Generate a unique ID if missing
 		if (!attributes.blockInstanceId) {
-	        // Generate a random unique string
-	        const uniqueId = Math.random().toString(36).substr(2, 9);
-	        setAttributes({ blockInstanceId: uniqueId });
+	        newAttributes.blockInstanceId = Math.random().toString(36).substr(2, 9);
 	    }
+
+        // B. Force Style Defaults (The Fix)
+        // Check if the style object is empty/undefined, and if so, apply our defaults manually.
+        // This ensures they are "real" attributes that render on the front end.
+        if (!attributes.style) {
+            newAttributes.style = {
+                spacing: {
+                    padding: "var:preset|spacing|20", // Extra Small
+                    margin: {
+                        top: "var:preset|spacing|30",   // Small
+                        bottom: "var:preset|spacing|30" // Small
+                    }
+                }
+            };
+        }
+
+        // Apply changes if needed
+        if (Object.keys(newAttributes).length > 0) {
+            setAttributes(newAttributes);
+        }
 	
         // 1. Get all current heading blocks
         const currentBlocks = blocks

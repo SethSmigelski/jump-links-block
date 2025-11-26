@@ -8,6 +8,7 @@
 	font-size: calc(var(--jump-link-font-size, 1em) * 1.375);
 	flex-basis: 100%;
 }
+/* Keep spacing tight for sticky nav / avoid theme conflicts  */
 .wp-block-seo44-jump-links nav > ul li,
 .wp-block-seo44-jump-links nav > ol li{
     margin:0;padding:0
@@ -30,7 +31,7 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-/* Jump Links Block - Horizontal Layout Styles */
+/* Jump Links Block - Horizontal li spacing */
 .wp-block-seo44-jump-links.is-layout-horizontal ol li,
 .wp-block-seo44-jump-links.is-layout-horizontal ul li {
     margin: 0.5em 0 0;
@@ -197,20 +198,22 @@
     }
 }
 /* Add scrollspy - active section link is bold and horizontal background */
+/* ONLY when the block is stuck */
+
 /* Base Active Style (Bold text for everyone) */
-.wp-block-seo44-jump-links a.is-active {
+.wp-block-seo44-jump-links.is-stuck a.is-active {
     font-weight: bold;
     color: var(--seo44-link-color);
 }
 
 /* Horizontal-Only Active Style (Background color) */
-.wp-block-seo44-jump-links.is-layout-horizontal a.is-active {
+.wp-block-seo44-jump-links.is-stuck.is-layout-horizontal a.is-active {
     background-color: var(--seo44-link-hover-bg);
     text-decoration: none; /* Optional: remove underline when active */
 }
 
 /* Vertical-Only Active Style (Left Border indicator) */
-.wp-block-seo44-jump-links:not(.is-layout-horizontal) a.is-active {
+.wp-block-seo44-jump-links.is-stuck:not(.is-layout-horizontal) a.is-active {
     border-left: 3px solid var(--seo44-link-color);
     padding-left: 0.5em;
 }

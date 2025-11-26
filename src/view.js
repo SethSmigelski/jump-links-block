@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
 
 jumpLinksBlocks.forEach(block => {
         
-        // --- SMOOTH SCROLLING LOGIC (Event Delegation) ---
+        // --- SMOOTH SCROLLING LOGIC (With Offset) ---
         // Clean, delegated click listener attached to the block itself
         block.addEventListener('click', function(e) {
             const link = e.target.closest('a[href^="#"]');
@@ -13,8 +13,32 @@ jumpLinksBlocks.forEach(block => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
+                
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // 1. Check if we need an offset
+                    // We check if the block has the 'is-sticky' class (meaning the feature is enabled)
+                    // Note: We check 'is-sticky' (configuration), not 'is-stuck' (current state),
+                    // because clicking a link might *cause* the page to scroll and the block to stick.
+                    let offset = 0;
+                    if (block.classList.contains('is-sticky')) {
+                        // Retrieve the user setting from the data attribute
+                        const settingOffset = parseInt(block.getAttribute('data-seo44-jump-offset'), 10);
+                        if (!isNaN(settingOffset)) {
+                            offset = settingOffset;
+                        }
+                    }
+
+                    // 2. Calculate position
+                    // (Window Scroll Y + Element Rect Top) gives absolute position.
+                    // Then we subtract the offset.
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    // 3. Scroll
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
                 }
             }
         });

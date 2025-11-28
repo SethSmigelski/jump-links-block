@@ -3,7 +3,7 @@
  * Plugin Name:       Jump Links Block (SEO 44)
  * Plugin URI:        https://www.sethcreates.com/plugins-for-wordpress/jump-links-block-seo-44/
  * Description:       A standalone custom block for automatically creating a customizable Jump Links table of contents.
- * Version:           2.0.0
+ * Version:           2.0.1
  * Author:            Seth Smigelski
  * Author URI:  	    https://www.sethcreates.com/plugins-for-wordpress/
  * License:           GPL-2.0+

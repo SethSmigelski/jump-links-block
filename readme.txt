@@ -3,7 +3,7 @@ Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -177,6 +177,9 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 6. Published Horizontal Jump Links with sticky navigation showing the Active Link Indicator.
 
 == Changelog ==
+
+= 2.0.1 =
+* TWEAK: To avoid the bottom of horizontal link "buttons" from ever being cut off when the menu is collapsed, the styling has been finetuned to include a defined line-height for list items.
 
 = 2.0.0 =
 * FEATURE: **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers, a "Jump Offset" slider to ensure that the sticky header does not cover the heading text, and a "Disable on Mobile" toggle to preserve screen space on small devices.

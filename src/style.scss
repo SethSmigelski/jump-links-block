@@ -14,7 +14,12 @@
 	/* font-size: calc(var(--jump-link-font-size, 1em) * 1.375); This is no longer necessary with heading selection */
 	flex-basis: 100%;
 }
-/* Keep spacing tight for sticky nav / avoid theme conflicts  */
+/* Keep spacing tight. Good for sticky nav.  Avoid theme conflicts  */
+.wp-block-seo44-jump-links nav > ul,
+.wp-block-seo44-jump-links nav > ol{
+    margin:0;
+}
+/* Keep spacing tight. Good for sticky nav.  Avoid theme conflicts  */
 .wp-block-seo44-jump-links nav > ul li,
 .wp-block-seo44-jump-links nav > ol li{
     margin:0;
@@ -122,7 +127,7 @@
 /* Horizontal Layout: Collapse to 1 line */
 .wp-block-seo44-jump-links.is-collapsible.is-layout-horizontal > nav > ul,
 .wp-block-seo44-jump-links.is-collapsible.is-layout-horizontal > nav > ol {
-    max-height: calc(var(--jump-link-font-size, 1em)*1.75 + 1.5em + 2px); /* defined line height of li (font-size * 1.75)  + vertical padding + border thickness */
+    max-height: calc(var(--jump-link-font-size, 1em)*1.75 + 1.5em + 2px); /* defined line height of li (font-size * 1.5)  + vertical padding + border thickness */
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
 }
@@ -174,7 +179,7 @@
 
 /* NUMBERED LISTS (OL): Use Padding to keep numbers aligned, indent text only */
 .wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-3 {
-    padding-left: 1.5em; /* Indent text only */ 
+    padding-left: 1.5em; /* Indent text only */
     opacity: 0.9;
 }
 .wp-block-seo44-jump-links:not(.is-layout-horizontal) ol li.seo44-jump-link-level-4 {
@@ -256,4 +261,78 @@
     transition: max-height 0.5s ease, opacity 0.3s ease, margin 0.5s ease;
 	margin-top:0; /* Use block spacing instead */
 	margin-bottom: 0.25em;
+}
+
+
+/* --- NEW: Text Link Style (Overrides Button Style) --- */
+.wp-block-seo44-jump-links.is-layout-horizontal.is-style-text-links li a {
+    background-color: transparent !important; /* Force transparent */
+    border: none !important;
+    padding: 0; /* Reset padding */
+    text-decoration: underline; /* Standard link look */
+    text-underline-offset: 0.2em;
+    color: var(--seo44-link-color);
+}
+.wp-block-seo44-jump-links.is-layout-horizontal.is-style-text-links li a:hover {
+    text-decoration: none;
+    color: var(--seo44-link-color); /* Maintain color or darken if you wish */
+}
+
+/* --- NEW: Separators --- */
+.wp-block-seo44-jump-links.has-separator-space li:not(:last-child):after {
+    content: " ";
+    margin: 0 0.5em;
+    color: currentColor;
+    opacity: 0.5;
+}
+
+.wp-block-seo44-jump-links.has-separator-dot li:not(:last-child):after {
+    content: "·";
+    font-weight: bold;
+    margin: 0 0.5em;
+    color: currentColor;
+    opacity: 0.6;
+}
+
+.wp-block-seo44-jump-links.has-separator-pipe li:not(:last-child):after {
+    content: "|";
+    margin: 0 0.5em;
+    color: currentColor;
+    opacity: 0.5;
+}
+
+.wp-block-seo44-jump-links.has-separator-slash li:not(:last-child):after {
+    content: "/";
+    margin: 0 0.5em;
+    color: currentColor;
+    opacity: 0.5;
+}
+
+/* Fix spacing for separators */
+.wp-block-seo44-jump-links.is-style-text-links.is-layout-horizontal ul,
+.wp-block-seo44-jump-links.is-style-text-links.is-layout-horizontal ol {
+    gap: 0; /* Remove gap, rely on separator margins */
+}
+.wp-block-seo44-jump-links.is-style-text-links.is-layout-horizontal li {
+    margin: 0;
+}
+
+
+/* --- NEW: Smart Sticky (Scroll-Up-To-Reveal) --- */
+
+/* 1. Base transition for the "Smart" block */
+.wp-block-seo44-jump-links.is-sticky.is-smart-sticky {
+    transition: transform 0.3s ease-in-out, top 0.3s ease;
+    will-change: transform;
+}
+
+/* 2. Hidden State (Applied by JS) */
+.wp-block-seo44-jump-links.is-sticky.is-smart-sticky.is-scroll-hidden {
+    transform: translateY(-120%); /* Move strictly up out of view */
+    pointer-events: none; /* Prevent clicks when hidden */
+}
+
+/* 3. Ensure dropdowns/tooltips don't get stuck */
+.wp-block-seo44-jump-links.is-sticky.is-smart-sticky.is-scroll-hidden .seo-44-show-more {
+    display: none; /* Hide toggle when nav is hidden */
 }

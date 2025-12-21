@@ -34,8 +34,8 @@ export default function Edit({ attributes, setAttributes }) {
 		layout, listStyle, 
 		isEditing, isCollapsible, isSmartIndentation,
 		fontSize, textColor, linkColor, blockBackgroundColor,
-		linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius,
-		isSticky, stickyOffset, jumpOffset, stickyStrategy,
+		linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius, linkStyle, separatorType,
+		isSticky, stickyOffset, jumpOffset, stickyStrategy, stickyBehavior,
 	} = attributes;
 
 	// Consolidate all dynamic styles onto the parent wrapper
@@ -62,9 +62,11 @@ export default function Edit({ attributes, setAttributes }) {
     // Generate the Dynamic ID (matching save.js logic)
     // We use attributes.blockInstanceId directly since it wasn't destructured
     const listId = attributes.blockInstanceId ? `seo44-jump-links-list-${attributes.blockInstanceId}` : 'seo44-jump-links-list';
-
+	const separatorClass = linkStyle === 'text' && separatorType !== 'none' ? `has-separator-${separatorType}` : '';
+	const linkStyleClass = linkStyle === 'text' ? 'is-style-text-links' : '';
+	
 	const blockProps = useBlockProps({ style });
-    blockProps.className = `${blockProps.className} ${layout === 'horizontal' ? 'is-layout-horizontal' : ''} ${isCollapsible && !isEditing ? 'is-collapsible' : ''} ${listStyle === 'none' ? 'list-style-none' : ''}`.trim();
+    blockProps.className = `${blockProps.className} ${layout === 'horizontal' ? 'is-layout-horizontal' : ''} ${isCollapsible && !isEditing ? 'is-collapsible' : ''} ${listStyle === 'none' ? 'list-style-none' : ''} ${separatorClass} ${linkStyleClass}`.trim();
 
 	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
@@ -284,28 +286,59 @@ export default function Edit({ attributes, setAttributes }) {
                         <>
                             <hr />
                             <p><strong>{__('Horizontal Link Styles', 'jump-links-block-seo-44')}</strong></p>
-                            <PanelColorSettings
-                                title={__('Link Colors', 'jump-links-block-seo-44')}
-                                colorSettings={[
-                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'jump-links-block-seo-44') },
-                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'jump-links-block-seo-44') },    
-									{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'jump-links-block-seo-44') },
-                                ]}
-                            />
-                            {/* Updated RangeControl */}
-                            <RangeControl
-                                label={__('Link Border Radius', 'jump-links-block-seo-44')}
-                                value={linkBorderRadius}
-                                onChange={(newValue) => setAttributes({ linkBorderRadius: newValue })}
-                                min={0}
-                                max={50}
-                                __nextHasNoMarginBottom={true}
-                                __next40pxDefaultSize={true}
-                            />
-                        </>
-                    )}
-				</PanelBody>
-										  
+							{/* NEW: Link Style Selection */}
+							        <SelectControl
+							            label={__('Link Style', 'jump-links-block-seo-44')}
+							            value={linkStyle}
+							            options={[
+							                { label: __('Button (Default)', 'jump-links-block-seo-44'), value: 'button' },
+							                { label: __('Plain Text', 'jump-links-block-seo-44'), value: 'text' },
+							            ]}
+							            onChange={(val) => setAttributes({ linkStyle: val })}
+							            __nextHasNoMarginBottom={true}
+							        />
+							
+							        {/* SHOW BUTTON SETTINGS (Existing) ONLY IF BUTTON STYLE */}
+							        {linkStyle === 'button' && (
+							            <>
+							                <PanelColorSettings
+				                                title={__('Link Colors', 'jump-links-block-seo-44')}
+				                                colorSettings={[
+				                                    { value: linkBackgroundColor, onChange: (newColor) => setAttributes({ linkBackgroundColor: newColor }), label: __('Background', 'jump-links-block-seo-44') },
+				                                	{ value: linkBackgroundColorHover, onChange: (newColor) => setAttributes({ linkBackgroundColorHover: newColor }), label: __('Background Hover', 'jump-links-block-seo-44') },    
+													{ value: linkBorderColor, onChange: (newColor) => setAttributes({ linkBorderColor: newColor }), label: __('Border', 'jump-links-block-seo-44') },
+				                                ]}
+                            				/>
+							                <RangeControl
+				                                label={__('Link Border Radius', 'jump-links-block-seo-44')}
+				                                value={linkBorderRadius}
+				                                onChange={(newValue) => setAttributes({ linkBorderRadius: newValue })}
+				                                min={0}
+				                                max={50}
+				                                __nextHasNoMarginBottom={true}
+				                                __next40pxDefaultSize={true}
+				                            />
+							            </>
+							        )}
+									{/* NEW: SEPARATOR SETTINGS (Only if Text Style) */}
+							        {linkStyle === 'text' && (
+							            <SelectControl
+							                label={__('Separator', 'jump-links-block-seo-44')}
+							                value={separatorType}
+							                options={[
+                                                // REPLACED 'None' with 'Space'
+							                    { label: __('Space ( )', 'jump-links-block-seo-44'), value: 'space' },
+							                    { label: __('Middle Dot (·)', 'jump-links-block-seo-44'), value: 'dot' },
+							                    { label: __('Pipe (|)', 'jump-links-block-seo-44'), value: 'pipe' },
+							                    { label: __('Slash (/)', 'jump-links-block-seo-44'), value: 'slash' },
+							                ]}
+							                onChange={(val) => setAttributes({ separatorType: val })}
+							                __nextHasNoMarginBottom={true}
+							            />
+							        )}
+							    </>
+					)}
+				</PanelBody>				  
 
 				{/* Panel 3: Content Settings */}
 				<PanelBody title={__('Content Settings', 'jump-links-block-seo-44')}>
@@ -335,7 +368,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     { label: 'Div (No Semantic Value)', value: 'div' },
                                 ]}
                                 onChange={(newTag) => setAttributes({ headingTag: newTag })}
-								help={__('Choose a level that fits your page\'s structure.', 'search-appearance-toolkit-seo-44')}
+								help={__('Choose a level that fits your page\'s structure.', 'jump-links-block-seo-44')}
                                 __nextHasNoMarginBottom={true}
                                 __next40pxDefaultSize={true}
                             />
@@ -395,6 +428,18 @@ export default function Edit({ attributes, setAttributes }) {
                                 __nextHasNoMarginBottom={true}
                                 __next40pxDefaultSize={true}
 				            />
+							{/* NEW: Smart Sticky Control */}
+					        <SelectControl
+					            label={__('Scroll Behavior', 'jump-links-block-seo-44')}
+					            help={__('Choose "Scroll-Up-To-Reveal" to hide the nav when scrolling down (saves screen space).', 'jump-links-block-seo-44')}
+					            value={stickyBehavior}
+					            options={[
+					                { label: __('Always Visible', 'jump-links-block-seo-44'), value: 'always' },
+					                { label: __('Scroll-Up-To-Reveal', 'jump-links-block-seo-44'), value: 'smart' },
+					            ]}
+					            onChange={(val) => setAttributes({ stickyBehavior: val })}
+					            __nextHasNoMarginBottom={true}
+					        />		
 				            <ToggleControl
 				                label={__('Disable on Mobile', 'jump-links-block-seo-44')}
 				                help={__('Prevents the block from sticking on small screens to save reading space.', 'jump-links-block-seo-44')}

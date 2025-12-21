@@ -3,7 +3,7 @@
 window.addEventListener('load', function () {
     const jumpLinksBlocks = document.querySelectorAll('.wp-block-seo44-jump-links');
 
-jumpLinksBlocks.forEach(block => {
+	jumpLinksBlocks.forEach(block => {
         
         // --- SMOOTH SCROLLING LOGIC (With Offset) ---
         block.addEventListener('click', function(e) {
@@ -50,6 +50,51 @@ jumpLinksBlocks.forEach(block => {
             }
         });
 
+		// --- SMART STICKY LOGIC (Scroll-Up-To-Reveal) ---
+        // Filter for blocks that actually have the 'is-smart-sticky' class
+        const smartBlocks = Array.from(jumpLinksBlocks).filter(b => b.classList.contains('is-smart-sticky'));
+    
+        if (smartBlocks.length > 0) {
+            let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            let ticking = false; // For throttling
+            const delta = 10; // Minimum scroll amount to trigger change
+    
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        
+                        smartBlocks.forEach(block => {
+                            // 1. SAFETY CHECK: Is the block actually stuck?
+                            // If the block is NOT stuck (it's sitting normally in the content), 
+                            // we must ensure it is visible and then stop.
+                            if (!block.classList.contains('is-stuck')) {
+                                block.classList.remove('is-scroll-hidden');
+                                return; 
+                            }
+    
+                            // 2. Determine Direction
+                            if (Math.abs(lastScrollTop - scrollTop) <= delta) {
+                                return; // Ignore tiny movements
+                            }
+    
+                            if (scrollTop > lastScrollTop) {
+                                // SCROLLING DOWN -> HIDE
+                                block.classList.add('is-scroll-hidden');
+                            } else {
+                                // SCROLLING UP -> SHOW
+                                block.classList.remove('is-scroll-hidden');
+                            }
+                        });
+    
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+		
         // --- COLLAPSIBLE LOGIC (SIMPLIFIED & ROBUST) ---
         if (block.classList.contains('is-collapsible')) {
             const button = block.querySelector('.seo-44-show-more');

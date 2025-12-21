@@ -29,6 +29,18 @@
     "linkPadding": {
       "type": "string"
     },
+    "linkStyle": {
+      "type": "string",
+      "default": "button"
+    },
+    "separatorType": {
+      "type": "string",
+      "default": "space"
+    },
+    "stickyBehavior": {
+      "type": "string",
+      "default": "always"
+    },    
     "fontSize": {
       "type": "string"
     },
@@ -149,6 +161,6 @@
   },
   "textdomain": "jump-links-block-seo-44",
   "title": "SEO 44 Jump Links",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "viewScript": "file:./view.js"
 }

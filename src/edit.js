@@ -37,9 +37,7 @@ export default function Edit({ attributes, setAttributes }) {
 		linkBackgroundColor, linkBackgroundColorHover, linkBorderColor, linkBorderRadius, linkStyle, separatorType,
 		isSticky, stickyOffset, jumpOffset, stickyStrategy, stickyBehavior,
 	} = attributes;
-	// Calculate Border Width
-    // No fallback. If it's undefined, it should stay undefined for previous blocks.
-    const borderWidth = attributes.style?.border?.top?.width || attributes.style?.border?.width;
+	
 	// Consolidate all dynamic styles onto the parent wrapper
 	const style = {
 		// Text & Font
@@ -57,11 +55,6 @@ export default function Edit({ attributes, setAttributes }) {
 		
 		'--seo44-sticky-offset': isSticky ? `${stickyOffset}px` : undefined
 	};
-	// CHANGED: Only add this variable if a border actually exists.
-    // This ensures old blocks (which have no border) don't get a new style property, preventing the validation error.
-    if (borderWidth) {
-        style['--seo44-block-border-thickness'] = borderWidth;
-    }
 
 	const ListTag = listStyle === 'ol' ? 'ol' : 'ul';
 	const { createInfoNotice } = useDispatch( 'core/notices' );

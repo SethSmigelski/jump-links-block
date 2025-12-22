@@ -70,7 +70,9 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 
 * **Organized Sidebar:** All styling controls are neatly organized in a dedicated "Appearance" panel.
 
-* **Layout Control:** Display your links in a standard vertical list or a modern horizontal, button-style layout.
+* **Layout Options:** Display your links in a standard vertical list or a horizontal layout. For horizontal lists, choose between the classic **Button** style or the minimalist **Plain Text** style.
+  
+* **Visual Separators:** When using the Plain Text layout, choose from elegant separators like Spaces, Middle Dots, Pipes, or Slashes to organize your links.
   
 * **List Styles:** Choose between a bulleted list (`<ul>`), a numbered list (`<ol>`), or no list styling at all.
 
@@ -93,6 +95,8 @@ A list of jump links acts as a clear, semantic outline of your page's structure.
 * **Collapsible List:** Optional feature to collapse long lists with an elegant "Show More" / "Show Less" SVG icon button to expand and contract the list horizontally or vertically.
 
 * **Sticky Navigation:** Optionally, keep the table of contents pinned to the viewport as users scroll, ensuring navigation is always accessible for long articles.
+
+* **Scroll-Up-To-Reveal:** Enable optional "Smart Sticky" behavior to save screen space. The sticky navigation hides automatically when users scroll down and instantly reappears when they scroll up—perfect for mobile reading.
 
 * **Smart Sticky Controls:**  Includes a Top Offset setting to prevent the block from hiding behind your site's sticky header, and a Disable on Mobile strategy to prevent it from blocking content on small screens.
 
@@ -169,6 +173,11 @@ No. The block is designed to be smart about this. If a heading block already has
 ### How do I make the Table of Contents stay visible while scrolling?
 In the block settings sidebar, look for the **Position Settings** panel. Toggle on **"Sticky Position"**.
 You can then use the **"Top Offset"** slider to adjust how far from the top of the screen the block sits (useful if you have a sticky site header).
+
+### How do I make the Table of Contents stay visible while scrolling?
+In the block settings sidebar, look for the **Position Settings** panel. Toggle on **"Sticky Position"**.
+You can then use the **"Top Offset"** slider to adjust how far from the top of the screen the block sits (useful if you have a sticky site header). 
+Optionally, you can also change the **Scroll Behavior** to "Scroll-Up-To-Reveal" if you want the navigation to hide while the user reads and reappear only when they scroll up.
 
 ### Why isn't the block "sticky" on my phone?
 The sticky feature includes a **"Disable on Mobile"** setting that is enabled by default.

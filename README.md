@@ -170,10 +170,10 @@ No. The block is designed to be smart about this. If a heading block already has
 
 **Note:** If one of the headings on your page is “Office Directions,” the ID created will be “office-directions.” This could create a potential conflict if you have another ID on your webpage named “office-directions.” In this case, assign a different ID to the block heading to resolve the conflict.
 
-### How do I make the Table of Contents stay visible while scrolling?
-In the block settings sidebar, look for the **Position Settings** panel. Toggle on **"Sticky Position"**.
-You can then use the **"Top Offset"** slider to adjust how far from the top of the screen the block sits (useful if you have a sticky site header).
+### How do I style the links in the horizontal layout?
+The special styling options for the horizontal layout (like link background and border color) will automatically appear in the **Appearance** panel in the sidebar *after* you select the "Horizontal" layout option.
 
+From there, you can switch the **Link Style** between "Button" (default) and "Plain Text." If you select text, you will see additional options for visual separators.
 ### How do I make the Table of Contents stay visible while scrolling?
 In the block settings sidebar, look for the **Position Settings** panel. Toggle on **"Sticky Position"**.
 You can then use the **"Top Offset"** slider to adjust how far from the top of the screen the block sits (useful if you have a sticky site header). 

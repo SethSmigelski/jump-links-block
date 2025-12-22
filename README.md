@@ -4,8 +4,8 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 * **Contributors:** sethsm
 * **Tags:** block, jump links, on this page, table of contents, jump links block
 * **Requires at least:** 5.5
-* **Tested up to:** 6.8
-* **Stable tag:** 2.0.0
+* **Tested up to:** 6.9
+* **Stable tag:** 2.1.0
 * **Requires PHP:** 7.4
 * **License:** GPLv2 or later
 * **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
@@ -218,25 +218,12 @@ Here’s how:
 ---
 
 ## Changelog
-### 2.0.0
-* **FEATURE:** **Sticky Positioning:** Keep your table of contents visible while users scroll. Includes a "Top Offset" slider to clear sticky headers, a "Jump Offset" slider to ensure that the sticky header does not cover the heading text, and a "Disable on Mobile" toggle to preserve screen space on small devices.
-* **FEATURE:** **Auto-Hide Title:** Implemented a smart "sticky state" detection. When the block sticks, the title gently collapses and fades out to keep the interface clean (this occurs when a block title is used alongside sticky positioning).
-* **FEATURE:** **Smart Indentation:** Added a "Create Visual Hierarchy" toggle. When enabled, H3 and H4 sub-headings are visually indented to create a clear, nested outline structure.
-* **FEATURE:** **Block Background:** You can now set a background color for the entire block container, perfect for creating "card-style" floating navigation.
-* **FEATURE:** **ScrollSpy:** Automatically highlights the active link in the table of contents as the user scrolls through the corresponding section of the post.
-
-### 1.9.2
-* **FEATURE:** Added support for Border and Spacing controls. You can now add borders, rounded corners, margins, and padding to the Jump Links block directly from the editor settings.
-* **FEATURE:** Added a "Heading Level" control. You can now choose the specific HTML tag (H2, H3, H4, H5, Paragraph, or Div) for the "On This Page" heading to better match your document structure.
-* **REFACTOR:** Optimized the block's styling logic to use CSS variables on the parent container instead of inline styles for every link. This reduces the block's HTML size and improves rendering performance.
-* **FIX:** Resolved an accessibility and HTML validation issue where using multiple Jump Links blocks on a single page created duplicate element IDs. Each block now generates a unique instance ID.
-* **PERFORMANCE:** Refactored the front-end JavaScript to use event delegation for smooth scrolling. This reduces memory usage by attaching a single event listener to the block instead of individual listeners for every link.
-* **TWEAK:** Reorganized the sidebar settings for better clarity between Block Title settings and Content Inclusion settings.
-
-### 1.9.0
-* **HELLO WORLD:** Initial release to the WordPress Plugin Directory.
-
-For a complete list of changes, please see the [full changelog](https://seo44plugin.com/jump-links-block-seo-44/changelog/) or the changelog.txt file included with the plugin.
+### 2.1.0
+* **NEW:** Added a "Plain Text" style option for horizontal layouts, offering a minimalist alternative to the default button style.
+* **NEW:** Introduced optional "Smart Sticky" (Scroll-Up-To-Reveal) behavior. The sticky table of contents can now hide automatically when scrolling down to save screen space and reappear when scrolling up.
+* **NEW:** Added visual separators (Middle Dot, Pipe, and Slash) for text-based link lists.
+* **ENHANCEMENT:** Introduced CSS transitions for sticky elements for a smooth visual experience for Scroll-Up-To-Reveal jump links.
+* **ENHANCEMENT:** Optimized editor controls to conditionally display relevant settings, keeping the sidebar clean.
 
 ## Upgrade Notice
 

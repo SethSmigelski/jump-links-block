@@ -224,6 +224,7 @@ Here’s how:
 * **NEW:** Added visual separators (Middle Dot, Pipe, and Slash) for text-based link lists.
 * **ENHANCEMENT:** Introduced CSS transitions for sticky elements for a smooth visual experience for Scroll-Up-To-Reveal jump links.
 * **ENHANCEMENT:** Optimized editor controls to conditionally display relevant settings, keeping the sidebar clean.
+* **FIX:** Added dynamic border calculation to resolve an issue where thick borders could prevent the navigation bar from sticking or hiding correctly.
 
 ## Upgrade Notice
 

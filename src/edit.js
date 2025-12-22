@@ -55,8 +55,7 @@ export default function Edit({ attributes, setAttributes }) {
 		'--seo44-link-radius': layout === 'horizontal' && linkBorderRadius ? `${linkBorderRadius}px` : undefined,
 		'--seo44-block-bg': blockBackgroundColor,
 		
-		'--seo44-sticky-offset': isSticky ? `${stickyOffset}px` : undefined,
-		'--seo44-block-border-thickness': borderWidth
+		'--seo44-sticky-offset': isSticky ? `${stickyOffset}px` : undefined
 	};
 	// CHANGED: Only add this variable if a border actually exists.
     // This ensures old blocks (which have no border) don't get a new style property, preventing the validation error.

@@ -6,6 +6,7 @@
 * **NEW:** Added visual separators (Middle Dot, Pipe, and Slash) for text-based link lists.
 * **ENHANCEMENT:** Introduced CSS transitions for sticky elements for a smooth visual experience for Scroll-Up-To-Reveal jump links.
 * **ENHANCEMENT:** Optimized editor controls to conditionally display relevant settings, keeping the sidebar clean.
+* **FIX:** Added dynamic border calculation to resolve an issue where thick borders could prevent the navigation bar from sticking or hiding correctly.
 
 = 2.0.1 =
 * **TWEAK:** To avoid the bottom of horizontal link "buttons" from ever being cut off when the menu is collapsed, the styling has been finetuned to include a defined line-height for list items.

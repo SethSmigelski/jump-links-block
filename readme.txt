@@ -3,7 +3,7 @@ Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
 Requires at least: 5.5
 Tested up to: 6.9
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -189,6 +189,9 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 6. Published Horizontal Jump Links with sticky navigation showing the Active Link Indicator.
 
 == Changelog ==
+
+= 2.1.1 =
+* **FIX:** The sticky navigation now remains visible when the list is expanded, preventing it from disappearing unexpectedly during use.
 
 = 2.1.0 =
 * **NEW:** Introduced optional "Smart Sticky" (Scroll-Up-To-Reveal) behavior. The sticky table of contents can now hide automatically when scrolling down to save screen space and reappear when scrolling up.

@@ -5,7 +5,7 @@ A custom block that automatically creates a clickable, customizable Jump Links t
 * **Tags:** block, jump links, on this page, table of contents, jump links block
 * **Requires at least:** 5.5
 * **Tested up to:** 6.9
-* **Stable tag:** 2.1.0
+* **Stable tag:** 2.1.1
 * **Requires PHP:** 7.4
 * **License:** GPLv2 or later
 * **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
@@ -227,6 +227,10 @@ Here’s how:
 ---
 
 ## Changelog
+
+### 2.1.1
+* **FIX:** The sticky navigation now remains visible when the list is expanded, preventing it from disappearing unexpectedly during use.
+
 ### 2.1.0
 * **FEATURE:** **Scroll-Up-To-Reveal:** Introduced optional "Smart Sticky" behavior. The sticky table of contents can now hide automatically when scrolling down to save screen space and reappear when scrolling up.
 * **NEW:** Added a "Plain Text" style option for horizontal layouts, offering a minimalist alternative to the default button style.

@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.1.3 =
+* **IMPROVEMENT:**  Implemented recursive block scanning. The plugin now identifies headings nested inside layout blocks (Groups, Columns, Kadence Rows) to generate your jump links list.
+
 = 2.1.2 =
 * **DEV:** Tested Up To WordPress 7.0.
 

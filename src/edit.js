@@ -82,8 +82,9 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
+	 
+	// --- EFFECT: Initialization & Scanning ---
 	
-	// 1. Get all current heading blocks section in your useEffect:  JavaScript	// --- EFFECT: Initialization & Scanning ---
 	useEffect(() => {
         const newAttributes = {};
 

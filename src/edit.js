@@ -10,6 +10,18 @@ function stripHtml(html) {
 	return doc.body.textContent || '';
 }
 
+// Helper function to extract all blocks recursively and support nested headings
+function getFlatBlocks(blocksArray) {
+    let flatBlocks = [];
+    blocksArray.forEach((block) => {
+        flatBlocks.push(block);
+        if (block.innerBlocks && block.innerBlocks.length > 0) {
+            flatBlocks = flatBlocks.concat(getFlatBlocks(block.innerBlocks));
+        }
+    });
+    return flatBlocks;
+}
+
 // set svg chevrons
 const arrowUpIcon = (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -71,7 +83,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const blocks = useSelect((select) => select('core/block-editor').getBlocks(), []);
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
 	
-	// --- EFFECT: Initialization & Scanning ---
+	// 1. Get all current heading blocks section in your useEffect:  JavaScript	// --- EFFECT: Initialization & Scanning ---
 	useEffect(() => {
         const newAttributes = {};
 
@@ -85,8 +97,9 @@ export default function Edit({ attributes, setAttributes }) {
             setAttributes(newAttributes);
         }
 	
-        // 1. Get all current heading blocks
-        const currentBlocks = blocks
+        // 1. Get all current heading blocks (Updated to scan nested blocks)
+        const allBlocks = getFlatBlocks(blocks);
+        const currentBlocks = allBlocks
             .filter(block => block.name === 'core/heading' && headingLevels.includes(`h${block.attributes.level}`));
 
         // --- Tools for de-duping and warning ---

@@ -42,4 +42,27 @@ if ( ! function_exists('seo44_jump_links_localize_script') ) {
 	}
 	// Use a late priority (20) to ensure the script is enqueued first
 	add_action( 'wp_enqueue_scripts', 'seo44_jump_links_localize_script', 20 );
-} 
+}
+
+/**
+ * Prevent the Jump Links CSS from loading globally on every page.
+ */
+function jump_links_block_dequeue_global_styles() {
+    // Only apply this restriction on the front-end
+    if ( ! is_admin() ) {
+        wp_dequeue_style( 'seo44-jump-links-style' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'jump_links_block_dequeue_global_styles', 99 );
+
+/**
+ * Re-enqueue the CSS *only* when the block is actually rendered on the page.
+ */
+function jump_links_block_enqueue_styles_on_render( $block_content, $block ) {
+    // Check if the block being rendered is our Jump Links block
+    if ( isset( $block['blockName'] ) && $block['blockName'] === 'seo44/jump-links' ) {
+        wp_enqueue_style( 'seo44-jump-links-style' );
+    }
+    return $block_content;
+}
+add_filter( 'render_block', 'jump_links_block_enqueue_styles_on_render', 10, 2 );

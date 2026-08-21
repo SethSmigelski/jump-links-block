@@ -1,9 +1,9 @@
 === Jump Links Block (SEO 44) ===
 Contributors: sethsm
 Tags: block, jump links, on this page, table of contents, jump links block
-Requires at least: 5.5
-Tested up to: 7.0
-Stable tag: 2.1.3
+Requires at least: 6.3
+Tested up to: 7.1
+Stable tag: 2.2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -189,6 +189,11 @@ Follow these instructions to [create a Block Pattern of a Jump Links Block](http
 6. Published Horizontal Jump Links with sticky navigation showing the Active Link Indicator.
 
 == Changelog ==
+
+= 2.2.0 =
+* **PERFORMANCE:**  Block styles are now conditionally loaded only when the Jump Links block is present.
+* **IMPROVEMENT:**  Implemented late-enqueue logic for block assets. Global inline CSS has been replaced with a conditionally loaded external stylesheet, improving browser caching and reducing page weight on pages not using the Jump Links Block.
+* **DEV:** Tested Up To WordPress 7.1.
 
 = 2.1.3 =
 * **IMPROVEMENT:**  Implemented recursive block scanning. The plugin now identifies headings nested inside layout blocks (Groups, Columns, Kadence Rows) to generate your jump links list.
